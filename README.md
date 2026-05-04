@@ -1,8 +1,8 @@
-# 🛒 SeicentoTools – Java Web E-commerce
+# 🛒 SeicenTools – Java Web E-commerce
 
 ## 📌 Descrizione del Progetto
 
-**SeicentoTools** è un'applicazione web sviluppata come progetto per il corso di *Tecnologie Software per il Web* presso l’Università degli Studi di Salerno .
+**SeicenTools** è un'applicazione web sviluppata come progetto per il corso di *Tecnologie Software per il Web* presso l’Università degli Studi di Salerno .
 
 Il sistema implementa un **e-commerce dinamico e responsive** specializzato nella vendita di materiali da ferramenta, con particolare focus su prodotti per pittura e imbiancatura.
 
@@ -14,9 +14,8 @@ L’obiettivo principale è offrire un’esperienza utente **semplice, intuitiva
 
 * Realizzazione di un sito web e-commerce dinamico
 * Implementazione di architettura basata su **Java Servlet**
-* Interfaccia responsive (mobile-first)
+* Interfaccia responsive
 * Separazione dei ruoli utente (guest, registrato, amministratore)
-* Gestione completa del flusso di acquisto
 
 ---
 
@@ -26,7 +25,7 @@ L’obiettivo principale è offrire un’esperienza utente **semplice, intuitiva
 
 * Java Servlet
 * Apache Tomcat
-* JDBC (Java Database Connectivity)
+* JDBC (Java DataBase Connectivity)
 
 ### Frontend
 
