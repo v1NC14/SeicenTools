@@ -15,7 +15,7 @@ public class UtenteDAO implements IUtenteDAO {
     // REGISTRAZIONE UTENTE
     @Override
     public boolean registraUtente(Connection conn, Utente user, String pwd) throws Exception{
-        String query = "INSERT INTO utente (noime, email, password, ruolo) VALUES (?, ?, ?, ?)";
+        String query = "INSERT INTO utente (nome, email, ruolo, hashPWd) VALUES (?, ?, ?, ?)";
 
         if (conn != null) {
             try (PreparedStatement ps = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
@@ -23,8 +23,9 @@ public class UtenteDAO implements IUtenteDAO {
 
                 ps.setString(1, user.getNome());
                 ps.setString(2, user.getEmail());
-                ps.setString(3, hashedPassword);
-                ps.setString(4, user.getRuolo().toString());
+                ps.setString(3, user.getRuolo().toString());
+                ps.setString(4, hashedPassword);
+
 
                 if (ps.execute()){
                     System.out.println("Inserimento nuovo utente riuscito");
@@ -37,6 +38,7 @@ public class UtenteDAO implements IUtenteDAO {
                         // AGGIORNO L'OGGETTO JAVA
                         // Fondamentale: ora l'oggetto 'utente' ha la matricola vera
                         user.setId(idGenerato);
+                        user.setHashpwd(hashedPassword);
                     } else {
                         throw new SQLException("Creazione utente fallita, nessun ID ottenuto.");
                     }
@@ -66,7 +68,7 @@ public class UtenteDAO implements IUtenteDAO {
 
             Utente utente = new Utente();
 
-            while (rs.next()) {
+            if (rs.next()) {
                 Ruolo ruolo = Ruolo.valueOf(rs.getString("ruolo"));
 
                 utente.setId(rs.getInt("id"));
@@ -95,7 +97,7 @@ public class UtenteDAO implements IUtenteDAO {
 
             Utente utente = new Utente();
 
-            while (rs.next()) {
+            if (rs.next()) {
                 utente.setId(rs.getInt("id"));
                 utente.setEmail(rs.getString("email"));
                 utente.setNome(rs.getString("nome"));
@@ -164,7 +166,6 @@ public class UtenteDAO implements IUtenteDAO {
         } catch (SQLException e) {
             throw new SQLException("Connessione con il database fallita...");
         }
-
     }
 
     // RECUPERO DELLA PASSWORD OVE SERVISSE
@@ -175,13 +176,13 @@ public class UtenteDAO implements IUtenteDAO {
             throw new IllegalArgumentException("Email non può essere null");
         }
 
-        String sql = "SELECT hashPassword FROM utente WHERE email = ?";
+        String sql = "SELECT hashPwd FROM utente WHERE email = ?";
 
         try (Connection con = DBConnection.getConnection(); PreparedStatement ps = con.prepareStatement(sql)){
             ps.setString(1, email);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
-                return rs.getString("hashPassword");
+                return rs.getString("hashPwd");
             }
             else {
                 return null;

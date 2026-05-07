@@ -9,17 +9,17 @@ public class Utente {
 
     public Utente(){};
 
-    public Utente(int id, String nome, String Pwd, String email, Ruolo ruolo){
+    public Utente(int id, String nome, String email, Ruolo ruolo){
         this.id = id;
         this.nome = nome;
-        this.Pwd = Pwd;
+        this.Pwd = null;
         this.email = email;
         this.ruolo = ruolo;
     }
 
-    public Utente(String nome, String Pwd, String email, Ruolo ruolo){
+    public Utente(String nome, String email, Ruolo ruolo){
         this.nome = nome;
-        this.Pwd = Pwd;
+        this.Pwd = null;
         this.email = email;
         this.ruolo = ruolo;
     }
