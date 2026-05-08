@@ -34,6 +34,7 @@ public class Ordine {
     public void setId_utente(int id_utente) {this.id_utente = id_utente;}
     public void setTotale(BigDecimal totale) {this.totale = totale;}
     public void setQta(int qta) {this.qta = qta;}
+    public void setDataCreazione(Timestamp dataCreazione){this.dataCreazione = dataCreazione;}
     public void setIndirizzoConsegna(String indirizzoConsegna) {this.indirizzoConsegna = indirizzoConsegna;}
 }
 

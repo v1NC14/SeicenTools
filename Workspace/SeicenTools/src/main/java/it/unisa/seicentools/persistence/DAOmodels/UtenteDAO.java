@@ -39,6 +39,7 @@ public class UtenteDAO implements IUtenteDAO {
                         // Fondamentale: ora l'oggetto 'utente' ha la matricola vera
                         user.setId(idGenerato);
                         user.setHashpwd(hashedPassword);
+                        return true;
                     } else {
                         throw new SQLException("Creazione utente fallita, nessun ID ottenuto.");
                     }
