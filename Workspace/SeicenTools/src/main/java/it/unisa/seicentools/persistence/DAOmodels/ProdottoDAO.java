@@ -98,4 +98,8 @@ public class ProdottoDAO implements IProdottoDAO {
         }
         return false;
     }
+
+    //public boolean updateProdotto(Prodotto p) throws Exception{}
+
+    //public boolean deleteProdotto(Prodotto p) throws Exception{}
 }

@@ -67,12 +67,11 @@ public class OrdineDAO implements IOrdineDAO {
 
                 ordini.add(tmp);
             }
-
-            return ordini;
         } catch (SQLException e) {
             e.printStackTrace();
             throw new SQLException("Connessione con il database fallita...");
         }
+        return ordini;
     }
 
     @Override
@@ -98,12 +97,11 @@ public class OrdineDAO implements IOrdineDAO {
 
                 ordini.add(tmp);
             }
-
-            return ordini;
         } catch (SQLException e) {
             e.printStackTrace();
             throw new SQLException("Connessione con il database fallita...");
         }
+        return ordini;
     }
 
     @Override
@@ -129,11 +127,14 @@ public class OrdineDAO implements IOrdineDAO {
 
                 ordini.add(tmp);
             }
-
-            return ordini;
         } catch (SQLException e) {
             e.printStackTrace();
             throw new SQLException("Connessione con il database fallita...");
         }
+        return ordini;
     }
+
+    //public boolean updateOrdine(Ordine ordine) throws Exception{}
+
+    //public boolean deleteOrdine(Ordine ordine) throws Exception{}
 }

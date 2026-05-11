@@ -193,4 +193,6 @@ public class UtenteDAO implements IUtenteDAO {
             throw new SQLException("Connessione con il database fallita...");
         }
     }
+
+    //public boolean updateUtente(Utente utente) throws Exception{}
 }

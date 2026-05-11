@@ -1,6 +1,7 @@
 package it.unisa.seicentools.persistence.DAOmodels;
 
 import it.unisa.seicentools.models.ProdottiOrdinati;
+import it.unisa.seicentools.models.Prodotto;
 import it.unisa.seicentools.persistence.DBConnection;
 import java.sql.*;
 import java.util.ArrayList;
@@ -36,9 +37,10 @@ public class ProdottiOrdinatiDAO {
         }
     }
 
-    public List<ProdottiOrdinati> getProdottiByOrdine(int id) throws Exception {
-        List<ProdottiOrdinati> lista = new ArrayList<>();
-        String query = "SELECT * FROM prodottiordinati WHERE id_ordine = ?";
+    public List<Prodotto> getProdottiByOrdine(int id) throws Exception {
+        //MODIFCIA IL CODICE; CI SONO DEGLI ERRORI
+        List<Prodotto> lista = new ArrayList<>();
+        String query = "SELECT * FROM prodottiordinati WHERE id_ordine = ?"; //CAMBIA QUERY (deve restituire la lista di prodotti legati all'ordine, non oggetti di tipo prodottoordinato)
 
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement(query)) {
@@ -47,8 +49,9 @@ public class ProdottiOrdinatiDAO {
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-                ProdottiOrdinati tmp = new ProdottiOrdinati();
+                Prodotto tmp = new Prodotto();
 
+                /*ERROR*/
                 tmp.setId(rs.getInt("id"));
                 tmp.setIdOrdine(rs.getInt("id_ordine"));
                 tmp.setIdProdotto(rs.getInt("id_prodotto"));
@@ -64,4 +67,5 @@ public class ProdottiOrdinatiDAO {
         }
     }
 
+    //modificare i metodi, le query sono errate
 }
