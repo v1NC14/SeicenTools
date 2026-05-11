@@ -194,5 +194,23 @@ public class UtenteDAO implements IUtenteDAO {
         }
     }
 
-    //public boolean updateUtente(Utente utente) throws Exception{}
+    @Override
+    public boolean updateUtente(Utente utente) throws Exception{
+        String query = "UPDATE ordine SET (nome, email, ruolo) VALUES (?, ?, ?) WHERE id = ?";
+
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement ps = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
+
+            ps.setString(1, utente.getNome());
+            ps.setString(2, utente.getEmail());
+            ps.setString(3, utente.getRuolo().toString());
+            ps.setInt(4, utente.getId());
+
+            ps.executeUpdate();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new SQLException("Connessione con il database fallita...");
+        }
+    }
 }

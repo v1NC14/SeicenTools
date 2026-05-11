@@ -12,4 +12,5 @@ public interface IUtenteDAO {
     public List<Utente> getAllUtentiRegistrati() throws Exception;
     public void rimuoviUtente(Utente utente) throws Exception;
     public String recuperaPassword(String email) throws Exception;
+    public boolean updateUtente(Utente utente) throws Exception;
 }

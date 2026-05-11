@@ -39,7 +39,7 @@ public class OrdineDAO implements IOrdineDAO {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            throw new SQLException("Connessione dcon il database fallita...");
+            throw new SQLException("Connessione con il database fallita...");
         }
     }
 
@@ -134,7 +134,42 @@ public class OrdineDAO implements IOrdineDAO {
         return ordini;
     }
 
-    //public boolean updateOrdine(Ordine ordine) throws Exception{}
+    @Override
+    public boolean updateOrdine(Ordine ordine) throws Exception{
+        //id_utente, qta, totale, indirizzo
+        String query = "UPDATE ordine SET (id_utente, qta, tot, indirizzoConsegna) VALUES (?, ?, ?, ?) WHERE id = ?";
 
-    //public boolean deleteOrdine(Ordine ordine) throws Exception{}
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement ps = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
+
+            ps.setInt(1, ordine.getId_utente());
+            ps.setBigDecimal(2, ordine.getTotale());
+            ps.setInt(3, ordine.getQta());
+            ps.setString(4, ordine.getIndirizzoConsegna());
+            ps.setInt(5, ordine.getId());
+
+            ps.executeUpdate();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new SQLException("Connessione con il database fallita...");
+        }
+    }
+
+    @Override
+    public boolean deleteOrdine(Ordine ordine) throws Exception{
+        String query = "DELETE FROM ordine WHERE id = ?";
+
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement ps = conn.prepareStatement(query)) {
+
+            ps.setInt(1, ordine.getId());
+            ps.executeUpdate();
+
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new SQLException("Connessione con il database fallita...");
+        }
+    }
 }

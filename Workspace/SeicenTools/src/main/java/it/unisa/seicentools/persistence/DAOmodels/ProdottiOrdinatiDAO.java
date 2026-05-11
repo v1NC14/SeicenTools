@@ -38,9 +38,8 @@ public class ProdottiOrdinatiDAO {
     }
 
     public List<Prodotto> getProdottiByOrdine(int id) throws Exception {
-        //MODIFCIA IL CODICE; CI SONO DEGLI ERRORI
         List<Prodotto> lista = new ArrayList<>();
-        String query = "SELECT * FROM prodottiordinati WHERE id_ordine = ?"; //CAMBIA QUERY (deve restituire la lista di prodotti legati all'ordine, non oggetti di tipo prodottoordinato)
+        String query = "SELECT * FROM prodotto INNER JOIN prodottiordinati ON prodottiordinati.id_prodotto = prodotto.id WHERE id_ordine = ?"; //CAMBIA QUERY (deve restituire la lista di prodotti legati all'ordine, non oggetti di tipo prodottoordinato)
 
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement(query)) {
@@ -53,19 +52,21 @@ public class ProdottiOrdinatiDAO {
 
                 /*ERROR*/
                 tmp.setId(rs.getInt("id"));
-                tmp.setIdOrdine(rs.getInt("id_ordine"));
-                tmp.setIdProdotto(rs.getInt("id_prodotto"));
-                tmp.setQta(rs.getInt("qta"));
+                tmp.setNome(rs.getString("nome"));
+                tmp.setCategoria(rs.getString("categoria"));
+                tmp.setDescrizione(rs.getString("descrizione"));
+                tmp.setPrezzo(rs.getBigDecimal("prezzo"));
+                tmp.setImgPath(rs.getString("imgPath"));
+                tmp.setDisponibilita(rs.getInt("disponibilita"));
 
                 lista.add(tmp);
             }
-
-            return lista;
         } catch (Exception e) {
             e.printStackTrace();
             throw new SQLException("Connessione con il database fallita...");
         }
+        return lista;
     }
 
-    //modificare i metodi, le query sono errate
+    //revisionare in futuro
 }
