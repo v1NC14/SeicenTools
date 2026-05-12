@@ -5,6 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3a961311-2e34-4c97-af2d-180b33b80a94" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/application/accessMGMT/SessionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/application/accessMGMT/interfaces/ISessionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/persistence/PersistenceServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/persistence/interfaces/IPersistenceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/persistence/DAOmodels/OrdineDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/persistence/DAOmodels/OrdineDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/persistence/DAOmodels/ProdottiOrdinatiDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/persistence/DAOmodels/ProdottiOrdinatiDAO.java" afterDir="false" />
@@ -68,6 +73,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mauro\Documents\GitHub\SeicenTools\Workspace\SeicenTools\src\main\webapp\css" />
       <recent name="C:\Users\mauro\Documents\GitHub\SeicenTools\Workspace\SeicenTools" />
     </key>
   </component>
