@@ -39,7 +39,7 @@ public class ProdottiOrdinatiDAO {
 
     public List<Prodotto> getProdottiByOrdine(int id) throws Exception {
         List<Prodotto> lista = new ArrayList<>();
-        String query = "SELECT * FROM prodotto INNER JOIN prodottiordinati ON prodottiordinati.id_prodotto = prodotto.id WHERE id_ordine = ?"; //CAMBIA QUERY (deve restituire la lista di prodotti legati all'ordine, non oggetti di tipo prodottoordinato)
+        String query = "SELECT * FROM prodotto INNER JOIN prodottiordinati ON prodottiordinati.id_prodotto = prodotto.id WHERE id_ordine = ?";
 
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement(query)) {
@@ -50,7 +50,6 @@ public class ProdottiOrdinatiDAO {
             while (rs.next()) {
                 Prodotto tmp = new Prodotto();
 
-                /*ERROR*/
                 tmp.setId(rs.getInt("id"));
                 tmp.setNome(rs.getString("nome"));
                 tmp.setCategoria(rs.getString("categoria"));
