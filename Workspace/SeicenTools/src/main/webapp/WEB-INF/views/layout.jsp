@@ -14,7 +14,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
         <nav class="navbar nav-color">
             <div class="navbar-brand" id="brand">
-                <img src="${pageContext.request.contextPath}/imgs/logo.jpg" alt="logo" id="logo" class="mx-3 my-1"> <!--qui poi verrà inserita l'img del logo (croppato) di EWMS-->
+                <img src="${pageContext.request.contextPath}/imgs/logo.jpg" alt="logo" id="logo" class="mx-3 my-1"> <!-- qui poi verrà inserita l img del logo (croppato) di EWMS -->
                 SeicenTools
             </div>
 

@@ -11,10 +11,11 @@ public class Ordine {
     private int qta;
     private Timestamp dataCreazione;
     private String indirizzoConsegna;
+    private String numCarta;
 
     public Ordine(){};
 
-    public Ordine(int id, int id_utente, BigDecimal totale, int qta, String indirizzoConsegna){
+    public Ordine(int id, int id_utente, BigDecimal totale, int qta, String indirizzoConsegna, String numCarta) {
         this.id = id;
         this.id_utente = id_utente;
         this.totale = totale;
