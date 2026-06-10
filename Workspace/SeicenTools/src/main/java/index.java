@@ -8,7 +8,6 @@ import java.io.IOException;
 public class index  extends HttpServlet {
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        String path="/WEB-INF/jsp/index.jsp";
         try{
             req.setAttribute("viewPath","WEB-INF/views/login.jsp");
             req.getRequestDispatcher("WEB-INF/views/layout.jsp").forward(req,resp);

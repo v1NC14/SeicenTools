@@ -20,11 +20,10 @@ public class LoginServlet  extends HttpServlet {
 
        if(sessionService.login(username, password)){
            Utente utente = sessionService.getUtente(username);
-
            HttpSession session = request.getSession();
            
            if(utente != null){
-               switch(utente.getRuolo){
+               switch(utente.getRuolo()){
                    case USER:
                        session.setAttribute("utente",utente);
                        response.sendRedirect(request.getContextPath()+"/homepage");
@@ -35,6 +34,14 @@ public class LoginServlet  extends HttpServlet {
                        response.sendRedirect(request.getContextPath()+"/homepage");
                        break;
                }
+
+               /*
+               * qui non serve il case perché non stai facendo nulla di diverso
+               *
+               * trova un motivo per utilizzare lo switch altrimenti basta che fai semplicemente
+               * session.setAttribute("utente",utente);
+               * response.sendRedirect(request.getContextPath()+"/homepage");
+               * */
            }
            else{
                response.sendRedirect(request.getContextPath()+"/homepage");

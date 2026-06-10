@@ -21,12 +21,17 @@ public class OrdineServlet  extends HttpServlet{
         HttpSession session = req.getSession();
         Ordine ordine = (Ordine)session.getAttribute("ordine");
 
-
+        /*
+        Qui dovresti utilizzare l'entità ProdottiOrdinati per risalire ai prodotti contenuti nell'ordine
+        ricordati di settare come attributo in sessione una List<Prodotto> che verrà mostrata nella pagina ordine
+        poi le piccolezze me le vedo io
+        */
     }
 
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        doPost(request, response);
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+            doPost(request, response);
+        }
+    }
 }

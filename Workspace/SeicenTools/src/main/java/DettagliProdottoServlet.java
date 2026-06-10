@@ -21,6 +21,11 @@ public class DettagliProdottoServlet extends HttpServlet {
         Prodotto prod = (Prodotto)session.getAttribute("prodotto");
 
 
+        /*
+         * qui va bene ma ricorda che ogni volta che ci troviamo in una pagina dove si può visualizzare un prodotto
+         * (quindi, ordine, homepage, catalogo, carrello, ...) si deve rimandare alla pagina dettaglio con lo specifico
+         * id del prodotto
+         */
 
     }
 

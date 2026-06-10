@@ -25,5 +25,9 @@ public class CarrelloServlet  extends HttpServlet {
         HttpSession session = req.getSession();
         List<Prodotto> carrello = (List<Prodotto>) session.getAttribute("carrello");
 
+        /*
+        * ti ho creato le entità per il carrello e la relativa assocciazione N-1 / 1-N quindi adesso ti devi solo
+        * ricavare la lista dei prodotti dalle associazioni con le tabelle
+        * */
     }
 }
