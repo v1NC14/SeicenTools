@@ -3,8 +3,7 @@
 
 <div class = "profile_img">
 <img > <!--qui devo capire come poter caricare le immagini, servirà tempo, è una delle parti più difficili del progetto-->
-<a href="ProfiloServlet?action=chngPwd
-"> <!--da creare-->
+<a href="ProfiloServlet?action=chngImg"> <!--da creare-->
     <button type="button" class="btn btn-danger mx-1">Cambia immagine profilo<i class="bi bi-box-arrow-right"></i></button>
 </a>
 </div>
