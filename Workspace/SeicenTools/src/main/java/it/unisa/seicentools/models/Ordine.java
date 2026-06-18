@@ -3,6 +3,7 @@ package it.unisa.seicentools.models;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.time.Instant;
+import java.util.List;
 
 public class Ordine {
     private int id;
@@ -12,6 +13,7 @@ public class Ordine {
     private Timestamp dataCreazione;
     private String indirizzoConsegna;
     private String numCarta;
+
 
     public Ordine(){};
 

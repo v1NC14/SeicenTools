@@ -21,35 +21,18 @@ public class LoginServlet  extends HttpServlet {
        if(sessionService.login(username, password)){
            Utente utente = sessionService.getUtente(username);
            HttpSession session = request.getSession();
-           
-           if(utente != null){
-               switch(utente.getRuolo()){
-                   case USER:
-                       session.setAttribute("utente",utente);
-                       response.sendRedirect(request.getContextPath()+"/homepage");
-                       break;
-
-                   case ADMIN:
-                       session.setAttribute("utente",utente);
-                       response.sendRedirect(request.getContextPath()+"/homepage");
-                       break;
-               }
-
-               /*
-               * qui non serve il case perché non stai facendo nulla di diverso
-               *
-               * trova un motivo per utilizzare lo switch altrimenti basta che fai semplicemente
-               * session.setAttribute("utente",utente);
-               * response.sendRedirect(request.getContextPath()+"/homepage");
-               * */
-           }
-           else{
-               response.sendRedirect(request.getContextPath()+"/homepage");
-               request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request,response);
-           }
+            session.setAttribute("utente", utente);
        }
+       else{
+           request.setAttribute("errore","Login non valido");
+       }
+
    }
 
+   private void doGet(HttpServletRequest request, HttpServletResponse response) {
+       response.sendRedirect(request.getContextPath() + "/homepage");
+       request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
+   }
 
 
 }
