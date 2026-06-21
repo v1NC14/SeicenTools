@@ -9,10 +9,11 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
+@WebServlet(name="CatalogoServlet", value="catalogo")
 public class CatalogoServlet extends HttpServlet {
 
-    @WebServlet(name="CatalogoServlet", value="catalogo")
-    private void doGet(HttpServletRequest req , HttpServletResponse resp) throws ServletException, IOException {
+    @Override
+    protected void doGet(HttpServletRequest req , HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
         List<Prodotto> catalogo = (List<Prodotto>) session.getAttribute("catalogo");
     }

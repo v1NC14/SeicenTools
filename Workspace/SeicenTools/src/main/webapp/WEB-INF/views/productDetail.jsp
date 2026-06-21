@@ -10,7 +10,7 @@
 </c:if>
 
 </div>
-<div class = "profile_data">
+<div class = "product_data">
     <div class="mx-2 my-2">
         <c:if test="${error != null}">
             <div class="error-banner">
