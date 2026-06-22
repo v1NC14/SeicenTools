@@ -2,6 +2,7 @@
 package it.unisa.seicentools;
 import it.unisa.seicentools.application.accessMGMT.SessionService;
 import it.unisa.seicentools.models.Ordine;
+import it.unisa.seicentools.models.ProdottiOrdinati;
 import it.unisa.seicentools.models.Utente;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -20,6 +21,12 @@ public class OrdineServlet  extends HttpServlet{
     protected void doGet(HttpServletRequest req , HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
         Ordine ordine = (Ordine)session.getAttribute("ordine");
+        ProdottiOrdinati pOrdinati = (ProdottiOrdinati)session.getAttribute("prodottoOrdinato");
+        int idOrdine = ordine.getId();
+
+        if(idOrdine==pOrdinati.getIdOrdine()){
+
+        }
 
         /*
         Qui dovresti utilizzare l'entità ProdottiOrdinati per risalire ai prodotti contenuti nell'ordine
