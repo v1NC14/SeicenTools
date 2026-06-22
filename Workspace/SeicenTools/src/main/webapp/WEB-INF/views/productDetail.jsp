@@ -29,7 +29,7 @@
         </div>
 
         <div class="my-2">
-            <a href="CarrelloServlet?prodotto=${sessionScope.prodotto}">
+            <a href="AddCarrelloServlet?prodotto=${sessionScope.prodotto}">
                 <button type="button" class="btn btn-warning mx-1">Aggiungi al carrello<i class="bi bi-plus"></i></button>
             </a>
             <c:if ${sessionScope.utente.ruolo == 'ADMIN'}>

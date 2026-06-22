@@ -1,7 +1,6 @@
-
-
-package it.unisa.seicentools;
+import it.unisa.seicentools.models.Carrello;
 import it.unisa.seicentools.models.Prodotto;
+import it.unisa.seicentools.persistence.DAOmodels.ProdottoDAO;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -10,31 +9,26 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
-import java.util.List;
 
-
-@WebServlet(name="AddCarrelloServlet" , value="/add-carrello")
-public class AddCarrelloServlet extends HttpServlet {
+@WebServlet(name = "RmvFromCartServlet", value="rmv-cart")
+public class RmvFromCartServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
 
-        if(session.getAttribute("user") != null){
-            try{
-                List<Prodotto> carrello = (List<Prodotto>) session.getAttribute("carrello");
-
-                Prodotto tmp = (Prodotto) session.getAttribute("prodotto");
-                carrello.add(tmp);
+        if (session.getAttribute("utente") != null) {
+            try {
+                Carrello carrello = (Carrello) session.getAttribute("carrello");
+                int idPrd = Integer.parseInt(req.getParameter("id"));
 
                 CarrelloDAO cartDAO = new CarrelloDAO();
+                ProdottoDAO prodottoDAO = new ProdottoDAO();
 
-                cartDAO.add(carrello, tmp);
+                Prodotto tmp =  prodottoDAO.getProdottoById(idPrd);
 
-                //String psAdd = "INSERT INTO carrelloutente (id_utente, id_podotto) VALUES(?, ?)";"
-
-                session.setAttribute("carrello", carrello);
-            }catch(Exception e){
+                cartDAO.remove(carrello, tmp);
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
@@ -42,6 +36,6 @@ public class AddCarrelloServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        doPost(req, resp);
+        doPost(req,resp);
     }
 }

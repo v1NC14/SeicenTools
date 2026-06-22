@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3a961311-2e34-4c97-af2d-180b33b80a94" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CarrelloServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AddCarrelloServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CatalogoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CatalogoServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AddCarrelloServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AddCarrelloServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DettagliProdottoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DettagliProdottoServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/HomepageServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/HomepageServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/persistence/DAOmodels/ProdottoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/persistence/DAOmodels/ProdottoDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/productDetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/productDetail.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
