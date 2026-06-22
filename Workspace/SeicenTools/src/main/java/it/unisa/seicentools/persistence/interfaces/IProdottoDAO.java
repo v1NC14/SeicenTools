@@ -10,4 +10,5 @@ public interface IProdottoDAO {
     public boolean addProdotto(Prodotto p) throws Exception;
     public boolean updateProdotto(Prodotto p) throws Exception;
     public boolean deleteProdotto(Prodotto p) throws Exception;
+    public List<Prodotto> getProdottoByCategoria(String cat) throws Exception;
 }

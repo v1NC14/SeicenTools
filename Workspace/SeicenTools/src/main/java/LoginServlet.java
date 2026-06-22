@@ -21,18 +21,20 @@ public class LoginServlet  extends HttpServlet {
        if(sessionService.login(username, password)){
            Utente utente = sessionService.getUtente(username);
            HttpSession session = request.getSession();
-            session.setAttribute("utente", utente);
+           
+           if(utente != null){
+               session.setAttribute("utente",utente);
+               request.setAttribute("viewPath", "/WEB-INF/views/homepage.jsp");
+               request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
+           }
+           else{
+               request.setAttribute("error", "Utente non loggato, effettua il login");
+               request.setAttribute("viewPath", "/WEB-INF/views/login.jsp");
+               request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
+           }
        }
-       else{
-           request.setAttribute("errore","Login non valido");
-       }
-
    }
 
-   private void doGet(HttpServletRequest request, HttpServletResponse response) {
-       response.sendRedirect(request.getContextPath() + "/homepage");
-       request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
-   }
 
 
 }

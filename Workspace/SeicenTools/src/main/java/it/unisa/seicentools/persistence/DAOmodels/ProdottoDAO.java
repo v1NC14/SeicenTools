@@ -67,6 +67,59 @@ public class ProdottoDAO implements IProdottoDAO {
     }
 
     @Override
+    public List<Prodotto> getProdottoByCategoria(String cat) throws Exception{
+
+        int c = 0, p = 0;
+        List<String> filtri = new ArrayList<>();
+        String tmp = "", query;
+        for(int i= 0; i < cat.length(); i++){
+            tmp += cat.charAt(i);
+            if (!Character.isLetterOrDigit(cat.charAt(i))
+                    && !Character.isWhitespace(cat.charAt(i))) {
+                c++;
+                filtri.add(tmp);
+                tmp = "";
+            }
+        }
+
+        if(c == 0){query = "SELECT * FROM prodotti WHERE categoria = ?";}
+        else{
+            query = "SELECT * FROM prodotti WHERE categoria LIKE '"+ filtri.get(0) +"'";
+            for(int i = 1; i < filtri.size(); i++){
+                query += " OR categoria LIKE '"+ filtri.get(i)+"'";
+            }
+        }
+
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement ps = conn.prepareStatement(query)) {
+
+            if(c==0)
+                ps.setString(1, cat);
+
+            ResultSet rs = ps.executeQuery();
+
+            List<Prodotto> tmplist = new ArrayList<>();
+
+            while (rs.next()) {
+                Prodotto temp = new Prodotto();
+
+                temp.setId(rs.getInt("id"));
+                temp.setNome(rs.getString("nome"));
+                temp.setCategoria(rs.getString("categoria"));
+                temp.setDescrizione(rs.getString("descrizione"));
+                temp.setPrezzo(rs.getBigDecimal("prezzo"));
+                temp.setImgPath(rs.getString("imgPath"));
+
+                tmplist.add(temp);
+            }
+
+            return tmplist;
+        } catch (SQLException e) {
+            throw new SQLException("Connessione con il database fallita...");
+        }
+    }
+
+    @Override
     public boolean addProdotto(Prodotto p) throws Exception{
         String query = "INSERT INTO prodotti(nome, categoria, descrizione, prezzo, imgPath, disponibilita) VALUES (?, ?, ?, ?, ?, ?)";
 

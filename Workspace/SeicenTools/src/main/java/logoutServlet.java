@@ -7,7 +7,7 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
-@WebServlet(name="logoutServlet", value="/LogoutServlet")
+@WebServlet(name="logoutServlet", value="/logut")
 public class logoutServlet  extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
