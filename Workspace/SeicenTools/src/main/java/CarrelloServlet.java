@@ -30,4 +30,5 @@ public class CarrelloServlet  extends HttpServlet {
         * ricavare la lista dei prodotti dalle associazioni con le tabelle
         * */
     }
+
 }

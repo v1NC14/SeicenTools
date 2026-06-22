@@ -28,5 +28,10 @@ public class DettagliProdottoServlet extends HttpServlet {
          */
 
     }
+    @Override
+    protected void doGet(HttpServletRequest req , HttpServletResponse resp) throws ServletException, IOException{
+        resp.sendRedirect(req.getContextPath() + "/catalogo");
+        req.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(req, resp);
+    }
 
 }
