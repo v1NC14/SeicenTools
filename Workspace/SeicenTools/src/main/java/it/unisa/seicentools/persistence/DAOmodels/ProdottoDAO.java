@@ -61,8 +61,7 @@ public class ProdottoDAO implements IProdottoDAO {
             }
 
             return tmp;
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
             throw new SQLException("Connessione con il database fallita...");
         }
     }

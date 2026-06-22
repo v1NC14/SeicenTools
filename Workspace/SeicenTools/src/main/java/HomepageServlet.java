@@ -39,7 +39,7 @@ public class HomepageServlet extends HttpServlet {
 
                 } catch (SQLException e) {
                     request.setAttribute("error", "Errore durante il caricamento della homepage");
-                    session.setAttribute("viewPath", "/WEB-INF/views/login.jsp");
+                    request.setAttribute("viewPath", "/WEB-INF/views/login.jsp");
                     response.sendRedirect(request.getContextPath() + "/DispatcherServlet");
                 }
 
