@@ -1,5 +1,7 @@
 package it.unisa.seicentools;
 import it.unisa.seicentools.application.accessMGMT.SessionService;
+import it.unisa.seicentools.application.productMGMT.commonProdService;
+import it.unisa.seicentools.application.productMGMT.interfaces.IcommonProdService;
 import it.unisa.seicentools.models.Ordine;
 import it.unisa.seicentools.models.Prodotto;
 import it.unisa.seicentools.models.Utente;
@@ -20,13 +22,11 @@ public class DettagliProdottoServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req , HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
-
+        IcommonProdService service = new commonProdService();
         int idPrd = Integer.parseInt(req.getParameter("id"));
 
-        ProdottoDAO prodottoDAO = new ProdottoDAO();
-
         try {
-            Prodotto tmp = prodottoDAO.getProdottoById(idPrd);
+            Prodotto tmp = service.getProdotto(idPrd);
 
             req.setAttribute("prodotto", tmp);
             req.setAttribute("viewPath", "/WEB-INF/views/productDetail.jsp");
@@ -37,9 +37,8 @@ public class DettagliProdottoServlet extends HttpServlet {
 
     }
     @Override
-    protected void doGet(HttpServletRequest req , HttpServletResponse resp) throws ServletException, IOException{
-        resp.sendRedirect(req.getContextPath() + "/catalogo");
-        req.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(req, resp);
+    protected void doPost(HttpServletRequest req , HttpServletResponse resp) throws ServletException, IOException{
+        doGet(req, resp);
     }
 
 }

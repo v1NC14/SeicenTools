@@ -149,9 +149,9 @@ public class UtenteDAO implements IUtenteDAO {
         }
 
         if (utente.getId() <= 0){
-            throw new IllegalArgumentException("Matricola inserita non valida");
+            throw new IllegalArgumentException("id inserito non valido");
         }
-        String sql = "DELETE FROM utente WHERE matricola = ?";
+        String sql = "DELETE FROM utente WHERE id = ?";
 
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -162,7 +162,7 @@ public class UtenteDAO implements IUtenteDAO {
 
             if (rows == 0) {
                 // Opzionale: lanciare eccezione se l'utente non esisteva
-                throw new SQLException("Impossibile cancellare: nessun utente trovato con matricola " + utente.getId());
+                throw new SQLException("Impossibile cancellare: nessun utente trovato con id " + utente.getId());
             }
         } catch (SQLException e) {
             throw new SQLException("Connessione con il database fallita...");

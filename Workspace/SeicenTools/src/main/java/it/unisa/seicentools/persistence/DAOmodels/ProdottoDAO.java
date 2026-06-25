@@ -156,7 +156,6 @@ public class ProdottoDAO implements IProdottoDAO {
 
     @Override
     public boolean updateProdotto(Prodotto p) throws Exception{
-        //id_utente, qta, totale, indirizzo
         String query = "UPDATE ordine SET (nome, categoria, descrizione, prezzo, imgPath, disponibilita) VALUES (?, ?, ?, ?, ?, ?) WHERE id = ?";
 
         try (Connection conn = DBConnection.getConnection();

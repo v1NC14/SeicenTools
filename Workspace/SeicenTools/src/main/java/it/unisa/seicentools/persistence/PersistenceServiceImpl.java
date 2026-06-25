@@ -19,6 +19,9 @@ public class PersistenceServiceImpl implements IPersistenceService {
     public OrdineDAO getOrdineDAO(){return new OrdineDAO();}
 
     @Override
+    public CarrelloDAO getCarrelloDAO(){return new CarrelloDAO();}
+
+    @Override
     public ProdottoDAO getProdottoDAO(){return new ProdottoDAO();}
 
     @Override

@@ -1,5 +1,6 @@
 package it.unisa.seicentools.persistence.DAOmodels;
 
+import it.unisa.seicentools.models.Ordine;
 import it.unisa.seicentools.models.ProdottiOrdinati;
 import it.unisa.seicentools.models.Prodotto;
 import it.unisa.seicentools.persistence.DBConnection;
@@ -37,14 +38,14 @@ public class ProdottiOrdinatiDAO {
         }
     }
 
-    public List<Prodotto> getProdottiByOrdine(int id) throws Exception {
+    public List<Prodotto> getProdottiByOrdine(Ordine ordine) throws Exception {
         List<Prodotto> lista = new ArrayList<>();
         String query = "SELECT * FROM prodotto INNER JOIN prodottiordinati ON prodottiordinati.id_prodotto = prodotto.id WHERE id_ordine = ?";
 
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement(query)) {
 
-            ps.setInt(1, id);
+            ps.setInt(1, ordine.getId());
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
