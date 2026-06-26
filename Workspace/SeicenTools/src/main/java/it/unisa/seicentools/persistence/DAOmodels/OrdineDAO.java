@@ -1,5 +1,6 @@
 package it.unisa.seicentools.persistence.DAOmodels;
 import it.unisa.seicentools.models.Ordine;
+import it.unisa.seicentools.models.Prodotto;
 import it.unisa.seicentools.persistence.DBConnection;
 import it.unisa.seicentools.persistence.interfaces.IOrdineDAO;
 

@@ -14,9 +14,9 @@ public class RimuoviUtenteServlet extends HttpServlet {
 
         HttpSession session = request.getSession();
 
-        Utente utente =request.getParameter("utente");
+        Utente user = (Utente) request.getAttribute("utente");
 
-        boolean eliminato= UtenteDAO.rimuoviUtente(utente);
+        boolean eliminato= UtenteDAO.rimuoviUtente(user);
         if(eliminato){
             request.setAttribute("messaggio", "Utente eliminato con successo.");
             request.getRequestDispatcher("/WEB-INF/jsp/layout.jsp").forward(request, response);
