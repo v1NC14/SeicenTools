@@ -86,7 +86,7 @@ public class ProdottoDAO implements IProdottoDAO {
         else{
             query = "SELECT * FROM prodotti WHERE categoria LIKE '"+ filtri.get(0) +"'";
             for(int i = 1; i < filtri.size(); i++){
-                query += " OR categoria LIKE '"+ filtri.get(i)+"'";
+                query += " AND categoria LIKE '"+ filtri.get(i)+"'";
             }
         }
 

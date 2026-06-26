@@ -5,7 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3a961311-2e34-4c97-af2d-180b33b80a94" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/OrdineServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OrdineServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ShowCarrelloServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ShowCarrelloServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/application/productMGMT/UserProdService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/application/productMGMT/UserProdService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/application/productMGMT/interfaces/IUserProdService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/application/productMGMT/interfaces/IUserProdService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/models/Ordine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/models/Ordine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/models/ProdottiOrdinati.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/models/ProdottiOrdinati.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/persistence/DAOmodels/CarrelloDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/persistence/DAOmodels/CarrelloDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/persistence/DAOmodels/OrdineDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/persistence/DAOmodels/OrdineDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/persistence/DAOmodels/ProdottiOrdinatiDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/persistence/DAOmodels/ProdottiOrdinatiDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/persistence/DAOmodels/ProdottoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/persistence/DAOmodels/ProdottoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/persistence/interfaces/ICarrelloDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/persistence/interfaces/ICarrelloDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/persistence/interfaces/IProdottiOrdinatiDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/persistence/interfaces/IProdottiOrdinatiDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

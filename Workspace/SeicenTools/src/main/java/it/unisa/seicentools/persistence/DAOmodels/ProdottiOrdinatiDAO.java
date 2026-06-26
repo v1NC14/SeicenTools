@@ -4,21 +4,23 @@ import it.unisa.seicentools.models.Ordine;
 import it.unisa.seicentools.models.ProdottiOrdinati;
 import it.unisa.seicentools.models.Prodotto;
 import it.unisa.seicentools.persistence.DBConnection;
+import it.unisa.seicentools.persistence.interfaces.IProdottiOrdinatiDAO;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProdottiOrdinatiDAO {
+public class ProdottiOrdinatiDAO implements IProdottiOrdinatiDAO {
 
+    @Override
     public boolean addProdottoOrdinato(ProdottiOrdinati tmp) throws Exception{
-        String query = "INSERT INTO prodottiordinati (qta, id_ordine, id_prodotto) VALUES (?, ?, ?)";
+        String query = "INSERT INTO prodottiordinati (id_ordine, id_prodotto) VALUES (?, ?)";
 
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement(query)) {
 
-            ps.setInt(1, tmp.getQta());
-            ps.setInt(2, tmp.getIdOrdine());
-            ps.setInt(3, tmp.getIdProdotto());
+            ps.setInt(1, tmp.getIdOrdine());
+            ps.setInt(2, tmp.getIdProdotto());
 
             try (ResultSet generatedKeys = ps.getGeneratedKeys()) {
                 if (generatedKeys.next()) {
@@ -38,6 +40,7 @@ public class ProdottiOrdinatiDAO {
         }
     }
 
+    @Override
     public List<Prodotto> getProdottiByOrdine(Ordine ordine) throws Exception {
         List<Prodotto> lista = new ArrayList<>();
         String query = "SELECT * FROM prodotto INNER JOIN prodottiordinati ON prodottiordinati.id_prodotto = prodotto.id WHERE id_ordine = ?";

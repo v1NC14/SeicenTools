@@ -17,8 +17,7 @@ public class Ordine {
 
     public Ordine(){};
 
-    public Ordine(int id, int id_utente, BigDecimal totale, int qta, String indirizzoConsegna, String numCarta) {
-        this.id = id;
+    public Ordine(int id_utente, BigDecimal totale, int qta, String indirizzoConsegna, String numCarta) {
         this.id_utente = id_utente;
         this.totale = totale;
         this.qta = qta;

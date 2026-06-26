@@ -1,8 +1,11 @@
 
 package it.unisa.seicentools;
 import it.unisa.seicentools.application.accessMGMT.SessionService;
+import it.unisa.seicentools.application.productMGMT.UserProdService;
+import it.unisa.seicentools.application.productMGMT.interfaces.IUserProdService;
 import it.unisa.seicentools.models.Ordine;
 import it.unisa.seicentools.models.ProdottiOrdinati;
+import it.unisa.seicentools.models.Prodotto;
 import it.unisa.seicentools.models.Utente;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -12,6 +15,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
+import java.util.List;
 
 
 @WebServlet(name="OrdineServlet"  ,value="/ordine")
@@ -19,24 +23,48 @@ public class OrdineServlet  extends HttpServlet{
 
     protected void doPost(HttpServletRequest req , HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
-        Ordine ordine = (Ordine)session.getAttribute("ordine");
-        ProdottiOrdinati pOrdinati = (ProdottiOrdinati)session.getAttribute("prodottoOrdinato");
-        int idOrdine = ordine.getId();
+        Utente utente = (Utente)session.getAttribute("utente");
+        IUserProdService service = new  UserProdService();
 
-        if(idOrdine==pOrdinati.getIdOrdine()){
-            
+        List<Prodotto> carrello = (List<Prodotto>) session.getAttribute("carrello");
+
+        try {
+            String numCarta = req.getParameter("numCarta");
+            String indirizzoConsegna = req.getParameter("indirizzoConsegna");
+
+            Ordine order = service.cartToOrder(carrello, utente.getId(), numCarta, indirizzoConsegna);
+
+            if(order!=null) {
+                req.setAttribute("esito", "Ordine effettuato");
+                session.removeAttribute("carrello");
+            }else{
+                req.setAttribute("esito", "Si è verificato un problema, ordine interrotto");
+            }
+                req.setAttribute("viewPath", "/WEB-INF/views/homepage.jsp");
+                req.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(req, resp);
+
+        }catch (Exception e){
+            e.printStackTrace();
         }
-
-        /*
-        Qui dovresti utilizzare l'entità ProdottiOrdinati per risalire ai prodotti contenuti nell'ordine
-        ricordati di settare come attributo in sessione una List<Prodotto> che verrà mostrata nella pagina ordine
-        poi le piccolezze me le vedo io
-        */
     }
 
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-            doPost(request, response);
+        HttpSession session = request.getSession();
+        IUserProdService service = new UserProdService();
+        Utente utente =  (Utente) session.getAttribute("utente");
+
+        try {
+            List<Prodotto> lista = service.getProdByUtente(utente.getId());
+
+            session.setAttribute("carrello",lista); //rieseguo la scansione del carrello per sicurezza
+            request.setAttribute("viewPath", "/WEB-INF/views/ordine.jsp");
+            request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        request.setAttribute("viewPath", "/WEB-INF/views/ordine.jsp");
+        request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
     }
 }

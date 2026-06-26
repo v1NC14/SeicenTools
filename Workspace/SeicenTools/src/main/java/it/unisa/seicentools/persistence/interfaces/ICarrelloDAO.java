@@ -10,7 +10,7 @@ import java.util.List;
 public interface ICarrelloDAO {
     public boolean creaCarrello(Carrello carrello, int qta) throws Exception;
 
-    public List<Prodotto> getByUtente(int id_utente) throws Exception;
+    public List<Carrello> getByUtente(int id_utente) throws Exception;
 
     public boolean rmvFromCarrello(int id_utente, int id_Prd) throws Exception;
 

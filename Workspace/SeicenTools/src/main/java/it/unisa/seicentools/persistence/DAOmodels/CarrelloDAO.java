@@ -2,7 +2,6 @@ package it.unisa.seicentools.persistence.DAOmodels;
 
 import it.unisa.seicentools.models.Carrello;
 import it.unisa.seicentools.models.Prodotto;
-import it.unisa.seicentools.models.Utente;
 import it.unisa.seicentools.persistence.DBConnection;
 import it.unisa.seicentools.persistence.interfaces.ICarrelloDAO;
 
@@ -44,7 +43,7 @@ public class CarrelloDAO implements ICarrelloDAO {
     }
 
     @Override
-    public List<Prodotto> getByUtente(int id_utente) throws Exception{
+    public List<Carrello> getByUtente(int id_utente) throws Exception{
         String query = "SELECT * FROM CarrelloUtente WHERE id_utente = ?";
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement(query)){
@@ -52,19 +51,15 @@ public class CarrelloDAO implements ICarrelloDAO {
             ps.setInt(1, id_utente);
             ResultSet rs = ps.executeQuery();
 
-            List<Prodotto> carrello = new ArrayList<>();
+            List<Carrello> carrello = new ArrayList<>();
 
-            while(rs.next()){
-                Prodotto p = new Prodotto();
-                p.setId(rs.getInt("id_prodotto"));
-                p.setNome(rs.getString("nome"));
-                p.setCategoria(rs.getString("categoria"));
-                p.setDescrizione(rs.getString("descrizione"));
-                p.setPrezzo(rs.getBigDecimal("prezzo"));
-                p.setImgPath(rs.getString("img_path"));
-                p.setDisponibilita(rs.getInt("disponibilita"));
+            while (rs.next()) {
+                Carrello tmp = new Carrello();
+                tmp.setId_utente(rs.getInt("id_utente"));
+                tmp.setId_prodotto(rs.getInt("id_prodotto"));
+                tmp.setQta(rs.getInt("qta"));
 
-                carrello.add(p);
+                carrello.add(tmp);
             }
 
             return carrello;
