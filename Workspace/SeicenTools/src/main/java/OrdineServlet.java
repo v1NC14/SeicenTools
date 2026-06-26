@@ -24,7 +24,7 @@ public class OrdineServlet  extends HttpServlet{
         int idOrdine = ordine.getId();
 
         if(idOrdine==pOrdinati.getIdOrdine()){
-
+            
         }
 
         /*
