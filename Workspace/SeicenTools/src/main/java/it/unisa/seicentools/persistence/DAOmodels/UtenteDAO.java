@@ -195,7 +195,7 @@ public class UtenteDAO implements IUtenteDAO {
     }
 
     @Override
-    public boolean updateUtente(Utente utente) throws Exception{
+    public static boolean updateUtente(Utente utente) throws Exception{
         String query = "UPDATE ordine SET (nome, email, ruolo) VALUES (?, ?, ?) WHERE id = ?";
 
         try (Connection conn = DBConnection.getConnection();
