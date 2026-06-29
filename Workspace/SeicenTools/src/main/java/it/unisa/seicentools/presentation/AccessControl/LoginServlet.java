@@ -1,4 +1,4 @@
-package it.unisa.seicentools;
+package it.unisa.seicentools.presentation.AccessControl;
 import it.unisa.seicentools.application.accessMGMT.SessionService;
 import it.unisa.seicentools.models.Utente;
 import jakarta.servlet.ServletException;
@@ -13,7 +13,7 @@ import java.io.IOException;
 @WebServlet(name="Loginservlet", value="/LoginServlet")
 public class LoginServlet  extends HttpServlet {
    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
        String username = request.getParameter("username");
        String password = request.getParameter("password");
        SessionService sessionService = new SessionService();

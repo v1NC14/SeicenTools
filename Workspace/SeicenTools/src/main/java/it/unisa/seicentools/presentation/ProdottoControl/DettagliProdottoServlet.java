@@ -1,12 +1,7 @@
-package it.unisa.seicentools;
-import it.unisa.seicentools.application.accessMGMT.SessionService;
+package it.unisa.seicentools.presentation.ProdottoControl;
 import it.unisa.seicentools.application.productMGMT.commonProdService;
 import it.unisa.seicentools.application.productMGMT.interfaces.IcommonProdService;
-import it.unisa.seicentools.models.Ordine;
 import it.unisa.seicentools.models.Prodotto;
-import it.unisa.seicentools.models.Utente;
-import it.unisa.seicentools.persistence.DAOmodels.ProdottoDAO;
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 ;

@@ -1,3 +1,5 @@
+package it.unisa.seicentools.presentation.UtenteControl;
+
 import it.unisa.seicentools.models.Utente;
 import it.unisa.seicentools.persistence.DAOmodels.UtenteDAO;
 import jakarta.servlet.ServletException;
@@ -11,10 +13,10 @@ import java.io.IOException;
 public class RimuoviUtenteServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         HttpSession session = request.getSession();
-
         Utente user = (Utente) request.getAttribute("utente");
+
+
 
         boolean eliminato= UtenteDAO.rimuoviUtente(user);
         if(eliminato){

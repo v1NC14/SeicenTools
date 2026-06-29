@@ -1,6 +1,5 @@
+package it.unisa.seicentools.presentation.CarrelloControl;
 
-
-package it.unisa.seicentools;
 import it.unisa.seicentools.application.productMGMT.UserProdService;
 import it.unisa.seicentools.application.productMGMT.interfaces.IUserProdService;
 import it.unisa.seicentools.models.Prodotto;
@@ -15,24 +14,26 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
-
-@WebServlet(name="ShowCarrelloServlet" , value="/show-carrello")
-public class ShowCarrelloServlet extends HttpServlet {
+@WebServlet(name = "RmvFromCartServlet", value="rmv-cart")
+public class RmvFromCarrelloServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
-        Utente user = (Utente) session.getAttribute("utente");
+        Utente utente = (Utente) session.getAttribute("utente");
         IUserProdService service = new UserProdService();
+        if (utente != null) {
+            try {
+                List<Prodotto> carrello = (List<Prodotto>) session.getAttribute("carrello");
+                int idPrd = Integer.parseInt(req.getParameter("id"));
 
-        if(user != null){
-            try{
-                List<Prodotto> carrello = service.getProdByUtente(user.getId());
+                if(service.rmvFromCarrello(utente.getId(), idPrd))
+                    carrello.remove(idPrd);
 
-                session.setAttribute("prodottiUtente", carrello);
-                req.setAttribute("viewPath", "/WEB-INF/views/carrello.jsp");
-                req.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(req, resp);
-            }catch(Exception e){
+
+                session.setAttribute("carrello", carrello);
+                resp.sendRedirect(req.getContextPath() + "/show-carrello");
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
@@ -40,6 +41,6 @@ public class ShowCarrelloServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        doPost(req, resp);
+        doPost(req,resp);
     }
 }
