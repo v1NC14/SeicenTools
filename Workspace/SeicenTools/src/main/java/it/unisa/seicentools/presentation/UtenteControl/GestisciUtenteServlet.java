@@ -10,7 +10,7 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
-@WebServlet(name="it.unisa.seicentools.presentation.UtenteControl.GestisciUtenteServlet", value="/gestisciUtente")
+@WebServlet(name="GestisciUtenteServlet", value="/gestisciUtente")
 public class GestisciUtenteServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -18,7 +18,7 @@ public class GestisciUtenteServlet extends HttpServlet {
         Utente utente = (Utente) req.getSession().getAttribute("utente");
     }
     @Override
-    private void doGet(HttpServletRequest request, HttpServletResponse response) {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) {
         response.sendRedirect(request.getContextPath() + "/gestisciUtente");
         request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
     }

@@ -26,7 +26,7 @@ public class UserProdService implements IUserProdService {
     }
 
     @Override
-    public boolean  aggiungiAlCarrello(Carrello cart, int qta) throws SQLException {
+    public boolean aggiungiAlCarrello(Carrello cart, int qta) throws SQLException {
         if(cart.getId_prodotto() < 0 || cart.getId_utente()<0){
             throw new IllegalArgumentException("error placeholder");
         }else{

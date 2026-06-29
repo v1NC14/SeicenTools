@@ -10,7 +10,7 @@ public interface IUtenteDAO {
     public Utente getUtenteById(int id) throws Exception;
     public Utente getUtenteByEmail(String email) throws Exception;
     public List<Utente> getAllUtentiRegistrati() throws Exception;
-    public void rimuoviUtente(Utente utente) throws Exception;
+    public boolean rimuoviUtente(Utente utente) throws Exception;
     public String recuperaPassword(String email) throws Exception;
     public boolean updateUtente(Utente utente) throws Exception;
 }

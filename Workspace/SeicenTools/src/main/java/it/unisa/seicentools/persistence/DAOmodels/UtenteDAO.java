@@ -142,7 +142,7 @@ public class UtenteDAO implements IUtenteDAO {
 
     // RIMUOVE UN UTENTE
     @Override
-    public void rimuoviUtente(Utente utente) throws Exception {
+    public boolean rimuoviUtente(Utente utente) throws Exception {
         // Grazie al CASCADE sul DB, basta cancellare dalla tabella padre.
         if (utente == null) {
             throw new IllegalArgumentException("I dati non possono essere null");
@@ -164,6 +164,7 @@ public class UtenteDAO implements IUtenteDAO {
                 // Opzionale: lanciare eccezione se l'utente non esisteva
                 throw new SQLException("Impossibile cancellare: nessun utente trovato con id " + utente.getId());
             }
+            return true;
         } catch (SQLException e) {
             throw new SQLException("Connessione con il database fallita...");
         }
@@ -195,7 +196,7 @@ public class UtenteDAO implements IUtenteDAO {
     }
 
     @Override
-    public static boolean updateUtente(Utente utente) throws Exception{
+    public boolean updateUtente(Utente utente) throws Exception{
         String query = "UPDATE ordine SET (nome, email, ruolo) VALUES (?, ?, ?) WHERE id = ?";
 
         try (Connection conn = DBConnection.getConnection();

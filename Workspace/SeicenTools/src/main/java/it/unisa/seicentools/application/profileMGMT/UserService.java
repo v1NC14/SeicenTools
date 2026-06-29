@@ -1,9 +1,9 @@
-package it.unisa.seicentools.application.productMGMT;
+package it.unisa.seicentools.application.profileMGMT;
 
-import it.unisa.seicentools.application.productMGMT.interfaces.IUserService;
-import it.unisa.seicentools.models.Ruolo;
+import it.unisa.seicentools.application.profileMGMT.interfaces.IUserService;
 import it.unisa.seicentools.models.Utente;
-import it.unisa.seicentools.persistence.DAOmodels.UtenteDAO;
+import it.unisa.seicentools.persistence.DBConnection;
+import it.unisa.seicentools.persistence.PersistenceServiceImpl;
 import it.unisa.seicentools.persistence.interfaces.IPersistenceService;
 import it.unisa.seicentools.persistence.interfaces.IUtenteDAO;
 
@@ -12,8 +12,7 @@ import java.sql.SQLException;
 
 public class UserService implements IUserService {
     private final IPersistenceService service;
-    Connection connection;
-    public UserService() {this.service = service;}
+    public UserService() {this.service = PersistenceServiceImpl.getIstanza();}
 
     public UserService(IPersistenceService service) {
         if (service == null) {throw new IllegalArgumentException("Service cannot be null");}
@@ -21,21 +20,6 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public boolean addUser(Utente user, String pwd) throws SQLException{
-        if(user==null){
-            throw new IllegalArgumentException("Errore");
-        }else{
-            IUtenteDAO userDAO = service.getUtenteDAO();
-            try{
-                return userDAO.registraUtente(connection,user,pwd );
-            }
-            catch (Exception e) {
-                throw new SQLException(e);
-            }
-        ]
-    }
-
-
     public boolean deleteUser(Utente user) throws SQLException{
         if(user==null){
             throw new IllegalArgumentException("Errore");
@@ -46,6 +30,20 @@ public class UserService implements IUserService {
                 return userDAO.rimuoviUtente(user);
             }
             catch(Exception e){
+                throw new SQLException(e);
+            }
+        }
+    }
+
+    @Override
+    public boolean addUser(Utente user, String pwd) throws SQLException{
+        if(user==null){
+            throw new IllegalArgumentException("Errore");
+        }else {
+            IUtenteDAO userDAO = service.getUtenteDAO();
+            try {Connection connection = DBConnection.getConnection();
+                return userDAO.registraUtente(connection, user, pwd);
+            } catch (Exception e) {
                 throw new SQLException(e);
             }
         }
@@ -64,5 +62,4 @@ public class UserService implements IUserService {
                 }
             }
     }
-
-    }
+}
