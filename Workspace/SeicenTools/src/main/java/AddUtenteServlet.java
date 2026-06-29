@@ -1,3 +1,7 @@
+import it.unisa.seicentools.application.productMGMT.UserProdService;
+import it.unisa.seicentools.application.productMGMT.UserService;
+import it.unisa.seicentools.application.productMGMT.interfaces.IUserProdService;
+import it.unisa.seicentools.application.productMGMT.interfaces.IUserService;
 import it.unisa.seicentools.models.Ruolo;
 import it.unisa.seicentools.models.Utente;
 import it.unisa.seicentools.persistence.DAOmodels.UtenteDAO;
@@ -19,30 +23,20 @@ public class AddUtenteServlet  extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-
-        //dati che verranno presi da un form.
-        String nome = request.getParameter("nome");
-        String email = request.getParameter("email");
-        Ruolo ruolo = request.getParameter("ruolo");
+        Utente user = (Utente) session.getAttribute("utente");
         String password = request.getParameter("password");
+        IUserService service = new UserService();
 
-        Utente utente = new Utente();
-        utente.setNome(nome);
-        utente.setEmail(email);
-        utente.setRuolo(ruolo);
-        utente.setHashpwd(password);
+        if(user!= null){
+            try{
+                service.addUser(user,password);
 
-        boolean aggiornamentoDati= UtenteDAO.registraUtente(utente);
-        if(aggiornamentoDati){
-            session.setAttribute("utente", utente);
-            request.setAttribute("messaggio", "Utente aggiuto con successo.");
-            request.getRequestDispatcher("/WEB-INF/jsp/layout.jsp").forward(request, response);
+                session.setAttribute("user",user);
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }
         }
-        else{
-            request.setAttribute("errore", "Errore durante la registrazione del nuovo utente.");
-            request.getRequestDispatcher("/WEB-INF/jsp/layout.jsp").forward(request, response);
-        }
-
 
     }
 

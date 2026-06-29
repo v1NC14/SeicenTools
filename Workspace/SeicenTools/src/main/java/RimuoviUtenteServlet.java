@@ -1,3 +1,5 @@
+import it.unisa.seicentools.application.productMGMT.UserService;
+import it.unisa.seicentools.application.productMGMT.interfaces.IUserService;
 import it.unisa.seicentools.models.Utente;
 import it.unisa.seicentools.persistence.DAOmodels.UtenteDAO;
 import jakarta.servlet.ServletException;
@@ -13,17 +15,19 @@ public class RimuoviUtenteServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         HttpSession session = request.getSession();
+        Utente user = (Utente) session.getAttribute("utente");
+        IUserService service = new UserService();
 
-        Utente user = (Utente) request.getAttribute("utente");
+        if(user!= null){
+            try{
+                service.deleteUser(user);
 
-        boolean eliminato= UtenteDAO.rimuoviUtente(user);
-        if(eliminato){
-            request.setAttribute("messaggio", "Utente eliminato con successo.");
-            request.getRequestDispatcher("/WEB-INF/jsp/layout.jsp").forward(request, response);
+                session.setAttribute("user",user);
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }
         }
-        else{
-            request.setAttribute("errore", "Errore durante l'eliminazione dell utente.");
-            request.getRequestDispatcher("/WEB-INF/jsp/layout.jsp").forward(request, response);
-        }
+
     }
 }
