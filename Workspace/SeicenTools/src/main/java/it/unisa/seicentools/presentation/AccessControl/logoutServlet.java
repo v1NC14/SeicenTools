@@ -1,3 +1,5 @@
+package it.unisa.seicentools.presentation.AccessControl;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -7,7 +9,7 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
-@WebServlet(name="logoutServlet", value="/logut")
+@WebServlet(name="it.unisa.seicentools.presentation.AccessControl.logoutServlet", value="/logut")
 public class logoutServlet  extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

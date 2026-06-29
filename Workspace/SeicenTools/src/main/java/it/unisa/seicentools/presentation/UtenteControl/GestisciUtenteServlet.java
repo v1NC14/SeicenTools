@@ -1,3 +1,5 @@
+package it.unisa.seicentools.presentation.UtenteControl;
+
 import it.unisa.seicentools.models.Utente;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -8,7 +10,7 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
-@WebServlet(name="GestisciUtenteServlet", value="/gestisciUtente")
+@WebServlet(name="it.unisa.seicentools.presentation.UtenteControl.GestisciUtenteServlet", value="/gestisciUtente")
 public class GestisciUtenteServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
