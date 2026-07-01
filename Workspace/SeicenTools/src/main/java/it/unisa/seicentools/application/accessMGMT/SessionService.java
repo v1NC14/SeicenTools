@@ -8,8 +8,6 @@ import it.unisa.seicentools.persistence.interfaces.IPersistenceService;
 import it.unisa.seicentools.persistence.interfaces.IUtenteDAO;
 import org.mindrot.jbcrypt.BCrypt;
 
-import java.sql.SQLException;
-
 public class SessionService implements ISessionService {
     private final IPersistenceService service;
 

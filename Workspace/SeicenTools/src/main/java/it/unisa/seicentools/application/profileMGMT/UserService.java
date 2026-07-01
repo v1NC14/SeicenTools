@@ -9,6 +9,7 @@ import it.unisa.seicentools.persistence.interfaces.IUtenteDAO;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
 
 public class UserService implements IUserService {
     private final IPersistenceService service;
@@ -49,6 +50,7 @@ public class UserService implements IUserService {
         }
     }
 
+    @Override
     public boolean updateUser(Utente user) throws SQLException{
             if(user==null){
                 throw new IllegalArgumentException("Errore");
@@ -61,5 +63,15 @@ public class UserService implements IUserService {
                     throw new SQLException(e);
                 }
             }
+    }
+
+    @Override
+    public List<Utente> getAllUtenti() throws SQLException{
+        IUtenteDAO userDAO = service.getUtenteDAO();
+        try {
+            return userDAO.getAllUtentiRegistrati();
+        }catch (Exception e){
+            throw new SQLException(e);
+        }
     }
 }

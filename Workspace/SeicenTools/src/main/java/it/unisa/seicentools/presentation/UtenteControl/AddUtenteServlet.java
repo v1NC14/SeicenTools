@@ -4,8 +4,6 @@ import it.unisa.seicentools.application.profileMGMT.UserService;
 import it.unisa.seicentools.application.profileMGMT.interfaces.IUserService;
 import it.unisa.seicentools.models.Ruolo;
 import it.unisa.seicentools.models.Utente;
-import it.unisa.seicentools.persistence.DAOmodels.UtenteDAO;
-import it.unisa.seicentools.persistence.interfaces.IUtenteDAO;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -19,35 +17,44 @@ import java.sql.SQLException;
 @WebServlet(name="AddUtenteServlet", value="/addUtente")
 public class AddUtenteServlet  extends HttpServlet {
 
+
+    //si deve cambiare la servlet capendo bene cosa fare nel doget e cosa fare nel dopost, per ora lascio così - 13:39 01/07/2026
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         IUserService service = new UserService();
+        Utente user = (Utente)session.getAttribute("utente");
 
-        //dati che verranno presi da un form.
-        String nome = request.getParameter("nome");
-        String email = request.getParameter("email");
-        Ruolo ruolo = Ruolo.valueOf(request.getParameter("ruolo"));
-        String password = request.getParameter("password");
+        if(user!=null){
+            //dati che verranno presi da un form.
+            String nome = request.getParameter("nome");
+            String email = request.getParameter("email");
+            Ruolo ruolo = Ruolo.valueOf(request.getParameter("ruolo"));
+            String password = request.getParameter("password");
 
-        Utente utente = new Utente();
-        utente.setNome(nome);
-        utente.setEmail(email);
-        utente.setRuolo(ruolo);
+            Utente utente = new Utente();
+            utente.setNome(nome);
+            utente.setEmail(email);
+            utente.setRuolo(ruolo);
 
-        try {
-            if (service.addUser(utente, password)) {
-                session.setAttribute("utente", utente);
-                request.setAttribute("messaggio", "Utente aggiuto con successo.");
+            try {
+                if (service.addUser(utente, password)) {
+                    request.setAttribute("messaggio", "Utente aggiuto con successo.");
+                    request.setAttribute("viewPath", "/WEB-INF/views/gestioneUtenti.jsp");
 
-            } else {
-                request.setAttribute("errore", "Errore durante la registrazione del nuovo utente.");
+                } else {
+                    request.setAttribute("errore", "Errore durante la registrazione del nuovo utente.");
+                    request.setAttribute("viewPath", "/WEB-INF/views/homepage.jsp");
+                }
+                request.getRequestDispatcher("/WEB-INF/jsp/layout.jsp").forward(request, response);
+            }catch (SQLException e){
+                throw new RuntimeException(e);
             }
-            request.getRequestDispatcher("/WEB-INF/jsp/layout.jsp").forward(request, response);
-        }catch (SQLException e){
-            throw new RuntimeException(e);
+        }else {
+            request.setAttribute("errore", "/Utente non loggato");
+            request.setAttribute("viewPath", "/WEB-INF/views/login.jsp");
+            request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
         }
-
     }
 
     @Override

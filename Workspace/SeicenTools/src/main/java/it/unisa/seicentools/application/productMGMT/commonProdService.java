@@ -10,6 +10,7 @@ import it.unisa.seicentools.persistence.interfaces.IPersistenceService;
 import it.unisa.seicentools.persistence.interfaces.IProdottoDAO;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class commonProdService implements IcommonProdService {
@@ -58,4 +59,68 @@ public class commonProdService implements IcommonProdService {
         }catch(Exception e){throw new SQLException(e);}
     }
 
+    @Override
+    public boolean aggiungiAlCarrello(Carrello cart, int qta) throws SQLException {
+        if(cart.getId_prodotto() < 0 || cart.getId_utente()<0){
+            throw new IllegalArgumentException("error placeholder");
+        }else{
+            ICarrelloDAO cartDAO = service.getCarrelloDAO();
+
+            try {
+                return cartDAO.creaCarrello(cart, qta);
+            }catch(Exception e){throw new SQLException(e);}
+        }
+    }
+
+    @Override
+    public List<Prodotto> getProdByUtente(int id_utente){
+        if(id_utente<0){throw new IllegalArgumentException("error placeholder");}
+        else{
+            ICarrelloDAO cartDAO = service.getCarrelloDAO();
+            IProdottoDAO prodDAO = service.getProdottoDAO();
+
+            try {
+                List<Carrello> carrello = cartDAO.getByUtente(id_utente);
+                List<Prodotto> prodottiUtente = new ArrayList<>();
+                for(Carrello c: carrello){
+                    Prodotto p = prodDAO.getProdottoById(c.getId_prodotto());
+                    prodottiUtente.add(p);
+                }
+
+                return prodottiUtente;
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            return null;
+        }
+    }
+
+    @Override
+    public boolean rmvFromCarrello(int id_utente, int id_Prd) throws SQLException{
+        if(id_utente<0){throw new IllegalArgumentException("error placeholder");}
+        else{
+            ICarrelloDAO cartDAO = service.getCarrelloDAO();
+
+            try {
+                return cartDAO.rmvFromCarrello(id_utente, id_Prd);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
+    @Override
+    public boolean cancellaCarrello(int id_utente) throws SQLException{
+        if(id_utente<0){throw new IllegalArgumentException("error placeholder");}
+        else{
+            ICarrelloDAO cartDAO = service.getCarrelloDAO();
+
+            try {
+                return cartDAO.deleteCarrello(id_utente);
+            } catch (Exception e) {
+                throw new SQLException(e);
+            }
+        }
+    }
 }
