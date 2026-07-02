@@ -5,6 +5,7 @@ import it.unisa.seicentools.models.Utente;
 import it.unisa.seicentools.persistence.DBConnection;
 import it.unisa.seicentools.persistence.PersistenceServiceImpl;
 import it.unisa.seicentools.persistence.interfaces.IPersistenceService;
+import it.unisa.seicentools.persistence.interfaces.IProdottoDAO;
 import it.unisa.seicentools.persistence.interfaces.IUtenteDAO;
 
 import java.sql.Connection;
@@ -50,7 +51,6 @@ public class UserService implements IUserService {
         }
     }
 
-    @Override
     public boolean updateUser(Utente user) throws SQLException{
             if(user==null){
                 throw new IllegalArgumentException("Errore");
@@ -66,12 +66,12 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public List<Utente> getAllUtenti() throws SQLException{
+    public List<Utente> getAllUser() throws SQLException {
         IUtenteDAO userDAO = service.getUtenteDAO();
+
         try {
             return userDAO.getAllUtentiRegistrati();
-        }catch (Exception e){
-            throw new SQLException(e);
-        }
+        }catch(Exception e){throw new SQLException(e);}
+    }
     }
 }

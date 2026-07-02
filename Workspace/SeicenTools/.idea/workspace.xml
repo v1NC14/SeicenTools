@@ -5,37 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3a961311-2e34-4c97-af2d-180b33b80a94" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/application/productMGMT/AdminProdService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/application/productMGMT/ImgService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/application/productMGMT/interfaces/IAdminProdService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/application/productMGMT/interfaces/ImgServiceInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/presentation/AccessControl/GuestServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/presentation/ProdottoControl/CreaProdottoServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/presentation/ProdottoControl/DelProdottoServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/presentation/ProdottoControl/ModificaProdottoServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CatalogoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CatalogoServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/HomepageServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/HomepageServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/index.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/index.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/application/accessMGMT/SessionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/application/accessMGMT/SessionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/application/productMGMT/UserProdService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/application/productMGMT/UserProdService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/application/productMGMT/commonProdService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/application/productMGMT/commonProdService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/application/productMGMT/interfaces/IUserProdService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/application/productMGMT/interfaces/IUserProdService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/application/productMGMT/interfaces/IcommonProdService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/application/productMGMT/interfaces/IcommonProdService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/application/profileMGMT/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/application/profileMGMT/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/application/profileMGMT/interfaces/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/application/profileMGMT/interfaces/IUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/presentation/AccessControl/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/presentation/AccessControl/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/presentation/AccessControl/logoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/presentation/AccessControl/logoutServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/presentation/CarrelloControl/AddCarrelloServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/presentation/CarrelloControl/AddCarrelloServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/presentation/CarrelloControl/DelCarrelloServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/presentation/CarrelloControl/DelCarrelloServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/presentation/CarrelloControl/RmvFromCarrelloServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/presentation/CarrelloControl/RmvFromCarrelloServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/presentation/CarrelloControl/ShowCarrelloServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/presentation/CarrelloControl/ShowCarrelloServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/presentation/OrdineControl/OrdineServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/presentation/OrdineControl/OrdineServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/presentation/ProdottoControl/DettagliProdottoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/presentation/ProdottoControl/DettagliProdottoServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/presentation/UtenteControl/AddUtenteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/presentation/UtenteControl/AddUtenteServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/presentation/UtenteControl/GestisciUtenteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/presentation/UtenteControl/GestisciUtenteServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/presentation/UtenteControl/ModificaUtenteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/presentation/UtenteControl/ModificaUtenteServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/presentation/UtenteControl/RimuoviUtenteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/presentation/UtenteControl/RimuoviUtenteServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +25,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -106,7 +78,6 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\mauro\Documents\GitHub\SeicenTools\Workspace\SeicenTools\src\main\webapp\imgs" />
       <recent name="C:\Users\mauro\Documents\GitHub\SeicenTools\Workspace\SeicenTools\src\main\webapp\css" />
       <recent name="C:\Users\mauro\Documents\GitHub\SeicenTools\Workspace\SeicenTools" />
     </key>
@@ -117,7 +88,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.33514.17" />
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26830.84" />
       </set>
     </attachedChunks>
   </component>

@@ -9,5 +9,5 @@ public interface IUserService {
     public boolean deleteUser(Utente user) throws SQLException;
     public boolean addUser(Utente user, String password) throws SQLException;
     public boolean updateUser(Utente user) throws SQLException;
-    public List<Utente> getAllUtenti() throws SQLException;
+    public List<Utente> getAllUser() throws SQLException;
 }
