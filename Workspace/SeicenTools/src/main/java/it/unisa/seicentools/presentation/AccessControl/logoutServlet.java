@@ -17,7 +17,7 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet(name="it.unisa.seicentools.presentation.AccessControl.logoutServlet", value="/logut")
+@WebServlet(name="logoutServlet", value="/logout")
 public class logoutServlet  extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

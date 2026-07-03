@@ -10,6 +10,7 @@ public class DBConnection {
     private static String url;
     private static String user;
     private static String password;
+    private static String driver;
 
     static {
         try {
@@ -27,10 +28,14 @@ public class DBConnection {
             url = prop.getProperty("db.url");
             user = prop.getProperty("db.user");
             password = prop.getProperty("db.password");
+            driver = prop.getProperty("db.driver");
+
+            // Explicitly load the JDBC driver
+            Class.forName(driver);
 
         } catch (Exception e) {
             e.printStackTrace();
-            throw new RuntimeException("Errore durante il caricamento della configurazione DB");
+            throw new RuntimeException("Errore durante il caricamento della configurazione DB: " + e.getMessage());
         }
     }
 

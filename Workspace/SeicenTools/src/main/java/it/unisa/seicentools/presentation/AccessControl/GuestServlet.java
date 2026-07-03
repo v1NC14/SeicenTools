@@ -3,6 +3,7 @@ package it.unisa.seicentools.presentation.AccessControl;
 import it.unisa.seicentools.application.accessMGMT.SessionService;
 import it.unisa.seicentools.models.Utente;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -10,6 +11,7 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
+@WebServlet(name = "GuestServlet", value="/guest")
 public class GuestServlet extends HttpServlet {
 /*
 * si deve inserire in sessione un oggetto Utente temporaneo con id temporaneo

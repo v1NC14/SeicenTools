@@ -15,7 +15,7 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "RmvFromCartServlet", value="rmv-cart")
+@WebServlet(name = "RmvFromCartServlet", value="/rmv-cart")
 public class RmvFromCarrelloServlet extends HttpServlet {
 
     @Override

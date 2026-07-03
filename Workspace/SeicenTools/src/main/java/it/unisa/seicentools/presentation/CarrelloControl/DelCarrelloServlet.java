@@ -14,7 +14,7 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
-@WebServlet(name = "DelCartServlet", value="del-cart")
+@WebServlet(name = "DelCartServlet", value="/del-cart")
 public class DelCarrelloServlet extends HttpServlet {
 
     @Override

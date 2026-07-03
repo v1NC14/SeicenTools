@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
-@WebServlet(name="GestisciUtenteServlet", value="/gestisciUtente")
+@WebServlet(name="GestisciUtenteServlet", value="/gestisci-utente")
 public class GestisciUtenteServlet extends HttpServlet {
 
     @Override

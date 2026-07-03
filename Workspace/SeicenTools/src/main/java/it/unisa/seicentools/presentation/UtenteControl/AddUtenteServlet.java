@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 
-@WebServlet(name="AddUtenteServlet", value="/addUtente")
+@WebServlet(name="AddUtenteServlet", value="/add-utente")
 public class AddUtenteServlet  extends HttpServlet {
 
 
