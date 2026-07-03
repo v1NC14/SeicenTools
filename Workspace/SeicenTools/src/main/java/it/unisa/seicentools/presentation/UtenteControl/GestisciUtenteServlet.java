@@ -30,7 +30,7 @@ public class GestisciUtenteServlet extends HttpServlet {
             List<Utente> listaUtenti = service.getAllUser();
 
             session.setAttribute("listaUtenti",listaUtenti);
-            request.setAttribute("viewPath", "/WEB-INF/views/gestioneUtenti.jsp");
+            request.setAttribute("viewPath", "gestioneUtenti.jsp");
             request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
         }
         catch (SQLException e) {

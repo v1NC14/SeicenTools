@@ -42,7 +42,7 @@ public class ModificaUtenteServlet extends HttpServlet {
                 throw new RuntimeException(e);
             }
             request.setAttribute("viewPath", "WEB-INF/views/gestioneUtenti.jsp");
-            request.getRequestDispatcher("/WEB-INF/jsp/layout.jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
         }else {
             request.setAttribute("errore", "/Utente non loggato");
             request.setAttribute("viewPath", "/WEB-INF/views/login.jsp");
@@ -61,14 +61,14 @@ public class ModificaUtenteServlet extends HttpServlet {
                 Utente user = service.getUser(Integer.parseInt(request.getParameter("id")));
 
                 request.setAttribute("user", user);
-                request.setAttribute("viewPath", "WEB-INF/views/modificaUtente.jsp");
-                request.getRequestDispatcher("/WEB-INF/jsp/layout.jsp").forward(request, response);
+                request.setAttribute("viewPath", "modificaUtente.jsp");
+                request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
         }else {
             request.setAttribute("errore", "/Utente non loggato");
-            request.setAttribute("viewPath", "/WEB-INF/views/login.jsp");
+            request.setAttribute("viewPath", "login.jsp");
             request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
         }
     }

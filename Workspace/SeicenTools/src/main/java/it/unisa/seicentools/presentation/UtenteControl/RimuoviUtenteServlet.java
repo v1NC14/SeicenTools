@@ -25,19 +25,20 @@ public class RimuoviUtenteServlet extends HttpServlet {
         if(utente != null){
             try {
                 if(service.deleteUser(user)){
-                    request.setAttribute("errore", "Utente eliminato con successo."); //anche se non è un errore, chaimarlo così ci evita di gestire altre stringhe nelle jsp
+                    request.setAttribute("errore", "Utente eliminato con successo."); //anche se non è un errore, chiamarlo così ci evita di gestire altre stringhe nelle jsp
+
                 }
                 else{
                     request.setAttribute("errore", "Errore durante l'eliminazione dell utente.");
-
+                    request.setAttribute("viewPath", "gestioneUtenti.jsp");
                 }
-                request.getRequestDispatcher("/WEB-INF/jsp/layout.jsp").forward(request, response);
+                request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
         }else {
             request.setAttribute("errore", "/Utente non loggato");
-            request.setAttribute("viewPath", "/WEB-INF/views/login.jsp");
+            request.setAttribute("viewPath", "login.jsp");
             request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
         }
     }

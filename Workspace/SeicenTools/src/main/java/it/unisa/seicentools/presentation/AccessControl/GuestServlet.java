@@ -18,7 +18,7 @@ public class GuestServlet extends HttpServlet {
 * */
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         SessionService sessionService = new SessionService();
 
 
@@ -27,14 +27,19 @@ public class GuestServlet extends HttpServlet {
 
         if(utente != null){
             session.setAttribute("utente", utente);
-            request.setAttribute("viewPath", "/WEB-INF/views/homepage.jsp");
+            request.setAttribute("viewPath", "homepage.jsp");
             request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
         }
         else{
             request.setAttribute("error", "Problemi con accesso come guest");
-            request.setAttribute("viewPath", "/WEB-INF/views/login.jsp");
+            request.setAttribute("viewPath", "login.jsp");
             request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
         }
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doPost(request, response);
     }
 
 }

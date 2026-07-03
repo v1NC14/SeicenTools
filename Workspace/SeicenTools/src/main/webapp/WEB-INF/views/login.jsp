@@ -24,5 +24,10 @@
 
             <button type="submit" class="btn-login">Accedi</button>
         </form>
+        <form name="guest" action="GuestServlet" method="post">
+            <div>
+                <button type = "submit" class="btn-login">Ospite</button>
+            </div>
+        </form>
     </div>
 </div>

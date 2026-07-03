@@ -30,7 +30,7 @@ public class CreaProdottoServlet extends HttpServlet {
             List<String> categorie = service.getCategorie();
             req.setAttribute("categorie", categorie);
 
-            req.setAttribute("viewPath", "/WEB-INF/views/creaProdotto.jsp");
+            req.setAttribute("viewPath", "creaProdotto.jsp");
             req.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(req,resp);
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -66,10 +66,10 @@ public class CreaProdottoServlet extends HttpServlet {
             try{
                 if(service.creaProdotto(tmp)){
                     req.setAttribute("errore", "Prodotto creato con successo");
-                    req.setAttribute("viewPath", "/WEB-INF/views/productDetail.jsp");
+                    req.setAttribute("viewPath", "productDetail.jsp");
                 }else{
                     req.setAttribute("errore", "Errore durante la registrazione del prodotto");
-                    req.setAttribute("viewPath", "/WEB-INF/views/homepage.jsp");
+                    req.setAttribute("viewPath", "homepage.jsp");
                 }
 
                 req.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(req, resp);
@@ -78,7 +78,7 @@ public class CreaProdottoServlet extends HttpServlet {
             }
         }else{
             req.setAttribute("errore", "/Utente non loggato");
-            req.setAttribute("viewPath", "/WEB-INF/views/login.jsp");
+            req.setAttribute("viewPath", "login.jsp");
             req.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(req, resp);
         }
     }

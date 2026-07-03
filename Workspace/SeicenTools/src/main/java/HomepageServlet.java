@@ -32,7 +32,7 @@ public class HomepageServlet extends HttpServlet {
             request.setAttribute("cardProducts", random);
             request.setAttribute("categorie", categorie);
             request.setAttribute("bannerProducts", banner);
-            request.setAttribute("viewPath","/WEB-INF/views/homepage.jsp");
+            request.setAttribute("viewPath","homepage.jsp");
             request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
         } catch (SQLException e) {
             throw new RuntimeException(e);

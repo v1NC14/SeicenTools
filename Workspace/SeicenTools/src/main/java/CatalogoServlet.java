@@ -25,7 +25,7 @@ public class CatalogoServlet extends HttpServlet {
 
             req.setAttribute("categorie", categorie);
             req.setAttribute("listaProdotti",lista);
-            req.setAttribute("viewPath", "/WEB-INF/views/catalogo.jsp");
+            req.setAttribute("viewPath", "catalogo.jsp");
             req.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(req, resp);
         }
         catch (SQLException e) {

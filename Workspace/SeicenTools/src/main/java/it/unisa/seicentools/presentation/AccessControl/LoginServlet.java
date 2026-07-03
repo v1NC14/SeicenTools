@@ -13,7 +13,7 @@ import java.io.IOException;
 @WebServlet(name="Loginservlet", value="/login")
 public class LoginServlet  extends HttpServlet {
    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
        String username = request.getParameter("username");
        String password = request.getParameter("password");
        SessionService sessionService = new SessionService();
@@ -24,12 +24,12 @@ public class LoginServlet  extends HttpServlet {
            
            if(utente != null){
                session.setAttribute("utente",utente);
-               request.setAttribute("viewPath", "/WEB-INF/views/homepage.jsp");
+               request.setAttribute("viewPath", "homepage.jsp");
                request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
            }
            else{
                request.setAttribute("error", "Utente non loggato, effettua il login");
-               request.setAttribute("viewPath", "/WEB-INF/views/login.jsp");
+               request.setAttribute("viewPath", "login.jsp");
                request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
            }
        }

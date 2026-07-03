@@ -24,7 +24,7 @@ public class DettagliProdottoServlet extends HttpServlet {
             Prodotto tmp = service.getProdotto(idPrd);
 
             req.setAttribute("prodotto", tmp);
-            req.setAttribute("viewPath", "/WEB-INF/views/productDetail.jsp");
+            req.setAttribute("viewPath", "productDetail.jsp");
             req.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(req, resp);
         } catch (Exception e) {
             throw new RuntimeException(e);
