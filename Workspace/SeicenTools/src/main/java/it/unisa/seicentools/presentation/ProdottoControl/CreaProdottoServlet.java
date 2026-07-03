@@ -77,7 +77,7 @@ public class CreaProdottoServlet extends HttpServlet {
                 throw new RuntimeException(e);
             }
         }else{
-            req.setAttribute("errore", "/Utente non loggato");
+            req.setAttribute("errore", "Utente non loggato");
             req.setAttribute("viewPath", "login.jsp");
             req.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(req, resp);
         }

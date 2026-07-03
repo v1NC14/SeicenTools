@@ -21,7 +21,6 @@ public class GuestServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         SessionService sessionService = new SessionService();
 
-
         Utente utente = sessionService.doGuest();
         HttpSession session = request.getSession();
 

@@ -71,7 +71,7 @@ public class OrdineServlet  extends HttpServlet{
                 e.printStackTrace();
             }
         }else {
-            request.setAttribute("errore", "/Utente non loggato");
+            request.setAttribute("errore", "Utente non loggato");
             request.setAttribute("viewPath", "login.jsp");
             request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
         }

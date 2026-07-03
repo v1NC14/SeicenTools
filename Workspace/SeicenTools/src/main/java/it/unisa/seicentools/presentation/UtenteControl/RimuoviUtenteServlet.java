@@ -37,7 +37,7 @@ public class RimuoviUtenteServlet extends HttpServlet {
                 throw new RuntimeException(e);
             }
         }else {
-            request.setAttribute("errore", "/Utente non loggato");
+            request.setAttribute("errore", "Utente non loggato");
             request.setAttribute("viewPath", "login.jsp");
             request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
         }

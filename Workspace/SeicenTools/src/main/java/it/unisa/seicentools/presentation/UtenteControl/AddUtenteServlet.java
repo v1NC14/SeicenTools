@@ -51,15 +51,9 @@ public class AddUtenteServlet  extends HttpServlet {
                 throw new RuntimeException(e);
             }
         }else {
-            request.setAttribute("errore", "/Utente non loggato");
+            request.setAttribute("errore", "Utente non loggato");
             request.setAttribute("viewPath", "login.jsp");
             request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
         }
-    }
-
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-        response.sendRedirect(request.getContextPath() + "/gestisciUtente");
-        request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
     }
 }
