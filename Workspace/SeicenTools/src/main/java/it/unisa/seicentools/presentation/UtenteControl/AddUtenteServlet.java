@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 
-@WebServlet(name="AddUtenteServlet", value="/addUtente")
+@WebServlet(name="AddUtenteServlet", value="/add-utente")
 public class AddUtenteServlet  extends HttpServlet {
 
 
@@ -40,26 +40,20 @@ public class AddUtenteServlet  extends HttpServlet {
             try {
                 if (service.addUser(utente, password)) {
                     request.setAttribute("messaggio", "Utente aggiuto con successo.");
-                    request.setAttribute("viewPath", "/WEB-INF/views/gestioneUtenti.jsp");
+                    request.setAttribute("viewPath", "gestioneUtenti.jsp");
 
                 } else {
                     request.setAttribute("errore", "Errore durante la registrazione del nuovo utente.");
-                    request.setAttribute("viewPath", "/WEB-INF/views/homepage.jsp");
+                    request.setAttribute("viewPath", "homepage.jsp");
                 }
-                request.getRequestDispatcher("/WEB-INF/jsp/layout.jsp").forward(request, response);
+                request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
             }catch (SQLException e){
                 throw new RuntimeException(e);
             }
         }else {
-            request.setAttribute("errore", "/Utente non loggato");
-            request.setAttribute("viewPath", "/WEB-INF/views/login.jsp");
+            request.setAttribute("errore", "Utente non loggato");
+            request.setAttribute("viewPath", "login.jsp");
             request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
         }
-    }
-
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-        response.sendRedirect(request.getContextPath() + "/gestisciUtente");
-        request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
     }
 }

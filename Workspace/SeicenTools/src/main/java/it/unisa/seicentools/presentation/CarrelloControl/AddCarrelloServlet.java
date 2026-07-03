@@ -38,7 +38,7 @@ public class AddCarrelloServlet extends HttpServlet {
             }
 
             session.setAttribute("carrello", carrello);
-            resp.sendRedirect(req.getContextPath() + "/dettagliProd?id=" + tmp.getId());
+            resp.sendRedirect(req.getContextPath() + "/dettagli-prod?id=" + tmp.getId());
         }catch(Exception e){
             e.printStackTrace();
         }

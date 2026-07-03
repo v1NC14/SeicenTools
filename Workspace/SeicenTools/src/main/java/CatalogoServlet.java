@@ -16,16 +16,16 @@ public class CatalogoServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req , HttpServletResponse resp) throws ServletException, IOException {
-        HttpSession session = req.getSession();
-        List<Prodotto> catalogo = (List<Prodotto>) session.getAttribute("catalogo");
         String filtro = req.getParameter("filtro");
         IcommonProdService service = new commonProdService();
 
         try {
             List<Prodotto> lista = service.getProdByCategoria(filtro);
+            List<String> categorie = service.getCategorie();
 
-            session.setAttribute("listaProdotti",lista);
-            req.setAttribute("viewPath", "/WEB-INF/views/catalogo.jsp");
+            req.setAttribute("categorie", categorie);
+            req.setAttribute("listaProdotti",lista);
+            req.setAttribute("viewPath", "catalogo.jsp");
             req.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(req, resp);
         }
         catch (SQLException e) {

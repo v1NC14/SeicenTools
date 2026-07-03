@@ -11,7 +11,7 @@ public class ProdottoDAO implements IProdottoDAO {
     @Override
     public List<Prodotto> getAllProdotti() throws Exception{
         List<Prodotto> prodotti = new ArrayList<>();
-        String query = "SELECT * FROM prodotti";
+        String query = "SELECT * FROM prodotto";
 
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement(query);
@@ -40,7 +40,7 @@ public class ProdottoDAO implements IProdottoDAO {
 
     @Override
     public Prodotto getProdottoById(int id) throws Exception{
-        String query = "SELECT * FROM prodotti WHERE id = ?";
+        String query = "SELECT * FROM prodotto WHERE id = ?";
 
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement(query)) {
@@ -82,7 +82,7 @@ public class ProdottoDAO implements IProdottoDAO {
             }
         }
 
-        if(c == 0){query = "SELECT * FROM prodotti WHERE categoria = ?";}
+        if(c == 0){query = "SELECT * FROM prodotto WHERE categoria = ?";}
         else{
             query = "SELECT * FROM prodotti WHERE categoria LIKE '"+ filtri.get(0) +"'";
             for(int i = 1; i < filtri.size(); i++){
@@ -121,7 +121,7 @@ public class ProdottoDAO implements IProdottoDAO {
 
     @Override
     public boolean addProdotto(Prodotto p) throws Exception{
-        String query = "INSERT INTO prodotti(nome, categoria, descrizione, prezzo, imgPath, disponibilita) VALUES (?, ?, ?, ?, ?, ?)";
+        String query = "INSERT INTO prodotto(nome, categoria, descrizione, prezzo, imgPath, disponibilita) VALUES (?, ?, ?, ?, ?, ?)";
 
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
@@ -190,6 +190,57 @@ public class ProdottoDAO implements IProdottoDAO {
             return true;
         } catch (Exception e) {
             e.printStackTrace();
+            throw new SQLException("Connessione con il database fallita...");
+        }
+    }
+
+    //UTILITIES
+
+    @Override
+    public List<String> getCategorie() throws Exception{
+        String query = "SELECT categoria FROM prodotto";
+
+        try(Connection conn = DBConnection.getConnection();
+            PreparedStatement ps = conn.prepareStatement(query)) {
+
+            List<String> lista = new ArrayList<>();
+            ResultSet rs = ps.executeQuery();
+
+            while(rs.next()){
+                if(!lista.contains(rs.getString("categoria")))
+                    lista.add(rs.getString("categoria"));
+            }
+
+            return lista;
+        }catch(Exception e){
+            throw new SQLException("Connessione con il database fallita...");
+        }
+    }
+
+    @Override
+    public List<Prodotto> getRandProd(int limit) throws Exception{
+        String query = "SELECT * FROM prodotto ORDER BY RANDOM() LIMIT ?";
+        try(Connection conn = DBConnection.getConnection();
+        PreparedStatement ps = conn.prepareStatement(query)){
+            ResultSet rs = ps.executeQuery();
+
+            List<Prodotto> tmplist = new ArrayList<>();
+
+            while (rs.next()) {
+                Prodotto temp = new Prodotto();
+
+                temp.setId(rs.getInt("id"));
+                temp.setNome(rs.getString("nome"));
+                temp.setCategoria(rs.getString("categoria"));
+                temp.setDescrizione(rs.getString("descrizione"));
+                temp.setPrezzo(rs.getBigDecimal("prezzo"));
+                temp.setImgPath(rs.getString("imgPath"));
+
+                tmplist.add(temp);
+            }
+
+            return tmplist;
+        }catch(Exception e){
             throw new SQLException("Connessione con il database fallita...");
         }
     }

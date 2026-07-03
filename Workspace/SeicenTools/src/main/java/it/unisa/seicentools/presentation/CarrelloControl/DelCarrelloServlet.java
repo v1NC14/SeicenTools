@@ -14,7 +14,7 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
-@WebServlet(name = "DelCartServlet", value="del-cart")
+@WebServlet(name = "DelCartServlet", value="/del-cart")
 public class DelCarrelloServlet extends HttpServlet {
 
     @Override
@@ -27,7 +27,7 @@ public class DelCarrelloServlet extends HttpServlet {
              if(service.cancellaCarrello(utente.getId()))
                  session.removeAttribute("carrello");
 
-             req.setAttribute("viewPath", "/WEB-INF/views/carrello.jsp");
+             req.setAttribute("viewPath", "carrello.jsp");
              req.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(req, resp);
          }catch(Exception e){
              e.printStackTrace();

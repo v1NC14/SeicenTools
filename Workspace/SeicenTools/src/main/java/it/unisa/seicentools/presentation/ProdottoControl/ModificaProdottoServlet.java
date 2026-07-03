@@ -33,14 +33,14 @@ public class ModificaProdottoServlet extends HttpServlet {
                 Prodotto tmp = service.getProdotto(idPrd);
 
                 req.setAttribute("prodotto", tmp);
-                req.setAttribute("viewPath", "/WEB-INF/views/productDetail.jsp");
+                req.setAttribute("viewPath", "modificaProdotto.jsp");
                 req.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(req, resp);
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
         }else{
             req.setAttribute("errore", "/Utente non loggato");
-            req.setAttribute("viewPath", "/WEB-INF/views/login.jsp");
+            req.setAttribute("viewPath", "login.jsp");
             req.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(req, resp);
         }
     }
@@ -72,10 +72,10 @@ public class ModificaProdottoServlet extends HttpServlet {
             try{
                 if(service.updateProdotto(tmp)){
                     req.setAttribute("errore", "Prodotto aggiornato con successo");
-                    req.setAttribute("viewPath", "/WEB-INF/views/productDetail.jsp");
+                    req.setAttribute("viewPath", "productDetail.jsp");
                 }else{
                     req.setAttribute("errore", "Errore durante l'aggiornamento del prodotto");
-                    req.setAttribute("viewPath", "/WEB-INF/views/homepage.jsp");
+                    req.setAttribute("viewPath", "homepage.jsp");
                 }
 
                 req.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(req, resp);
@@ -83,8 +83,8 @@ public class ModificaProdottoServlet extends HttpServlet {
                 throw new RuntimeException(e);
             }
         }else{
-            req.setAttribute("errore", "/Utente non loggato");
-            req.setAttribute("viewPath", "/WEB-INF/views/login.jsp");
+            req.setAttribute("errore", "Utente non loggato");
+            req.setAttribute("viewPath", "login.jsp");
             req.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(req, resp);
         }
     }

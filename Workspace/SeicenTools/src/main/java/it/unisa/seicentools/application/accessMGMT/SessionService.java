@@ -1,6 +1,7 @@
 package it.unisa.seicentools.application.accessMGMT;
 
 import it.unisa.seicentools.application.accessMGMT.interfaces.ISessionService;
+import it.unisa.seicentools.models.Ruolo;
 import it.unisa.seicentools.models.Utente;
 import it.unisa.seicentools.persistence.DAOmodels.UtenteDAO;
 import it.unisa.seicentools.persistence.PersistenceServiceImpl;
@@ -51,5 +52,17 @@ public class SessionService implements ISessionService {
             throw new RuntimeException(e);
         }
         return utente;
+    }
+
+    @Override
+    public Utente doGuest(){
+        Utente guest = new Utente();
+
+        guest.setId(0);
+        guest.setNome("Guest");
+        guest.setRuolo(Ruolo.GUEST);
+        guest.setEmail("Guest");
+
+        return guest;
     }
 }

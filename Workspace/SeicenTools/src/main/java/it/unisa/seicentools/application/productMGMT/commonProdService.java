@@ -123,4 +123,22 @@ public class commonProdService implements IcommonProdService {
             }
         }
     }
+
+    @Override
+    public List<String> getCategorie() throws SQLException{
+        IProdottoDAO prodottoDAO = service.getProdottoDAO();
+
+        try {
+            return prodottoDAO.getCategorie();
+        }catch(Exception e){throw new SQLException(e);}
+    }
+
+    @Override
+    public List<Prodotto> getRandProd(int limit) throws SQLException{
+        IProdottoDAO prodottoDAO = service.getProdottoDAO();
+
+        try{
+            return prodottoDAO.getRandProd(limit);
+        }catch(Exception e){throw new SQLException(e);}
+    }
 }

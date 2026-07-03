@@ -73,5 +73,16 @@ public class UserService implements IUserService {
             return userDAO.getAllUtentiRegistrati();
         }catch(Exception e){throw new SQLException(e);}
     }
+
+    @Override
+    public Utente getUser(int id) throws SQLException{
+        if(id < 0)
+            throw new IllegalArgumentException("L'id non può essere negativo, vuoto o null");
+        else{
+            IUtenteDAO userDAO = service.getUtenteDAO();
+            try {
+                return userDAO.getUtenteById(id);
+            }catch(Exception e){throw new SQLException(e);}
+        }
     }
 }

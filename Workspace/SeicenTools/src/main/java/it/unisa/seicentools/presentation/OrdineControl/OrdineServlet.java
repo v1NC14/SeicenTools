@@ -14,6 +14,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -35,12 +36,12 @@ public class OrdineServlet  extends HttpServlet{
                 Ordine order = service.cartToOrder(carrello, utente.getId(), numCarta, indirizzoConsegna);
 
                 if (order != null) {
-                    req.setAttribute("esito", "Ordine effettuato");
+                    req.setAttribute("error", "Ordine effettuato");
                     session.removeAttribute("carrello");
                 } else {
-                    req.setAttribute("esito", "Si è verificato un problema, ordine interrotto");
+                    req.setAttribute("error", "Si è verificato un problema, ordine interrotto");
                 }
-                req.setAttribute("viewPath", "/WEB-INF/views/homepage.jsp");
+                req.setAttribute("viewPath", "homepage.jsp");
                 req.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(req, resp);
 
             } catch (Exception e) {
@@ -48,11 +49,10 @@ public class OrdineServlet  extends HttpServlet{
             }
         }else {
             req.setAttribute("errore", "/Utente non loggato");
-            req.setAttribute("viewPath", "/WEB-INF/views/login.jsp");
+            req.setAttribute("viewPath", "login.jsp");
             req.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(req, resp);
         }
     }
-
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -65,14 +65,14 @@ public class OrdineServlet  extends HttpServlet{
                 List<Prodotto> lista = service.getProdByUtente(utente.getId());
 
                 session.setAttribute("carrello",lista); //rieseguo la scansione del carrello per sicurezza
-                request.setAttribute("viewPath", "/WEB-INF/views/ordine.jsp");
+                request.setAttribute("viewPath", "ordine.jsp");
                 request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
             }catch (Exception e){
                 e.printStackTrace();
             }
         }else {
-            request.setAttribute("errore", "/Utente non loggato");
-            request.setAttribute("viewPath", "/WEB-INF/views/login.jsp");
+            request.setAttribute("errore", "Utente non loggato");
+            request.setAttribute("viewPath", "login.jsp");
             request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
         }
     }
