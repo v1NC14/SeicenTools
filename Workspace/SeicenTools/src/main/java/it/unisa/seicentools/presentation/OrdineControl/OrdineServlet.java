@@ -14,6 +14,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -35,10 +36,10 @@ public class OrdineServlet  extends HttpServlet{
                 Ordine order = service.cartToOrder(carrello, utente.getId(), numCarta, indirizzoConsegna);
 
                 if (order != null) {
-                    req.setAttribute("esito", "Ordine effettuato");
+                    req.setAttribute("error", "Ordine effettuato");
                     session.removeAttribute("carrello");
                 } else {
-                    req.setAttribute("esito", "Si è verificato un problema, ordine interrotto");
+                    req.setAttribute("error", "Si è verificato un problema, ordine interrotto");
                 }
                 req.setAttribute("viewPath", "/WEB-INF/views/homepage.jsp");
                 req.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(req, resp);
@@ -52,7 +53,6 @@ public class OrdineServlet  extends HttpServlet{
             req.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(req, resp);
         }
     }
-
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

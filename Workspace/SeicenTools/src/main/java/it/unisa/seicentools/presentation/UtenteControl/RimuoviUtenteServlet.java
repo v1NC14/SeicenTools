@@ -13,7 +13,8 @@ import java.sql.SQLException;
 
 public class RimuoviUtenteServlet extends HttpServlet {
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         IUserService service = new UserService();
         Utente utente = (Utente) session.getAttribute("utente");
@@ -37,5 +38,10 @@ public class RimuoviUtenteServlet extends HttpServlet {
             request.setAttribute("viewPath", "/WEB-INF/views/login.jsp");
             request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
         }
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doPost(request,response);
     }
 }

@@ -20,7 +20,7 @@ import java.util.List;
 public class ShowCarrelloServlet extends HttpServlet {
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
         Utente user = (Utente) session.getAttribute("utente");
         IcommonProdService service = new commonProdService();
@@ -35,10 +35,5 @@ public class ShowCarrelloServlet extends HttpServlet {
         }catch(Exception e){
             e.printStackTrace();
         }
-    }
-
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        doPost(req, resp);
     }
 }

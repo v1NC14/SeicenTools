@@ -33,7 +33,7 @@ public class ModificaProdottoServlet extends HttpServlet {
                 Prodotto tmp = service.getProdotto(idPrd);
 
                 req.setAttribute("prodotto", tmp);
-                req.setAttribute("viewPath", "/WEB-INF/views/productDetail.jsp");
+                req.setAttribute("viewPath", "/WEB-INF/views/modificaProdotto.jsp");
                 req.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(req, resp);
             } catch (SQLException e) {
                 throw new RuntimeException(e);

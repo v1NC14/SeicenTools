@@ -13,4 +13,6 @@ public interface IcommonProdService {
     public List<Prodotto> getProdByUtente(int id_utente) throws SQLException;
     public boolean rmvFromCarrello(int id_utente, int id_Prd) throws SQLException;
     public boolean cancellaCarrello(int id_utente)  throws SQLException;
+    public List<String> getCategorie() throws SQLException;
+    public List<Prodotto> getRandProd(int limit) throws SQLException;
 }

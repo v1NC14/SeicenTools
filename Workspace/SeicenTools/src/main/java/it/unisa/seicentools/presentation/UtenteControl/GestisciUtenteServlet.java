@@ -19,9 +19,10 @@ import java.util.List;
 
 @WebServlet(name="GestisciUtenteServlet", value="/gestisciUtente")
 public class GestisciUtenteServlet extends HttpServlet {
+
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        HttpSession session = req.getSession();
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        HttpSession session = request.getSession();
         List<Utente> utenti = (List<Utente>) session.getAttribute("utenti");
         IUserService service = new UserService();
 
@@ -29,17 +30,11 @@ public class GestisciUtenteServlet extends HttpServlet {
             List<Utente> listaUtenti = service.getAllUser();
 
             session.setAttribute("listaUtenti",listaUtenti);
-            req.setAttribute("viewPath", "/WEB-INF/views/catalogo.jsp");
-            req.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(req, resp);
+            request.setAttribute("viewPath", "/WEB-INF/views/gestioneUtenti.jsp");
+            request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
         }
         catch (SQLException e) {
             throw new RuntimeException(e);
         }
-    }
-    }
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) {
-        response.sendRedirect(request.getContextPath() + "/gestisciUtente");
-        request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
     }
 }
