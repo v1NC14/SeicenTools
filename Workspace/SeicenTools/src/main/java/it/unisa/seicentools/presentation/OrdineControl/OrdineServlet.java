@@ -14,6 +14,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -61,9 +62,15 @@ public class OrdineServlet  extends HttpServlet{
         Utente utente =  (Utente) session.getAttribute("utente");
 
         if(utente != null){
-            try {
+            try {//introdurre la utility order to cart per ottenere le qta delle entità carrello e calcolare bene il prezzo
                 List<Prodotto> lista = service.getProdByUtente(utente.getId());
+                BigDecimal tot = new BigDecimal(0);
 
+                for(Prodotto prod : lista) {
+                    tot.add(prod.getPrezzo());
+                }
+
+                request.setAttribute("totale", tot);
                 session.setAttribute("carrello",lista); //rieseguo la scansione del carrello per sicurezza
                 request.setAttribute("viewPath", "ordine.jsp");
                 request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);

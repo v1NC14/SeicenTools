@@ -38,7 +38,8 @@ public class UserProdService implements IUserProdService {
         BigDecimal tot = new BigDecimal("0.00");
 
         for(int i = 0; i <  prodottiUtente.size(); i++){
-            tot.add(prodottiUtente.get(i).getPrezzo());
+
+            tot.add(prodottiUtente.get(i).getPrezzo() * prodottiUtente.get(i).getQta());
             qta++;
         }
 
@@ -66,4 +67,6 @@ public class UserProdService implements IUserProdService {
 
         return null;
     }
+
+    //aggiungere una utility per ottenere una List<Carrello> dato un ordine
 }

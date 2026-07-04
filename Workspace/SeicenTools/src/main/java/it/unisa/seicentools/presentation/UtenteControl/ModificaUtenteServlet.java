@@ -60,14 +60,14 @@ public class ModificaUtenteServlet extends HttpServlet {
             try {
                 Utente user = service.getUser(Integer.parseInt(request.getParameter("id")));
 
-                request.setAttribute("user", user);
+                request.setAttribute("utenteProfilo", user);
                 request.setAttribute("viewPath", "modificaUtente.jsp");
                 request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
         }else {
-            request.setAttribute("errore", "/Utente non loggato");
+            request.setAttribute("errore", "Utente non loggato");
             request.setAttribute("viewPath", "login.jsp");
             request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
         }
