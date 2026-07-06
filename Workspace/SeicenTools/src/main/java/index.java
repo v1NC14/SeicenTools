@@ -8,7 +8,7 @@ import java.io.IOException;
 @WebServlet(name = "index", value="/")
 public class index  extends HttpServlet {
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.sendRedirect(req.getContextPath()+ "/login");
+        resp.sendRedirect(req.getContextPath()+"/login");
     }
 
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
