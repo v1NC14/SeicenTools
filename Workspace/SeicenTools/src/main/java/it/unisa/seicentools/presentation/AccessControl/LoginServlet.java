@@ -24,14 +24,26 @@ public class LoginServlet  extends HttpServlet {
            
            if(utente != null){
                session.setAttribute("utente",utente);
-               request.setAttribute("viewPath", "homepage.jsp");
-               request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
+               response.sendRedirect(request.getContextPath() + "/homepage");
            }
            else{
                request.setAttribute("error", "Utente non loggato, effettua il login");
                request.setAttribute("viewPath", "login.jsp");
                request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
            }
+       }else {
+           request.setAttribute("error", "Login o Password invalide");
+       }
+   }
+
+   @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+       try{
+           request.setAttribute("viewPath","login.jsp");
+           request.getRequestDispatcher("WEB-INF/views/layout.jsp").forward(request,response);
+       }
+       catch(ServletException e){
+           throw new RuntimeException(e);
        }
    }
 }

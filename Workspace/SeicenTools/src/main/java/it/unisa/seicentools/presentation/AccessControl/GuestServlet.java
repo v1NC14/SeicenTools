@@ -26,8 +26,7 @@ public class GuestServlet extends HttpServlet {
 
         if(utente != null){
             session.setAttribute("utente", utente);
-            request.setAttribute("viewPath", "homepage.jsp");
-            request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
+            response.sendRedirect("/homepage");
         }
         else{
             request.setAttribute("error", "Problemi con accesso come guest");

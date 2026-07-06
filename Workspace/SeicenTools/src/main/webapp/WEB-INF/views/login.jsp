@@ -10,7 +10,7 @@
                 <p>${error}</p>
             </div>
         </c:if>
-        <form name="form1" action="LoginServlet" method="post" onSubmit="return validateForm()">
+        <form name="form1" action = "login" method="post" onSubmit="return validateForm()">
             <div class="form-group">
                 <div align="center" class="my-sm-1">Email/Username</div>
                 <input type="text" id="username" name="username"  placeholder="Inserisci il tuo username">
@@ -24,7 +24,7 @@
 
             <button type="submit" class="btn-login">Accedi</button>
         </form>
-        <form name="guest" action="GuestServlet" method="post">
+        <form name="guest" action="guest" method="post">
             <div>
                 <button type = "submit" class="btn-login">Ospite</button>
             </div>

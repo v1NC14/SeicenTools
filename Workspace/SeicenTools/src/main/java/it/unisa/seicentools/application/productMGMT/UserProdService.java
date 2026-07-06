@@ -39,7 +39,7 @@ public class UserProdService implements IUserProdService {
 
         for(int i = 0; i <  prodottiUtente.size(); i++){
 
-            tot.add(prodottiUtente.get(i).getPrezzo() * prodottiUtente.get(i).getQta());
+            //tot.add(prodottiUtente.get(i).getPrezzo() * prodottiUtente.get(i).getQta());
             qta++;
         }
 

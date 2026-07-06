@@ -222,6 +222,8 @@ public class ProdottoDAO implements IProdottoDAO {
         String query = "SELECT * FROM prodotto ORDER BY RANDOM() LIMIT ?";
         try(Connection conn = DBConnection.getConnection();
         PreparedStatement ps = conn.prepareStatement(query)){
+
+            ps.setInt(1, limit);
             ResultSet rs = ps.executeQuery();
 
             List<Prodotto> tmplist = new ArrayList<>();
