@@ -23,6 +23,7 @@ public class LoginServlet  extends HttpServlet {
            HttpSession session = request.getSession();
            
            if(utente != null){
+               session.removeAttribute("utente"); //cancello per sicurezzo l'utente in sessione prima di assegnarlo
                session.setAttribute("utente",utente);
                response.sendRedirect(request.getContextPath() + "/homepage");
            }
@@ -33,6 +34,7 @@ public class LoginServlet  extends HttpServlet {
            }
        }else {
            request.setAttribute("error", "Login o Password invalide");
+           doGet(request, response);
        }
    }
 

@@ -1,0 +1,53 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+
+<div>
+    <div class="addProdForm">
+        <c:if test="${error != null}">
+            <div class="error-banner mx-2"><p>${error}</p></div>
+        </c:if>
+
+        <form name = "form1" action = "crea-prod" method = "post">
+        <div id = "dataUpload">
+            <div class="form-group">
+                <div align="center" class="my-sm-1">Nome</div>
+                    <input type="text" id="nome" name="nome"  placeholder="Inserisci il nome del prodotto">
+                    <small id="error-username" class="error-msg" style="color: red"></small>
+            </div>
+            <div class="form-group">
+                <div align="center" class="my-sm-1">Prezzo</div>
+                    <input type="number" id="prezzo" name="prezzo" min="0.01" max="10000" step = "0.01">
+                    <small id="error-username" class="error-msg" style="color: red"></small>
+            </div>
+            <div class="form-group">
+                <div align="center" class="my-sm-1">Disponibilità</div>
+                    <input type="number" id="disponibilita" name="disponibilita" min="1" max="999">
+                    <small id="error-username" class="error-msg" style="color: red"></small>
+            </div>
+            <div class="form-group">
+                <div align="center" class="my-sm-1">Categoria</div>
+                    <select id="categoria" name="categoria" placeholder = "scegli">
+                        <c:foreach var = "c" items = "${categorie}">
+                            <option value = "${c}">${c}</option>
+                        </c:foreach>
+                    </select>
+                    <small id="error-username" class="error-msg" style="color: red"></small>
+            </div>
+            <div class="form-group">
+                <div align="center" class="my-sm-1">Descrizione</div>
+                    <textarea name = "descrizione" id = "descrizione" placeholder = "Inserisci qui la descrizione del prodotto (max.250 caratteri)" maxlength = 250></textarea>
+                    <small id="error-username" class="error-msg" style="color: red"></small>
+            </div>
+        </div>
+        <div id="imgUpload">
+            <div class="form-group">
+                <div align="center" class="my-sm-1">Carica immagine</div>
+                    <input type = "file" name = "img" id = "img" accept="image/*">
+                    <small id="error-username" class="error-msg" style="color: red"></small>
+            </div>
+
+            <button type="submit" class="btn-login">Crea prodotto</button>
+        </div>
+        </form>
+    </div>
+</div>
