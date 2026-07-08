@@ -23,14 +23,9 @@ public class LoginServlet  extends HttpServlet {
            HttpSession session = request.getSession();
            
            if(utente != null){
-               session.removeAttribute("utente"); //cancello per sicurezzo l'utente in sessione prima di assegnarlo
+               session.removeAttribute("utente"); //cancello per sicurezza l'utente in sessione prima di assegnarlo
                session.setAttribute("utente",utente);
                response.sendRedirect(request.getContextPath() + "/homepage");
-           }
-           else{
-               request.setAttribute("error", "Utente non loggato, effettua il login");
-               request.setAttribute("viewPath", "login.jsp");
-               request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
            }
        }else {
            request.setAttribute("error", "Login o Password invalide");
