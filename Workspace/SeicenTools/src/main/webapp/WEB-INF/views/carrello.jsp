@@ -26,11 +26,15 @@ html lang="it">
             </c:forEach>
        </div>
         <div class="effettuaOrdine">
-            <p class="grassetto"> Totale ordine: ${item.prezzoTotaleCarrello}</p><br>    <!-- anche questa è una variabile di ShowCarrelloServlet-->
+            <p class="grassetto" id="prezzo"> Totale ordine: ${item.prezzoTotaleCarrello}</p><br>    <!-- anche questa è una variabile di ShowCarrelloServlet-->
             <a href="OrdineServlet">
                 <button type="button">ORDINA</button>
             </a>
         </div>
 
+
+        <div id="footerL">
+            <p>&copy; 2026 SeicenTools</p>
+        </div>
     </body>
 </html>

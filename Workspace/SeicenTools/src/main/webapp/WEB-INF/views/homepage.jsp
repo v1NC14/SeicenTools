@@ -13,7 +13,7 @@
     <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
-        <div id="Banner" class="Banner" data-bs-ride="carousel">
+        <div id="Banner" class="Banner" data-bs-ride="carousel"><!-- qua si deve vedere per le immagini ne banner-->
             <div class="banner-inner">
                 <div class="banner-item">
                     <img src="..." class="d-block w-100" alt="...">
