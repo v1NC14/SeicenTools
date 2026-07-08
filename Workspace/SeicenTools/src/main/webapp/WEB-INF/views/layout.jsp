@@ -14,22 +14,27 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
         <nav class="navbar nav-color">
             <div class="navbar-brand" id="brand">
-                <img src="${pageContext.request.contextPath}/imgs/logo.jpg" alt="logo" id="logo" class="mx-3 my-1"> <!-- qui poi verrà inserita l img del logo (croppato) di EWMS -->
+                <img src="${pageContext.request.contextPath}/imgs/SeicenToolsLogo2.png" alt="logo" id="logo" class="mx-3 my-1">
                 SeicenTools
             </div>
 
-            <c:if test="${viewPath != '/WEB-INF/views/login.jsp'}">
+            <c:if test="${viewPath != 'login.jsp'}">
                 <div class="menu-links">
 
-                    <c:if test="${viewPath != '/WEB-INF/views/homepage.jsp'}">
+                    <c:if test="${viewPath != 'homepage.jsp'}">
                         <a href="${pageContext.request.contextPath}/homepage" class="btn-create"><!--nell'href ho scritto roba a caso per quando farai il backend-->
-                            <i class="bi bi-house-door mx-2" style="color: #04042a;"></i>                                                              <!--non hanno senso logico definito, sono li giusto per aiutarti a capire cosa dovrebbe fare-->
+                            <i class="bi bi-house-door mx-2" style="color: #04042a;"></i>
                         </a>
                     </c:if>
 
-                    <c:if test="${viewPath != '/WEB-INF/views/profilo.jsp'}">
+                    <c:if test="${viewPath != 'profilo.jsp'}">
                         <a href="${pageContext.request.contextPath}/profilo">
                             <i class="bi bi-person-square mx-2" style="color: #04042a;"></i>
+                        </a>
+                    </c:if>
+                    <c:if test="${viewPath != 'aggiungiProdottoAdmin.jsp'}">
+                        <a href="${pageContext.request.contextPath}/crea-prod">
+                            <i class="bi bi-plus-square-fill mx-2" style="color: #04042a;"></i>
                         </a>
                     </c:if>
                 </div>

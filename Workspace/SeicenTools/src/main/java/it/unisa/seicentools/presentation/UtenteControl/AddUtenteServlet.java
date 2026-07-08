@@ -23,24 +23,22 @@ public class AddUtenteServlet  extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         IUserService service = new UserService();
-        Utente user = (Utente)session.getAttribute("utente");
 
-        if(user!=null){
-            //dati che verranno presi da un form.
-            String nome = request.getParameter("nome");
-            String email = request.getParameter("email");
-            Ruolo ruolo = Ruolo.valueOf(request.getParameter("ruolo"));
-            String password = request.getParameter("password");
+        //dati che verranno presi da un form.
+        String nome = request.getParameter("nome");
+        String email = request.getParameter("email");
+        Ruolo ruolo = Ruolo.valueOf(request.getParameter("ruolo"));
+        String password = request.getParameter("password");
 
-            Utente utente = new Utente();
-            utente.setNome(nome);
-            utente.setEmail(email);
-            utente.setRuolo(ruolo);
+        Utente utente = new Utente();
+        utente.setNome(nome);
+        utente.setEmail(email);
+        utente.setRuolo(ruolo);
 
             try {
                 if (service.addUser(utente, password)) {
-                    request.setAttribute("messaggio", "Utente aggiuto con successo.");
-                    request.setAttribute("viewPath", "gestioneUtenti.jsp");
+                    request.setAttribute("messaggio", "Utente aggiunto con successo.");
+                    request.setAttribute("viewPath", "homepage.jsp"); //gestioneUtenti.jsp
 
                 } else {
                     request.setAttribute("errore", "Errore durante la registrazione del nuovo utente.");
@@ -50,10 +48,12 @@ public class AddUtenteServlet  extends HttpServlet {
             }catch (SQLException e){
                 throw new RuntimeException(e);
             }
-        }else {
-            request.setAttribute("errore", "Utente non loggato");
-            request.setAttribute("viewPath", "login.jsp");
-            request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
-        }
+
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setAttribute("viewPath", "registraUtente.jsp");
+        request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
     }
 }

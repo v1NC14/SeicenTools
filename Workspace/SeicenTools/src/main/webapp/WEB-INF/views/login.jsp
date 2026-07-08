@@ -29,5 +29,8 @@
                 <button type = "submit" class="btn-login">Ospite</button>
             </div>
         </form>
+        <form name="registraForm" action="add-utente" method="get">
+            <div><button type = "submit" class="btn-login">Registrati  <i class="bi bi-person-plus-fill"></i></button></div>
+        </form>
     </div>
 </div>

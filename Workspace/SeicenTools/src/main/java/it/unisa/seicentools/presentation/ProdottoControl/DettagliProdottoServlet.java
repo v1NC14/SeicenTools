@@ -18,10 +18,10 @@ public class DettagliProdottoServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req , HttpServletResponse resp) throws ServletException, IOException {
         IcommonProdService service = new commonProdService();
-        int idPrd = Integer.parseInt(req.getParameter("id"));
+        Integer idPrd = (Integer) req.getAttribute("id");
 
         try {
-            Prodotto tmp = service.getProdotto(idPrd);
+            Prodotto tmp = service.getProdotto(idPrd.intValue());
 
             req.setAttribute("prodotto", tmp);
             req.setAttribute("viewPath", "productDetail.jsp");
