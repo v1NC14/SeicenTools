@@ -1,17 +1,14 @@
+package it.unisa.seicentools.presentation;
+
 import it.unisa.seicentools.application.productMGMT.commonProdService;
 import it.unisa.seicentools.application.productMGMT.interfaces.IcommonProdService;
-import it.unisa.seicentools.models.Prodotto;
-import it.unisa.seicentools.models.Utente;
-import it.unisa.seicentools.persistence.DAOmodels.ProdottoDAO;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
+
 import java.io.IOException;
-import java.sql.SQLException;
-import java.util.List;
 
 /*
 * DA COMPLETARE - per ora va bene per provare

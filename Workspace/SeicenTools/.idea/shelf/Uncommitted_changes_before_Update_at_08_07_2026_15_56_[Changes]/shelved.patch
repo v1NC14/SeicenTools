@@ -1,0 +1,459 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"3a961311-2e34-4c97-af2d-180b33b80a94\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.gitignore\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.gitignore\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/CatalogoServlet.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/it/unisa/seicentools/presentation/CatalogoServlet.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/HomepageServlet.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/it/unisa/seicentools/presentation/HomepageServlet.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/index.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/it/unisa/seicentools/presentation/index.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/it/unisa/seicentools/presentation/AccessControl/LoginServlet.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/it/unisa/seicentools/presentation/AccessControl/LoginServlet.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/views/homepage.jsp\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/views/homepage.jsp\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/webapp/css/style.css\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/webapp/css/style.css\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Interface\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$/../..\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;v1NC14&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/v1NC14/SeicenTools.git&quot;,\r\n    &quot;accountId&quot;: &quot;0bd08e34-80d0-4bba-ba2b-dd71daccec23&quot;\r\n  }\r\n}</component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 6\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"3DJ4H7ySiWLyeDqqYXgBLiKTE3F\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"openDirectoriesWithSingleClick\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;Maven.SeicenTools [clean].executor&quot;: &quot;Run&quot;,\r\n    &quot;Maven.SeicenTools [package].executor&quot;: &quot;Run&quot;,\r\n    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;main&quot;,\r\n    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,\r\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/Gerardo/Documents/GitHub/SeicenTools/Workspace/SeicenTools&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;\r\n  },\r\n  &quot;keyToStringList&quot;: {\r\n    &quot;DatabaseDriversLRU&quot;: [\r\n      &quot;mysql&quot;\r\n    ],\r\n    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect&quot;: [\r\n      &quot;MySQL&quot;\r\n    ]\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\mauro\\Documents\\GitHub\\SeicenTools\\Workspace\\SeicenTools\\src\\main\\webapp\\imgs\" />\r\n      <recent name=\"C:\\Users\\mauro\\Documents\\GitHub\\SeicenTools\\Workspace\\SeicenTools\\src\\main\\webapp\\imgs\\products\" />\r\n      <recent name=\"C:\\Users\\mauro\\Documents\\GitHub\\SeicenTools\\Workspace\\SeicenTools\\src\\main\\webapp\\css\" />\r\n      <recent name=\"C:\\Users\\mauro\\Documents\\GitHub\\SeicenTools\\Workspace\\SeicenTools\" />\r\n    </key>\r\n    <key name=\"MoveClassesOrPackagesDialog.RECENTS_KEY\">\r\n      <recent name=\"\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.33514.17\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"3a961311-2e34-4c97-af2d-180b33b80a94\" name=\"Changes\" comment=\"\" />\r\n      <created>1777986750850</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1777986750850</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\".\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1783074259183</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1783074259183</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"2\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"main\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\".\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\".\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision a0d75764435f448e586755fd73faeb6c71d054ec)
++++ b/.idea/workspace.xml	(date 1783518959656)
+@@ -5,14 +5,13 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="3a961311-2e34-4c97-af2d-180b33b80a94" name="Changes" comment="">
+-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/CatalogoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/presentation/CatalogoServlet.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/HomepageServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/presentation/HomepageServlet.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/index.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/presentation/index.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/presentation/AccessControl/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unisa/seicentools/presentation/AccessControl/LoginServlet.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_07_2026_16_23_[Changes]/shelved.patch" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_07_2026_16_23__Changes_.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_07_2026_10_17_[Changes]/shelved.patch" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_07_2026_10_17__Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/carrello.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/carrello.jsp" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/catalogo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/catalogo.jsp" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/homepage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/homepage.jsp" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/style.css" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -57,32 +56,32 @@
+     <option name="openDirectoriesWithSingleClick" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;Maven.SeicenTools [clean].executor&quot;: &quot;Run&quot;,
+-    &quot;Maven.SeicenTools [package].executor&quot;: &quot;Run&quot;,
+-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Gerardo/Documents/GitHub/SeicenTools/Workspace/SeicenTools&quot;,
+-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "Maven.SeicenTools [clean].executor": "Run",
++    "Maven.SeicenTools [package].executor": "Run",
++    "ModuleVcsDetector.initialDetectionPerformed": "true",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
++    "RunOnceActivity.git.unshallow": "true",
++    "git-widget-placeholder": "Merging main",
++    "ignore.virus.scanning.warn.message": "true",
++    "kotlin-language-version-configured": "true",
++    "last_opened_file_path": "C:/Users/Gerardo/Documents/GitHub/SeicenTools/Workspace/SeicenTools",
++    "project.structure.last.edited": "Modules",
++    "project.structure.proportion": "0.15",
++    "project.structure.side.proportion": "0.2",
++    "settings.editor.selected.configurable": "preferences.pluginManager"
+   },
+-  &quot;keyToStringList&quot;: {
+-    &quot;DatabaseDriversLRU&quot;: [
+-      &quot;mysql&quot;
++  "keyToStringList": {
++    "DatabaseDriversLRU": [
++      "mysql"
+     ],
+-    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect&quot;: [
+-      &quot;MySQL&quot;
++    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect": [
++      "MySQL"
+     ]
+   }
+-}</component>
++}]]></component>
+   <component name="RecentsManager">
+     <key name="MoveFile.RECENT_KEYS">
+       <recent name="C:\Users\mauro\Documents\GitHub\SeicenTools\Workspace\SeicenTools\src\main\webapp\imgs" />
+Index: src/main/webapp/WEB-INF/views/homepage.jsp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><%@ page language=\"java\" contentType=\"text/html; charset=UTF-8\" pageEncoding=\"UTF-8\"%>\r\n<%@ taglib prefix=\"c\" uri=\"jakarta.tags.core\" %>\r\n\r\n<!Doctype html>\r\n<html lang=\"it\">\r\n    <head>\r\n        <meta charset=\"UTF-8\">\r\n        <title>SeicenTools</title>\r\n        <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB\" crossorigin=\"anonymous\">\r\n        <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css\">\r\n        <link rel=\"stylesheet\" href=\"${pageContext.request.contextPath}/css/style.css\">\r\n    </head>\r\n    <body>\r\n    <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI\" crossorigin=\"anonymous\"></script>\r\n        <nav class=\"navbar nav-color\">\r\n            <div class=\"navbar-brand\" id=\"brand\">\r\n                <img src=\"${pageContext.request.contextPath}/imgs/logo.jpg\" alt=\"logo\" id=\"logo\" class=\"mx-3 my-1\"> <!-- qui poi verrÃ  inserita l img del logo (croppato) di EWMS -->\r\n                SeicenTools\r\n            </div>\r\n            <div >\r\n                 <a href=\"ShowCarrelloServlet\">\r\n                    <img src=\"${pageContext.request.contextPath}/imgs/carrello.jpg\" alt=\"carrello\" id=\"carrello\" class=\"mx-3 my-1\">\r\n                </a>\r\n            </div>\r\n\r\n            <div>\r\n                <a herf=\"\"><!--fare la servlet profilo-->\r\n                    <img src=\"${pageContext.request.contextPath}/imgs/profilo.jpg\" alt=\"profilo\" id=\"profilo\" class=\"mx-3 my-1\">\r\n                </a>\r\n            </div>\r\n\r\n        </nav>\r\n\r\n        <div class=\"banner\">\r\n            <h1>BANNER</h1>\r\n        <!-- da completare-->\r\n        </div>\r\n\r\n        <div class=\"content\">\r\n\r\n            <aside class=\"categorie\" >\r\n\r\n                <a href=\"#\">CATEGORIA 1</a>\r\n                <a href=\"#\">CATEGORIA 2</a>\r\n                <a href=\"#\">CATEGORIA 3</a>\r\n                <a href=\"#\">CATEGORIA 5</a>\r\n            </aside>\r\n\r\n            <section class=\"prodotti\">\r\n                    <div class=\"product-card\">\r\n                        <a href=\"DettagliProdottoServlet\" >\r\n                            <img src=\"\" alt=\"prodotto1\" width=\"200\" height=\"200\"><br>Prodotto3\r\n                        </a>\r\n                    </div>\r\n                    <div class=\"product-card\">\r\n                        <a href=\"DettagliProdottoServlet\" >\r\n                            <img src=\"\" alt=\"prodotto2\" width=\"200\" height=\"200\"><br>Prodotto3\r\n                        </a>\r\n                    </div>\r\n                    <div class=\"product-card\">\r\n                        <a href=\"DettagliProdottoServlet\" >\r\n                            <img src=\"\" alt=\"prodotto3\" width=\"200\" height=\"200\"><br>Prodotto3\r\n                        </a>\r\n                    </div>\r\n            </section>\r\n\r\n        </div>\r\n\r\n\r\n\r\n        <div id=\"footerL\">\r\n            <p>&copy; 2026 SeicenTools</p>\r\n        </div>\r\n\r\n\r\n\r\n    </body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/webapp/WEB-INF/views/homepage.jsp b/src/main/webapp/WEB-INF/views/homepage.jsp
+--- a/src/main/webapp/WEB-INF/views/homepage.jsp	(revision a0d75764435f448e586755fd73faeb6c71d054ec)
++++ b/src/main/webapp/WEB-INF/views/homepage.jsp	(date 1783518936465)
+@@ -12,58 +12,42 @@
+     </head>
+     <body>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+-        <nav class="navbar nav-color">
+-            <div class="navbar-brand" id="brand">
+-                <img src="${pageContext.request.contextPath}/imgs/logo.jpg" alt="logo" id="logo" class="mx-3 my-1"> <!-- qui poi verrÃ  inserita l img del logo (croppato) di EWMS -->
+-                SeicenTools
+-            </div>
+-            <div >
+-                 <a href="ShowCarrelloServlet">
+-                    <img src="${pageContext.request.contextPath}/imgs/carrello.jpg" alt="carrello" id="carrello" class="mx-3 my-1">
+-                </a>
+-            </div>
+-
+-            <div>
+-                <a herf=""><!--fare la servlet profilo-->
+-                    <img src="${pageContext.request.contextPath}/imgs/profilo.jpg" alt="profilo" id="profilo" class="mx-3 my-1">
+-                </a>
+-            </div>
+-
+-        </nav>
+-
+-        <div class="banner">
+-            <h1>BANNER</h1>
+-        <!-- da completare-->
+-        </div>
++
++        <div id="Banner" class="Banner" data-bs-ride="carousel"><!-- qua si deve vedere per le immagini ne banner-->
++            <div class="banner-inner">
++                <div class="banner-item">
++                    <img src="..." class="d-block w-100" alt="...">
++                </div>
++                <div class="banner-item">
++                    <img src="..." class="d-block w-100" alt="...">
++                </div>
++                <div class="banner-item">
++                    <img src="..." class="d-block w-100" alt="...">
++                </div>
++            </div>
++        </div><!-- si deve vedere per le immagini-->
+ 
+         <div class="content">
+ 
+-            <aside class="categorie" >
+-
+-                <a href="#">CATEGORIA 1</a>
+-                <a href="#">CATEGORIA 2</a>
+-                <a href="#">CATEGORIA 3</a>
+-                <a href="#">CATEGORIA 5</a>
+-            </aside>
+-
+-            <section class="prodotti">
+-                    <div class="product-card">
+-                        <a href="DettagliProdottoServlet" >
+-                            <img src="" alt="prodotto1" width="200" height="200"><br>Prodotto3
+-                        </a>
+-                    </div>
+-                    <div class="product-card">
+-                        <a href="DettagliProdottoServlet" >
+-                            <img src="" alt="prodotto2" width="200" height="200"><br>Prodotto3
+-                        </a>
+-                    </div>
+-                    <div class="product-card">
+-                        <a href="DettagliProdottoServlet" >
+-                            <img src="" alt="prodotto3" width="200" height="200"><br>Prodotto3
+-                        </a>
++            <h4>CATEGORIE</h4><br>
++            <div  align="left" class="list-categories">
++               <c:forEach var="categories" items="${prodotto}">
++                    <a href="dettagli-prod? categoria=${categories.categoria}" class="list-categories-item list-categories-item-action ">${categories.categoria}</a>
++               </c:forEach>
++            </div>
++
++            <div align="right" class="productCard">
++                <c:forEach var="prod" items="${cardProducts}"
++                    <div class="card" style="width: 18rem;">
++                      <img src="${pageContext.request.contextPath}/imgs/${prod.imgPath}" class="card-img-top" alt="...">
++                      <div class="card-body">
++                        <h5 class="card-title">${prod.nome}</h5>
++                        <p class="card-text">${prod.descrizione}.</p>
++                        <a href="dettagli_prod? id=${prod.id}" class="btn btn-primary">visualizza</a>
++                      </div>
+                     </div>
+-            </section>
+-
++                </c:forEach>
++            </div>
+         </div>
+ 
+ 
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_08_07_2026_10_17_[Changes]/shelved.patch
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_08_07_2026_10_17_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_08_07_2026_10_17_[Changes]/shelved.patch
+new file mode 100644
+--- /dev/null	(date 1783518868371)
++++ b/.idea/shelf/Uncommitted_changes_before_Update_at_08_07_2026_10_17_[Changes]/shelved.patch	(date 1783518868371)
+@@ -0,0 +1,23 @@
++Index: .idea/workspace.xml
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
++<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"7ebbb0b4-e6d3-422f-8023-6c87d5360d3b\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/views/carrello.jsp\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/views/carrello.jsp\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/views/homepage.jsp\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/views/homepage.jsp\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$/../..\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 0\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"3G83JkSl5ZeKgU8xRksMwhSDpZ1\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;main&quot;,\r\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26830.84\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"7ebbb0b4-e6d3-422f-8023-6c87d5360d3b\" name=\"Changes\" comment=\"\" />\r\n      <created>1783339312411</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1783339312411</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n</project>
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++diff --git a/.idea/workspace.xml b/.idea/workspace.xml
++--- a/.idea/workspace.xml	(revision a1199fc44ded6c99e5b5aa6c8bbac8f2e1409714)
+++++ b/.idea/workspace.xml	(date 1783498366117)
++@@ -4,11 +4,7 @@
++     <option name="autoReloadType" value="SELECTIVE" />
++   </component>
++   <component name="ChangeListManager">
++-    <list default="true" id="7ebbb0b4-e6d3-422f-8023-6c87d5360d3b" name="Changes" comment="">
++-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/carrello.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/carrello.jsp" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/homepage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/homepage.jsp" afterDir="false" />
++-    </list>
+++    <list default="true" id="7ebbb0b4-e6d3-422f-8023-6c87d5360d3b" name="Changes" comment="" />
++     <option name="SHOW_DIALOG" value="false" />
++     <option name="HIGHLIGHT_CONFLICTS" value="true" />
++     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_07_07_2026_16_23_[Changes]/shelved.patch
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_07_07_2026_16_23_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_07_07_2026_16_23_[Changes]/shelved.patch
+new file mode 100644
+--- /dev/null	(date 1783518868359)
++++ b/.idea/shelf/Uncommitted_changes_before_Update_at_07_07_2026_16_23_[Changes]/shelved.patch	(date 1783518868359)
+@@ -0,0 +1,31 @@
++Index: .idea/workspace.xml
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
++<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"7ebbb0b4-e6d3-422f-8023-6c87d5360d3b\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/views/carrello.jsp\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/views/carrello.jsp\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/views/homepage.jsp\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/views/homepage.jsp\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$/../..\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 0\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"3G83JkSl5ZeKgU8xRksMwhSDpZ1\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;main&quot;,\r\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26830.84\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"7ebbb0b4-e6d3-422f-8023-6c87d5360d3b\" name=\"Changes\" comment=\"\" />\r\n      <created>1783339312411</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1783339312411</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n</project>
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++diff --git a/.idea/workspace.xml b/.idea/workspace.xml
++--- a/.idea/workspace.xml	(revision a1199fc44ded6c99e5b5aa6c8bbac8f2e1409714)
+++++ b/.idea/workspace.xml	(date 1783434106088)
++@@ -4,11 +4,7 @@
++     <option name="autoReloadType" value="SELECTIVE" />
++   </component>
++   <component name="ChangeListManager">
++-    <list default="true" id="7ebbb0b4-e6d3-422f-8023-6c87d5360d3b" name="Changes" comment="">
++-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/carrello.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/carrello.jsp" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/homepage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/homepage.jsp" afterDir="false" />
++-    </list>
+++    <list default="true" id="7ebbb0b4-e6d3-422f-8023-6c87d5360d3b" name="Changes" comment="" />
++     <option name="SHOW_DIALOG" value="false" />
++     <option name="HIGHLIGHT_CONFLICTS" value="true" />
++     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
++@@ -16,6 +12,7 @@
++   </component>
++   <component name="Git.Settings">
++     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+++    <option name="UPDATE_TYPE" value="REBASE" />
++   </component>
++   <component name="ProjectColorInfo">{
++   &quot;associatedIndex&quot;: 0
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_08_07_2026_10_17__Changes_.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_08_07_2026_10_17__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_08_07_2026_10_17__Changes_.xml
+new file mode 100644
+--- /dev/null	(date 1783518868371)
++++ b/.idea/shelf/Uncommitted_changes_before_Update_at_08_07_2026_10_17__Changes_.xml	(date 1783518868371)
+@@ -0,0 +1,4 @@
++<changelist name="Uncommitted_changes_before_Update_at_08_07_2026_10_17_[Changes]" date="1783498704441" recycled="true" deleted="true">
++  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_07_2026_10_17_[Changes]/shelved.patch" />
++  <option name="DESCRIPTION" value="Uncommitted changes before Update at 08/07/2026 10:17 [Changes]" />
++</changelist>
+\ No newline at end of file
+Index: src/main/webapp/WEB-INF/views/catalogo.jsp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/webapp/WEB-INF/views/catalogo.jsp b/src/main/webapp/WEB-INF/views/catalogo.jsp
+--- a/src/main/webapp/WEB-INF/views/catalogo.jsp	(revision a0d75764435f448e586755fd73faeb6c71d054ec)
++++ b/src/main/webapp/WEB-INF/views/catalogo.jsp	(date 1783518868375)
+@@ -1,0 +1,58 @@
++<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
++<%@ taglib prefix="c" uri="jakarta.tags.core" %>
++
++<!Doctype html>
++<html lang="it">
++    <head>
++        <meta charset="UTF-8">
++        <title>SeicenTools</title>
++        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
++        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
++        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
++    </head>
++    <body>
++    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
++
++    <div class="content">
++        <div align="left" class="categorie" >
++            <h2>CATEGORIE</h2><br>
++            <c:forEach var="categ" items="${categorie}">
++                <p>-${categ.categoria}</p><br>
++            </c:forEach>
++        </div>
++        <div align="right" class="main-content">
++            <div class="searchBar">
++
++                <div class="filtro">
++                  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" >
++                    Filtra per
++                  </button>
++                  <ul class="dropdown-menu">
++                        <c:forEach var="opzione" items="">
++                            <li><a class="filtro-item" href="">Action</a></li>
++                        </c:forEach>
++                  </ul>
++                </div>
++            </div><!-- da completare, capire per cosa filtrare-->
++
++            <div class="catalogo">
++                <c:forEach var="list" items="${listaProdotti">
++                    <div class="card" style="width: 18rem;">
++                        <img src="${pageContext.request.contextPath}/imgs/${list.imgPath}" class="card-img-top" alt="...">
++                        <div class="card-body">
++                            <h5 class="card-title">${list.nome}</h5>
++                                <p class="grassetto">${list.prezzo}.</p>
++                                <a href="dettagli_prod? id=${prod.id}" class="btn btn-primary">visualizza</a>
++                        </div>
++                    </div>
++                </c:forEach>
++            </div>
++        </div>
++    </div>
++
++
++    <div id="footerL">
++        <p>&copy; 2026 SeicenTools</p>
++    </div>
++    </body>
++</html>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_07_07_2026_16_23__Changes_.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_07_07_2026_16_23__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_07_07_2026_16_23__Changes_.xml
+new file mode 100644
+--- /dev/null	(date 1783518868359)
++++ b/.idea/shelf/Uncommitted_changes_before_Update_at_07_07_2026_16_23__Changes_.xml	(date 1783518868359)
+@@ -0,0 +1,4 @@
++<changelist name="Uncommitted_changes_before_Update_at_07_07_2026_16_23_[Changes]" date="1783434238701" recycled="false" toDelete="true">
++  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_07_2026_16_23_[Changes]/shelved.patch" />
++  <option name="DESCRIPTION" value="Uncommitted changes before Update at 07/07/2026 16:23 [Changes]" />
++</changelist>
+\ No newline at end of file
+Index: src/main/webapp/WEB-INF/views/carrello.jsp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><%@ page language=\"java\" contentType=\"text/html; charset=UTF-8\" pageEncoding=\"UTF-8\"%>\r\n+<%@ taglib prefix=\"c\" uri=\"jakarta.tags.core\" %>\r\n+\r\n+<!Doctype html>\r\n+<html lang=\"it\">\r\n+    <head>\r\n+        <meta charset=\"UTF-8\">\r\n+        <title>SeicenTools</title>\r\n+        <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB\" crossorigin=\"anonymous\">\r\n+        <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css\">\r\n+        <link rel=\"stylesheet\" href=\"${pageContext.request.contextPath}/css/style.css\">\r\n+    </head>\r\n+    <body>\r\n+    <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI\" crossorigin=\"anonymous\"></script>\r\n+        <nav class=\"navbar nav-color\">\r\n+            <div class=\"navbar-brand\" id=\"brand\">\r\n+                <img src=\"${pageContext.request.contextPath}/imgs/logo.jpg\" alt=\"logo\" id=\"logo\" class=\"mx-3 my-1\"> <!-- qui poi verrÃ  inserita l img del logo (croppato) di EWMS -->\r\n+                SeicenTools\r\n+            </div>\r\n+\r\n+            <div >\r\n+                <a href=\"HomepageServlet\">\r\n+                    <img src=\"${pageContext.request.contextPath}/imgs/homepage.jpg\" alt=\"homepage\" id=\"homepage\" class=\"mx-3 my-1\">\r\n+                </a>\r\n+            </div>\r\n+            <div >\r\n+                <a href=\"\"><!--profiloServlet-->\r\n+                    <img src=\"${pageContext.request.contextPath}/imgs/profilo.jpg\" alt=\"profilo\" id=\"profilo\" class=\"mx-3 my-1\">\r\n+                </a>\r\n+            </div>\r\n+        </nav>\r\n+\r\n+       <h3>Il tuo carrello</h3>\r\n+       <div calss=\"cart\" id=\"cart\">\r\n+            <c:forEach var=\"item\" items=\"${prodOrdine}\">\r\n+                <div class=\"cartItem\">\r\n+                    <c:out value=\"${item}\">\r\n+                    <h3>${sessionScope.prodOrdine.nome}</h3>&nbsp&nbsp\r\n+                    <p>quantita:${sessionScope.prodOrdine.qta}&nbsp&nbsp  prezzo:   </p>\r\n+                    <a href=\"RmvFromCarrelloServlet\">\r\n+                        <button type=\"button\">Rimuovi</button>\r\n+                    </a>\r\n+                </div>\r\n+            </c:forEach>\r\n+       </div>\r\n+\r\n+    </body>\r\n+</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/webapp/WEB-INF/views/carrello.jsp b/src/main/webapp/WEB-INF/views/carrello.jsp
+--- a/src/main/webapp/WEB-INF/views/carrello.jsp	(revision a0d75764435f448e586755fd73faeb6c71d054ec)
++++ b/src/main/webapp/WEB-INF/views/carrello.jsp	(date 1783518868373)
+@@ -1,48 +1,40 @@
+ <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+-+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+-+
+-+<!Doctype html>
+-+<html lang="it">
+-+    <head>
+-+        <meta charset="UTF-8">
+-+        <title>SeicenTools</title>
+-+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+-+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+-+        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
+-+    </head>
+-+    <body>
+-+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+-+        <nav class="navbar nav-color">
+-+            <div class="navbar-brand" id="brand">
+-+                <img src="${pageContext.request.contextPath}/imgs/logo.jpg" alt="logo" id="logo" class="mx-3 my-1"> <!-- qui poi verrÃ  inserita l img del logo (croppato) di EWMS -->
+-+                SeicenTools
+-+            </div>
+-+
+-+            <div >
+-+                <a href="HomepageServlet">
+-+                    <img src="${pageContext.request.contextPath}/imgs/homepage.jpg" alt="homepage" id="homepage" class="mx-3 my-1">
+-+                </a>
+-+            </div>
+-+            <div >
+-+                <a href=""><!--profiloServlet-->
+-+                    <img src="${pageContext.request.contextPath}/imgs/profilo.jpg" alt="profilo" id="profilo" class="mx-3 my-1">
+-+                </a>
+-+            </div>
+-+        </nav>
+-+
+-+       <h3>Il tuo carrello</h3>
+-+       <div calss="cart" id="cart">
+-+            <c:forEach var="item" items="${prodOrdine}">
+-+                <div class="cartItem">
+-+                    <c:out value="${item}">
+-+                    <h3>${sessionScope.prodOrdine.nome}</h3>&nbsp&nbsp
+-+                    <p>quantita:${sessionScope.prodOrdine.qta}&nbsp&nbsp  prezzo:   </p>
+-+                    <a href="RmvFromCarrelloServlet">
+-+                        <button type="button">Rimuovi</button>
+-+                    </a>
+-+                </div>
+-+            </c:forEach>
+-+       </div>
+-+
+-+    </body>
+-+</html>
+\ No newline at end of file
++<%@ taglib prefix="c" uri="jakarta.tags.core" %>
++<!Doctype html>
++html lang="it">
++    <head>
++        <meta charset="UTF-8">
++        <title>SeicenTools</title>
++        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
++        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
++        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
++    </head>
++    <body>
++    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
++
++
++       <h3>Il tuo carrello</h3>
++       <div calss="cart" id="cart">
++            <c:forEach var="item" items="${show-carrello}">
++                <div class="cartItem">
++                    <h3>${item.nome}</h3>&nbsp&nbsp
++                    <p>qta:${item.qta}&nbsp&nbsp  totale:${item.prezzoLotto </p><!--"prezzoLotto è una variabile di ShowCarrelloServlet che fa il prodotto tra prezzo e qta di ogno prodotto nel carrello"-->
++                    <a href="RmvFromCarrelloServlet">
++                        <button type="button">Rimuovi</button>
++                    </a>
++                </div>
++            </c:forEach>
++       </div>
++        <div class="effettuaOrdine">
++            <p class="grassetto" id="prezzo"> Totale ordine: ${item.prezzoTotaleCarrello}</p><br>    <!-- anche questa è una variabile di ShowCarrelloServlet-->
++            <a href="OrdineServlet">
++                <button type="button">ORDINA</button>
++            </a>
++        </div>
++
++
++        <div id="footerL">
++            <p>&copy; 2026 SeicenTools</p>
++        </div>
++    </body>
++</html>
+\ No newline at end of file
