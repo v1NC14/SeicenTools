@@ -17,7 +17,7 @@
         <div align="left" class="categorie" >
             <h2>CATEGORIE</h2><br>
             <c:forEach var="categ" items="${categorie}">
-                <p>-${categ.categoria}</p><br>
+                <p>-${categ}</p><br>
             </c:forEach>
         </div>
         <div align="right" class="main-content">

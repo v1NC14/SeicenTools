@@ -18,6 +18,7 @@ import java.util.List;
 @WebServlet(name = "RmvFromCartServlet", value="/rmv-cart")
 public class RmvFromCarrelloServlet extends HttpServlet {
 
+    @SuppressWarnings("unchecked")
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();

@@ -22,6 +22,7 @@ import java.util.List;
 @WebServlet(name="OrdineServlet"  ,value="/ordine")
 public class OrdineServlet  extends HttpServlet{
 
+    @SuppressWarnings("unchecked")
     protected void doPost(HttpServletRequest req , HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
         Utente utente = (Utente) session.getAttribute("utente");
