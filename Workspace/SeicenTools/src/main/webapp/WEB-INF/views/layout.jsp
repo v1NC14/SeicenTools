@@ -22,18 +22,18 @@
                 <div class="menu-links">
 
                     <c:if test="${viewPath != 'homepage.jsp'}">
-                        <a href="/homepage" class="btn-create"><!--nell'href ho scritto roba a caso per quando farai il backend-->
+                        <a href="homepage?action=homepage.jsp" class="btn-create"><!--nell'href ho scritto roba a caso per quando farai il backend-->
                             <i class="bi bi-house-door mx-2" style="color: #04042a;"></i>
                         </a>
                     </c:if>
 
                     <c:if test="${viewPath != 'profilo.jsp'}">
-                        <a href="/profilo">
+                        <a href="profilo?action=profilo.jsp">
                             <i class="bi bi-person-square mx-2" style="color: #04042a;"></i>
                         </a>
                     </c:if>
                     <c:if test="${viewPath != 'aggiungiProdottoAdmin.jsp'}">
-                        <a href="/crea-prod">
+                        <a href="crea-prod?action=aggiungiProdottoAdmin.jsp">
                             <i class="bi bi-plus-square-fill mx-2" style="color: #04042a;"></i>
                         </a>
                     </c:if>
