@@ -12,67 +12,46 @@
     </head>
     <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-        <nav class="navbar nav-color">
-            <div class="navbar-brand" id="brand">
-                <img src="${pageContext.request.contextPath}/imgs/logo.jpg" alt="logo" id="logo" class="mx-3 my-1"> <!-- qui poi verrÃ  inserita l img del logo (croppato) di EWMS -->
-                SeicenTools
-            </div>
-            <div >
-                 <a href="ShowCarrelloServlet">
-                    <img src="${pageContext.request.contextPath}/imgs/carrello.jpg" alt="carrello" id="carrello" class="mx-3 my-1">
-                </a>
-            </div>
 
-            <div>
-                <a herf=""><!--fare la servlet profilo-->
-                    <img src="${pageContext.request.contextPath}/imgs/profilo.jpg" alt="profilo" id="profilo" class="mx-3 my-1">
-                </a>
+        <div id="Banner" class="Banner" data-bs-ride="carousel">
+            <div class="banner-inner">
+                <div class="banner-item">
+                    <img src="..." class="d-block w-100" alt="...">
+                </div>
+                <div class="banner-item">
+                    <img src="..." class="d-block w-100" alt="...">
+                </div>
+                <div class="banner-item">
+                    <img src="..." class="d-block w-100" alt="...">
+                </div>
             </div>
-
-        </nav>
-
-        <div class="banner">
-            <h1>BANNER</h1>
-        <!-- da completare-->
-        </div>
+        </div><!-- si deve vedere per le immagini-->
 
         <div class="content">
 
-            <aside class="categorie" >
+            <h4>CATEGORIE</h4><br>
+            <div  align="left" class="list-categories">
+               <c:forEach var="cat" items="${categorie}">
+                    <a href="catalogo?filtro=${cat}" class="list-categories-item list-categories-item-action ">${cat}</a>
+               </c:forEach>
+            </div>
 
-                <a href="#">CATEGORIA 1</a>
-                <a href="#">CATEGORIA 2</a>
-                <a href="#">CATEGORIA 3</a>
-                <a href="#">CATEGORIA 5</a>
-            </aside>
-
-            <section class="prodotti">
-                    <div class="product-card">
-                        <a href="DettagliProdottoServlet" >
-                            <img src="" alt="prodotto1" width="200" height="200"><br>Prodotto3
-                        </a>
+            <div align="right" class="productCard">
+                <c:forEach var="prod" items = "${cardProducts}">
+                    <div class="card" style="width: 18rem;">
+                      <img src="${pageContext.request.contextPath}/imgs/${prod.imgPath}" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">${prod.nome}</h5>
+                        <p class="card-text">${prod.descrizione}.</p>
+                        <a href="dettagli_prod?id=${prod.id}" class="btn btn-primary">visualizza</a>
+                      </div>
                     </div>
-                    <div class="product-card">
-                        <a href="DettagliProdottoServlet" >
-                            <img src="" alt="prodotto2" width="200" height="200"><br>Prodotto3
-                        </a>
-                    </div>
-                    <div class="product-card">
-                        <a href="DettagliProdottoServlet" >
-                            <img src="" alt="prodotto3" width="200" height="200"><br>Prodotto3
-                        </a>
-                    </div>
-            </section>
-
+                </c:forEach>
+            </div>
         </div>
-
-
 
         <div id="footerL">
             <p>&copy; 2026 SeicenTools</p>
         </div>
-
-
-
     </body>
 </html>

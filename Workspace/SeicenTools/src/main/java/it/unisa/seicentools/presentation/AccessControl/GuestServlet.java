@@ -26,7 +26,7 @@ public class GuestServlet extends HttpServlet {
 
         if(utente != null){
             session.setAttribute("utente", utente);
-            response.sendRedirect("/homepage");
+            response.sendRedirect(request.getContextPath() + "/homepage");
         }
         else{
             request.setAttribute("error", "Problemi con accesso come guest");

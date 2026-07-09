@@ -31,7 +31,7 @@ public class CreaProdottoServlet extends HttpServlet {
             List<String> categorie = service.getCategorie();
             req.setAttribute("categorie", categorie);
 
-            req.setAttribute("viewPath", "creaProdotto.jsp");
+            req.setAttribute("viewPath", "aggiungiProdottoAdmin.jsp");
             req.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(req,resp);
         } catch (SQLException e) {
             throw new RuntimeException(e);
