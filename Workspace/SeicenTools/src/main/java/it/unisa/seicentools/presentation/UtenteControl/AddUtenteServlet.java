@@ -21,7 +21,6 @@ public class AddUtenteServlet  extends HttpServlet {
     //si deve cambiare la servlet capendo bene cosa fare nel doget e cosa fare nel dopost, per ora lascio così - 13:39 01/07/2026
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HttpSession session = request.getSession();
         IUserService service = new UserService();
 
         //dati che verranno presi da un form.

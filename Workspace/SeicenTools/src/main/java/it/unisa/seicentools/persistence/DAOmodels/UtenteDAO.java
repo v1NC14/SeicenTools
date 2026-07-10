@@ -15,11 +15,11 @@ public class UtenteDAO implements IUtenteDAO {
     // REGISTRAZIONE UTENTE
     @Override
     public boolean registraUtente(Connection conn, Utente user, String pwd) throws Exception{
-        String query = "INSERT INTO utente (nome, email, ruolo, hashPWd) VALUES (?, ?, ?, ?)";
+        String query = "INSERT INTO utente (nome, email, ruolo, hashPwd) VALUES (?, ?, ?, ?)";
 
         if (conn != null) {
             try (PreparedStatement ps = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
-                String hashedPassword = BCrypt.hashpw(user.getPwd(), BCrypt.gensalt());
+                String hashedPassword = BCrypt.hashpw(pwd, BCrypt.gensalt());
 
                 ps.setString(1, user.getNome());
                 ps.setString(2, user.getEmail());

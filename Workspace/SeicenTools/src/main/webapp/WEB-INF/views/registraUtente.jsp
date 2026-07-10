@@ -27,7 +27,7 @@
                 <div align="center" class="my-sm-1">Ruolo</div>
                 <select id="ruolo" name="ruolo" placeholder="Seleziona un ruolo">
                     <option value="USER" selected>Utente</option>
-                    <option value="ADMIN" <c:if test="${sessionScope.utente.ruolo != 'ADMIN'}">hidden</c:if>>Admin</option>
+                    <option value="ADMIN" >Admin</option>
 
                 </select>
             </div>
