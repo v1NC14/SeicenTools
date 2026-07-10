@@ -5,6 +5,7 @@ import it.unisa.seicentools.application.productMGMT.interfaces.IAdminProdService
 import it.unisa.seicentools.application.productMGMT.interfaces.IcommonProdService;
 import it.unisa.seicentools.application.profileMGMT.UserService;
 import it.unisa.seicentools.application.profileMGMT.interfaces.IUserService;
+import it.unisa.seicentools.models.Ruolo;
 import it.unisa.seicentools.models.Utente;
 import it.unisa.seicentools.persistence.DAOmodels.CarrelloDAO;
 import it.unisa.seicentools.persistence.interfaces.ICarrelloDAO;
@@ -24,16 +25,16 @@ public class logoutServlet  extends HttpServlet {
         HttpSession session = request.getSession();
         Utente utente = (Utente)session.getAttribute("utente");
         IcommonProdService service = new commonProdService();
-        IUserService userService = new UserService();
 
         if (session != null) {
-            if(utente.getRuolo().equals("GUEST")) {
+            if(utente.getRuolo().equals(Ruolo.GUEST)) {
                 try {
                     service.cancellaCarrello(utente.getId());
                 } catch (SQLException e) {
                     throw new RuntimeException(e);
                 }
             }
+            session.setAttribute("utente", null);
             session.invalidate();//invalida la sessione.
         }
         request.setAttribute("error", "logout effettuato");

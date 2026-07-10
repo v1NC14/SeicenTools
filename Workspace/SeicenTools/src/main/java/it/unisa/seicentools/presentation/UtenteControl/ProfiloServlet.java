@@ -19,17 +19,11 @@ public class ProfiloServlet extends HttpServlet {
         HttpSession session = request.getSession();
         Utente utente = (Utente) session.getAttribute("utente");
 
-        if(session != null){
-            if(utente != null){
-                request.setAttribute("viewPath", "profilo.jsp");
-                request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
-            }else {
-                request.setAttribute("errore", "Utente non loggato");
-                request.setAttribute("viewPath", "login.jsp");
-                request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
-            }
-        }else{
-            request.setAttribute("errore", "Sessione invalidata, riesegui l'accesso");
+        if (utente != null) {
+            request.setAttribute("viewPath", "profilo.jsp");
+            request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
+        } else {
+            request.setAttribute("errore", "Utente non loggato");
             request.setAttribute("viewPath", "login.jsp");
             request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
         }

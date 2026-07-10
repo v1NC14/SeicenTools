@@ -29,6 +29,7 @@ public class CreaProdottoServlet extends HttpServlet {
 
         try {
             List<String> categorie = service.getCategorie();
+            categorie.add("fine");
             req.setAttribute("categorie", categorie);
 
             req.setAttribute("viewPath", "aggiungiProdottoAdmin.jsp");

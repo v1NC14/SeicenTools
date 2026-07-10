@@ -22,11 +22,10 @@ public class LoginServlet  extends HttpServlet {
            Utente utente = sessionService.getUtente(username);
            HttpSession session = request.getSession();
            
-           if(utente != null){
-               session.removeAttribute("utente"); //cancello per sicurezza l'utente in sessione prima di assegnarlo
-               session.setAttribute("utente",utente);
-               response.sendRedirect(request.getContextPath() + "/homepage");
-           }
+           session.removeAttribute("utente"); //cancello per sicurezza l'utente in sessione prima di assegnarlo
+           session.setAttribute("utente",utente);
+           response.sendRedirect(request.getContextPath() + "/homepage");
+
        }else {
            request.setAttribute("error", "Login o Password invalide");
            doGet(request, response);

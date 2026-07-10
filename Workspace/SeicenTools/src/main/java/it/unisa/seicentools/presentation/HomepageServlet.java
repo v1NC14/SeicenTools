@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.util.List;
 
 /*
 * DA COMPLETARE - per ora va bene per provare
@@ -24,10 +25,10 @@ public class HomepageServlet extends HttpServlet {
         try {
            // List<Prodotto> random = service.getRandProd(8);
            // List<Prodotto> banner = service.getRandProd(4);
-            //List<String> categorie = service.getCategorie();
+            List<String> categorie = service.getCategorie();
 
            // request.setAttribute("cardProducts", random);
-           // request.setAttribute("categorie", categorie);
+            request.setAttribute("categorie", categorie);
             //request.setAttribute("bannerProducts", banner);
             request.setAttribute("viewPath","homepage.jsp");
             request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
