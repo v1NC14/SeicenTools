@@ -13,15 +13,15 @@ import jakarta.servlet.http.HttpServlet;
 
 import java.io.IOException;
 
-@WebServlet(name="DettagliProdotto", value="/dettagli-prod")
+@WebServlet(name="DettagliProdottoServlet", value="/dettagli-prod")
 public class DettagliProdottoServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req , HttpServletResponse resp) throws ServletException, IOException {
         IcommonProdService service = new commonProdService();
-        Integer idPrd = (Integer) req.getAttribute("id");
+        int idPrd = Integer.parseInt(req.getParameter("idPrd"));
 
         try {
-            Prodotto tmp = service.getProdotto(idPrd.intValue());
+            Prodotto tmp = service.getProdotto(idPrd);
 
             req.setAttribute("prodotto", tmp);
             req.setAttribute("viewPath", "productDetail.jsp");

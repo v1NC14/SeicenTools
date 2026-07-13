@@ -6,14 +6,10 @@
          version="6.0">
 
         <display-name>SeicenTools</display-name>
-        <welcome-file-list>
-                <welcome-file>login.jsp</welcome-file>
-        </welcome-file-list>
-        <error-page>
-        <error-code>404</error-code>
-        <location>/WEB-INF/views/error404.jsp</location>
-        </error-page>
 
         <session-config>
         <session-timeout>30</session-timeout> </session-config>
+        <welcome-file-list>
+                <welcome-file>index</welcome-file>
+        </welcome-file-list>
 </web-app>

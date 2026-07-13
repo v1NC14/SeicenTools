@@ -5,8 +5,8 @@
     <c:forEach var="item" items="${prodottiUtente}">
         <div class="cartItem">
             <h3>${item.nome}</h3>&nbsp&nbsp
-            <p>qta:${item.qta}&nbsp&nbsp  totale:${item.prezzoLotto </p><!--"prezzoLotto è una variabile di ShowCarrelloServlet che fa il prodotto tra prezzo e qta di ogno prodotto nel carrello"-->
-            <a href="RmvFromCarrelloServlet"><button type="button">Rimuovi</button></a>
+            <p>qta:${item.qta}&nbsp&nbsp  totale:${item.prezzoLotto} </p><!--"prezzoLotto è una variabile di ShowCarrelloServlet che fa il prodotto tra prezzo e qta di ogno prodotto nel carrello"-->
+            <a href="${pageContext.request.contextPath}/rmv-cart?id=${item.id}"><button type="button">Rimuovi</button></a>
         </div>
     </c:forEach>
 </div>

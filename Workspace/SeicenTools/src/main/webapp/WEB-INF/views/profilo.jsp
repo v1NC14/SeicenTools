@@ -20,10 +20,10 @@
         </div>
 
         <div class="my-2">
-            <a href="LogoutServlet">
+            <a href="${pageContext.request.contextPath}/logout">
                         <button type="button" class="btn btn-danger mx-1">Logout<i class="bi bi-box-arrow-right"></i></button>
                     </a>
-            <a href="OrdineServlet">
+            <a href="${pageContext.request.contextPath}/ordini-utente">
                 <button type="button" class="btn btn-danger mx-1">Elenco Ordini<i class="bi bi-box-arrow-right"></i></button>
             </a>
         </div>

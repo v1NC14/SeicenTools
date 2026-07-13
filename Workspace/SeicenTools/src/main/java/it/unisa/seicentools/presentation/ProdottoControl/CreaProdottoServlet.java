@@ -10,6 +10,7 @@ import it.unisa.seicentools.models.Prodotto;
 import it.unisa.seicentools.models.Ruolo;
 import it.unisa.seicentools.models.Utente;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 
@@ -19,6 +20,12 @@ import java.math.BigDecimal;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.UUID;
+
+@MultipartConfig(
+        fileSizeThreshold = 1024 * 1024,
+        maxFileSize = 10 * 1024 * 1024,
+        maxRequestSize = 10 * 1024 * 1024
+)
 
 @WebServlet(name="CreaProdotto", value="/crea-prod")
 public class CreaProdottoServlet extends HttpServlet {
@@ -68,14 +75,11 @@ public class CreaProdottoServlet extends HttpServlet {
             try{
                 if(service.creaProdotto(tmp)){
                     req.setAttribute("errore", "Prodotto creato con successo");
-                    req.setAttribute("id", tmp.getId());
-                    resp.sendRedirect(req.getContextPath()+"/dettagli-prod");
+                    resp.sendRedirect(req.getContextPath()+"/dettagli-prod?idPrd=" + tmp.getId());
                 }else{
                     req.setAttribute("errore", "Errore durante la registrazione del prodotto");
-                    req.setAttribute("viewPath", "homepage.jsp");
+                    resp.sendRedirect(req.getContextPath()+"/homepage");
                 }
-
-                req.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(req, resp);
             }catch(SQLException e){
                 throw new RuntimeException(e);
             }

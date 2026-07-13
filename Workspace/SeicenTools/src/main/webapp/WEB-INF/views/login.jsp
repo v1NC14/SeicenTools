@@ -1,8 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
-
-<script src="${pageContext.request.contextPath}/js/validazioneLogin.js"></script>
-
 <div>
     <div class="login_form">
         <c:if test="${error != null}">
@@ -10,7 +7,7 @@
                 <p>${error}</p>
             </div>
         </c:if>
-        <form name="form1" action = "login" method="post" onSubmit="return validateForm()">
+        <form name="form1" action = "${pageContext.request.contextPath}/login" method="post">
             <div class="form-group">
                 <div align="center" class="my-sm-1">Email/Username</div>
                 <input type="text" id="username" name="username"  placeholder="Inserisci il tuo username">
@@ -29,7 +26,7 @@
                 <button type = "submit" class="btn-login">Ospite</button>
             </div>
         </form>
-        <form name="registraForm" action="add-utente" method="get">
+        <form name="registraForm" action="${pageContext.request.contextPath}/add-utente" method="get">
             <div><button type = "submit" class="btn-login">Registrati  <i class="bi bi-person-plus-fill"></i></button></div>
         </form>
     </div>

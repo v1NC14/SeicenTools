@@ -7,7 +7,7 @@
             <div class="error-banner mx-2"><p>${error}</p></div>
         </c:if>
 
-        <form name = "form1" action = "crea-prod" method = "post">
+        <form name = "form1" action = "${pageContext.request.contextPath}/crea-prod" method = "post" enctype="multipart/form-data">
         <div id = "dataUpload">
             <div class="form-group">
                 <div align="center" class="my-sm-1">Nome</div>
@@ -27,9 +27,9 @@
             <div class="form-group">
                 <div align="center" class="my-sm-1">Categoria</div>
                     <select id="categoria" name="categoria" placeholder = "scegli">
-                        <c:foreach var = "c" items = "${categorie}">
+                        <c:forEach var = "c" items = "${categorie}">
                             <option value = "${c}">${c}</option>
-                        </c:foreach>
+                        </c:forEach>
                     </select>
                     <small id="error-username" class="error-msg" style="color: red"></small>
             </div>

@@ -50,7 +50,7 @@ public class OrdineServlet  extends HttpServlet{
                 e.printStackTrace();
             }
         }else {
-            req.setAttribute("errore", "/Utente non loggato");
+            req.setAttribute("errore", "Utente non loggato");
             req.setAttribute("viewPath", "login.jsp");
             req.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(req, resp);
         }

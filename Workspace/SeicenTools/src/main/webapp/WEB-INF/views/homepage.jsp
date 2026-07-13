@@ -20,18 +20,18 @@
     <h4>CATEGORIE</h4><br>
     <div  align="left" class="list-categories">
         <c:forEach var="cat" items="${categorie}">
-            <a href="catalogo?filtro=${cat}" class="list-categories-item list-categories-item-action ">${cat}</a>
+            <a href="${pageContext.request.contextPath}/catalogo?filtro=${cat}" class="list-categories-item list-categories-item-action ">${cat}</a>
         </c:forEach>
     </div>
 
     <div align="right" class="productCard">
         <c:forEach var="prod" items = "${cardProducts}">
             <div class="card" style="width: 18rem;">
-                <img src="${pageContext.request.contextPath}/imgs/${prod.imgPath}" class="card-img-top" alt="...">
+                <img src="${pageContext.request.contextPath}/imgs/products/${prod.imgPath}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">${prod.nome}</h5>
                     <p class="card-text">${prod.descrizione}.</p>
-                    <a href="dettagli_prod?id=${prod.id}" class="btn btn-primary">visualizza</a>
+                    <a href="${pageContext.request.contextPath}/dettagli_prod?idPrd=${prod.id}" class="btn btn-primary">visualizza</a>
                 </div>
             </div>
         </c:forEach>

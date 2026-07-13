@@ -21,13 +21,13 @@
         </div><!-- da completare, capire per cosa filtrare-->
 
         <div class="catalogo">
-            <c:forEach var="list" items="${listaProdotti">
+            <c:forEach var="list" items="${listaProdotti}">
                 <div class="card" style="width: 18rem;">
                     <img src="${pageContext.request.contextPath}/imgs/${list.imgPath}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">${list.nome}</h5>
                         <p class="grassetto">${list.prezzo}.</p>
-                            <a href="dettagli_prod? id=${prod.id}" class="btn btn-primary">visualizza</a>
+                            <a href="${pageContext.request.contextPath}/dettagli_prod?id=${prod.id}" class="btn btn-primary">visualizza</a>
                     </div>
                 </div>
             </c:forEach>

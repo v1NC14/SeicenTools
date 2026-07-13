@@ -9,7 +9,7 @@
                 <p>${error}</p>
             </div>
         </c:if>
-        <form name="form1" action = "add-utente" method="post">
+        <form name="form1" action = "${pageContext.request.contextPath}/add-utente" method="post">
             <div class="form-group">
                 <div align="center" class="my-sm-1">Nome</div>
                 <input type="text" id="nome" name="nome"  placeholder="Inserisci il tuo nome">
