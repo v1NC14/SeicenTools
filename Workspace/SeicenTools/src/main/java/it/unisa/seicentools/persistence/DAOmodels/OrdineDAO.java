@@ -1,8 +1,10 @@
 package it.unisa.seicentools.persistence.DAOmodels;
 import it.unisa.seicentools.models.Ordine;
 import it.unisa.seicentools.models.Prodotto;
+import it.unisa.seicentools.models.Utente;
 import it.unisa.seicentools.persistence.DBConnection;
 import it.unisa.seicentools.persistence.interfaces.IOrdineDAO;
+import it.unisa.seicentools.persistence.interfaces.IUtenteDAO;
 
 
 import java.sql.*;
@@ -172,5 +174,27 @@ public class OrdineDAO implements IOrdineDAO {
             e.printStackTrace();
             throw new SQLException("Connessione con il database fallita...");
         }
+    }
+
+    @Override
+    public List<Ordine> findByUser(int id, int offset, int limit) throw Exception{
+        List<Ordine> ordini = new ArrayList<>();
+        int page_size=5;
+        int limit = page_size;
+        int  totalOrders= Integer.parseInt("SELECT COUNT(*) FROM ordine WHERE id_utente = ?;");
+        int numPag= totalOrders/page_size;
+        int offset = (numPag - 1) * page_size;
+        String query = "SELECT * FROM ordine WHERE id_utente = ? ORDER BY data_ordine DESC LIMIT=? OFFSET=?;"
+
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement ps = conn.prepareStatement(query)) {
+            ps.setInt(1,id);
+            ps.setInt(2,limit);
+            ps.setInt(3,offset);
+        }
+        catch(Exception e){
+
+        }
+
     }
 }

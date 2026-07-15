@@ -12,7 +12,14 @@
             </div>
         </div>
         <div class="body-content">
-
+            <nav aria-label="pagination-nav">
+              <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#"> < </a></li>
+                <c:forEach var="pagina" items="${totalPages}">
+                    <li class="page-item"><a class="page-link" href="#">${currentPage}+1</a></li>
+                </c:forEach>
+              </ul>
+            </nav>
         </div>
     </div>
 

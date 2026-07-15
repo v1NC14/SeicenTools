@@ -68,5 +68,21 @@ public class UserProdService implements IUserProdService {
         return null;
     }
 
-    //aggiungere una utility per ottenere una List<Carrello> dato un ordine
+    public List<Ordine> getOrdiniUtente(int id) throws Exception {
+        if(id<0){
+            throw new IllegalArgumentException("L'id non può essere negativo, vuoto o null");
+        }
+        else{
+            IOrdineDAO ordineDAO = service.getOrdineDAO();
+            int offset;
+            int limit;
+            try{
+                return ordineDAO.findByUser(id,offset,limit);
+            }
+            catch (Exception e) {
+                throw new Exception(e);
+            }
+        }
+
+    }
 }

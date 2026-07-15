@@ -5,13 +5,13 @@
 <div id="Banner" class="Banner" data-bs-ride="carousel">
     <div class="banner-inner">
         <div class="banner-item">
-            <img src="..." class="d-block w-100" alt="...">
+            <img src="${pageContext.request.contextPath}/imgs/products/..." class="d-block w-100" alt="...">
         </div>
         <div class="banner-item">
-            <img src="..." class="d-block w-100" alt="...">
+            <img src="${pageContext.request.contextPath}/imgs/products/..."" class="d-block w-100" alt="...">
         </div>
         <div class="banner-item">
-            <img src="..." class="d-block w-100" alt="...">
+            <img src="${pageContext.request.contextPath}/imgs/products/..."" class="d-block w-100" alt="...">
         </div>
     </div>
 </div><!-- si deve vedere per le immagini-->
