@@ -15,7 +15,7 @@ public class OrdineDAO implements IOrdineDAO {
 
     @Override
     public boolean creaOrdine(Ordine ordine) throws Exception{
-        String query = "INSERT INTO ordini (user_id, tot, qta, indirizzoConsegna) VALUES (?, ?, ?, ?)";
+        String query = "INSERT INTO ordine (user_id, tot, qta, indirizzoConsegna) VALUES (?, ?, ?, ?)";
 
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
@@ -177,24 +177,24 @@ public class OrdineDAO implements IOrdineDAO {
     }
 
     @Override
-    public List<Ordine> findByUser(int id, int offset, int limit) throw Exception{
+    public int countOrdersByUser(int id_utente) throws Exception{
         List<Ordine> ordini = new ArrayList<>();
-        int page_size=5;
-        int limit = page_size;
-        int  totalOrders= Integer.parseInt("SELECT COUNT(*) FROM ordine WHERE id_utente = ?;");
-        int numPag= totalOrders/page_size;
-        int offset = (numPag - 1) * page_size;
-        String query = "SELECT * FROM ordine WHERE id_utente = ? ORDER BY data_ordine DESC LIMIT=? OFFSET=?;"
+        String query = "SELECT COUNT(*) FROM ordine WHERE id_utente = ?";
 
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement(query)) {
-            ps.setInt(1,id);
-            ps.setInt(2,limit);
-            ps.setInt(3,offset);
-        }
-        catch(Exception e){
 
+            ps.setInt(1, id_utente);
+            ResultSet rs = ps.executeQuery();
+
+            if(rs.next()){
+                return rs.getInt(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new SQLException("Connessione con il database fallita...");
         }
 
+        return 0;
     }
 }

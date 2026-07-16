@@ -17,4 +17,6 @@ public interface IOrdineDAO {
     public boolean updateOrdine(Ordine ordine) throws Exception;
 
     public boolean deleteOrdine(Ordine ordine) throws Exception;
+
+    public int countOrdersByUser(int id_utente) throws Exception;
 }

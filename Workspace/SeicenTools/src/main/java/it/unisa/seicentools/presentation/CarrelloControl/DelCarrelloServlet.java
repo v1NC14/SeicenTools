@@ -30,7 +30,7 @@ public class DelCarrelloServlet extends HttpServlet {
              req.setAttribute("viewPath", "carrello.jsp");
              req.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(req, resp);
          }catch(Exception e){
-             e.printStackTrace();
+             throw new RuntimeException(e);
          }
     }
 

@@ -35,7 +35,7 @@ public class RmvFromCarrelloServlet extends HttpServlet {
             session.setAttribute("carrello", carrello);
             resp.sendRedirect(req.getContextPath() + "/show-carrello");
         } catch (Exception e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 
