@@ -15,7 +15,7 @@ public class OrdineDAO implements IOrdineDAO {
 
     @Override
     public boolean creaOrdine(Ordine ordine) throws Exception{
-        String query = "INSERT INTO ordine (user_id, tot, qta, indirizzoConsegna) VALUES (?, ?, ?, ?)";
+        String query = "INSERT INTO ordine (id_utente, tot, qta, indirizzoConsegna) VALUES (?, ?, ?, ?)";
 
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {

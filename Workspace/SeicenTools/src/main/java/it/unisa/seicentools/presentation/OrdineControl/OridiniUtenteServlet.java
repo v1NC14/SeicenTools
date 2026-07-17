@@ -46,6 +46,7 @@ public class OridiniUtenteServlet extends HttpServlet {
             List<Ordine> lista = service.getOrdiniUtente(utente.getId());
             request.setAttribute("numOrders", numOrders);
             request.setAttribute("page", page);
+            request.setAttribute("totalPages", totalPages);
             request.setAttribute("orders",lista);
             request.setAttribute("offset", offset);
             request.setAttribute("viewPath","ordiniUtente.jsp");

@@ -19,7 +19,8 @@
         <div id="nav-pagination">
             <nav aria-label="Page navigation example">
               <ul class="pagination">
-                <li class="page-item">
+
+                <li class="page-item"<c:if test="${page <= 1}">hidden</c:if>>
                   <a class="page-link" href="${pageContext.request.contextPath}/ordini-utente?page=${page - 1}" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
                 </li>
 
@@ -27,7 +28,7 @@
                 <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/ordini-utente?page=${i}"><c:out value = "${i}"></c:out></a></li>
                 </c:forEach>
 
-                <li class="page-item">
+                <li class="page-item"<c:if test="${page >= totalPages}">hidden</c:if>>
                     <a class="page-link" href="${pageContext.request.contextPath}/ordini-utente?page=${page + 1}" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
                 </li>
               </ul>
