@@ -25,23 +25,33 @@ public class OridiniUtenteServlet extends HttpServlet {
         Utente utente = (Utente) session.getAttribute("utente");
         IOrderService service = new OrderService();
 
-       //int offset= Integer.parseInt(request.getParameter("offset"));  //non si calcola così
         final int limit = 5;
 
+        int page = 1;
+        int offset;
+        int actualPage = Integer.parseInt(request.getParameter("page"));
+
+        if(actualPage > 1)
+            page = actualPage;
 
         try {
             int numOrders = service.getNumOrders(utente.getId());
+            int totalPages = (numOrders + limit - 1) / limit;
+            if(page > 1){
+                int n = page - 1;
+                offset = n * limit;
+            }else{
+                offset = 1;
+            }
             List<Ordine> lista = service.getOrdiniUtente(utente.getId());
-            request.setAttribute("orders", numOrders);
-            request.setAttribute("totalPages",numOrders/limit);
-            request.setAttribute("currentPage", 0);
+            request.setAttribute("numOrders", numOrders);
+            request.setAttribute("page", page);
+            request.setAttribute("orders",lista);
+            request.setAttribute("offset", offset);
+            request.setAttribute("viewPath","ordiniUtente.jsp");
+            request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-
-
-        request.setAttribute("viewPath", "ordiniUtente.jsp");
-        request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
     }
-
 }

@@ -23,7 +23,7 @@
             <a href="${pageContext.request.contextPath}/logout">
                         <button type="button" class="btn btn-danger mx-1">Logout<i class="bi bi-box-arrow-right"></i></button>
                     </a>
-            <a href="${pageContext.request.contextPath}/ordini-utente">
+            <a href="${pageContext.request.contextPath}/ordini-utente?page=1">
                 <button type="button" class="btn btn-danger mx-1">Elenco Ordini<i class="bi bi-box-arrow-right"></i></button>
             </a>
         </div>

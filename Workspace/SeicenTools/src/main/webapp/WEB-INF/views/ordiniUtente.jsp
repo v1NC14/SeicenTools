@@ -1,31 +1,37 @@
-
-    <div class="content">
-        <div class="head-content">
-            <h3 class="grassetto">I TUOI ORDINI</h3>
-            <div class="filtro">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" >Filtra per</button>
-                <ul class="dropdown-menu">
-                    <c:forEach var="opzione" items="">
-                        <li><a class="filtro-item" href=""> </a></li>
-                    </c:forEach>
-                </ul>
-            </div>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<c:choose>
+    <c:when test = "${numOrders} == 0">
+        <div id = "noOrders"><h3>Nessun Ordine da mostrare</h3></div>
+    </c:when>
+    <c:otherwise>
+        <div id = "ordini-page">
+            <span><h2>I tuoi ordini</h2></span>
+            <c:forEach items="${orders}" var = "ordine" begin = "${offset}" end = "${offset + limit - 1}">
+                <div id = "ord-utente my-3">
+                    <span class="badge bg-info">Ordine #${ordine.id}</span>
+                    <span class="badge bg-secondary">#${ordine.dataCreazione}</span>
+                    <span class="fw-bold ms-2">${ordine.indirizzoConsegna}</span>
+                    <span class="badge bg-success ms-4">#${ordine.tot}</span>
+                </div>
+            </c:forEach>
         </div>
-        <div class="body-content">
-            <nav aria-label="pagination-nav">
+        <div id="nav-pagination">
+            <nav aria-label="Page navigation example">
               <ul class="pagination">
-                <li class="page-item"><a class="page-link" href="#"> < </a></li>
-                <c:forEach var="pagina" items="${totalPages}">
-                    <li class="page-item"><a class="page-link" href="#">${currentPage}+1</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="${pageContext.request.contextPath}/ordini-utente?page=${page - 1}" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+                </li>
+
+                <c:forEach begin = "1" end = "${totalPages}" var = "i">
+                <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/ordini-utente?page=${i}"><c:out value = "${i}"></c:out></a></li>
                 </c:forEach>
+
+                <li class="page-item">
+                    <a class="page-link" href="${pageContext.request.contextPath}/ordini-utente?page=${page + 1}" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+                </li>
               </ul>
             </nav>
         </div>
-    </div>
-
-
-
-
-    <div id="footerL">
-        <p>&copy; 2026 SeicenTools</p>
-    </div>
+    </c:otherwise>
+</c:choose>

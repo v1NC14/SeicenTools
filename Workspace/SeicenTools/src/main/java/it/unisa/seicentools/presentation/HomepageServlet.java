@@ -25,13 +25,13 @@ public class HomepageServlet extends HttpServlet {
         IcommonProdService service = new commonProdService();
 
         try {
-            List<Prodotto> random = service.getRandProd(8);
-            List<Prodotto> banner = service.getRandProd(4);
+            //List<Prodotto> random = service.getRandProd(8);
+            //List<Prodotto> banner = service.getRandProd(4);
             List<String> categorie = service.getCategorie();
 
-            request.setAttribute("cardProducts", random);
+            //request.setAttribute("cardProducts", random);
             request.setAttribute("categorie", categorie);
-            request.setAttribute("bannerProducts", banner);
+            //request.setAttribute("bannerProducts", banner);
             request.setAttribute("viewPath","homepage.jsp");
             request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
         } catch (SQLException e) {//SQLException
