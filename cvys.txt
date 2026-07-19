@@ -1,8 +1,0 @@
- -OrdiniUtenteServlet
--metodo 	findByUtente(int idUtente, int offset,int limit) in OrdiniDAO
-- aggiornare la jsp 'gestisciUtenti'
--utlizzare json (ordine)
--utilizzare ajax (carrello)
--AGGIUSTARE LOGIN 
--controllare il css
--FILTRARE ACCESSIBILITà navbar
