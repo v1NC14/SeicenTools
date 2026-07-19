@@ -21,19 +21,19 @@
             <c:if test="${viewPath != 'login.jsp'}">
                 <div class="menu-links">
 
-                    <c:if test="${viewPath != 'homepage.jsp' && viewPath != 'registraUtente.jsp'}">
+                    <c:if test="${viewPath != 'homepage.jsp' && viewPath != 'registraUtente.jsp'}"> <!-- homepage btn -->
                         <a href="${pageContext.request.contextPath}/homepage?action=homepage.jsp" class="btn-create"><!--nell'href ho scritto roba a caso per quando farai il backend-->
                             <i class="bi bi-house-door mx-2" style="color: #04042a;"></i>
                         </a>
                     </c:if>
 
-                    <c:if test="${viewPath != 'profilo.jsp' && viewPath != 'registraUtente.jsp'}">
+                    <c:if test="${viewPath != 'profilo.jsp' && viewPath != 'registraUtente.jsp'}"> <!-- registra utente btn -->
                         <a href="${pageContext.request.contextPath}/profilo?action=profilo.jsp">
                             <i class="bi bi-person-square mx-2" style="color: #04042a;"></i>
                         </a>
                     </c:if>
-                    <c:if test="${viewPath != 'aggiungiProdottoAdmin.jsp' && viewPath != 'registraUtente.jsp'}">
-                        <a href="${pageContext.request.contextPath}/crea-prod?action=aggiungiProdottoAdmin.jsp">
+                    <c:if test="${viewPath != 'aggiungiProdottoAdmin.jsp' && viewPath != 'registraUtente.jsp' && sessionScope.utente.ruolo == 'ADMIN'}">
+                        <a href="${pageContext.request.contextPath}/crea-prod?action=aggiungiProdottoAdmin.jsp"> <!-- aggiungi prodotto btn -->
                             <i class="bi bi-plus-square-fill mx-2" style="color: #04042a;"></i>
                         </a>
                     </c:if>

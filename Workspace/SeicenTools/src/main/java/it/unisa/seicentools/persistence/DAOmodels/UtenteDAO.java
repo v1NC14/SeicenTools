@@ -134,7 +134,6 @@ public class UtenteDAO implements IUtenteDAO {
                 lista.add(utente);
             }
         }catch (SQLException e){
-            e.printStackTrace();
             throw new SQLException("Connessione con il database fallita...");
         }
         return lista;
@@ -170,7 +169,7 @@ public class UtenteDAO implements IUtenteDAO {
         }
     }
 
-    // RECUPERO DELLA PASSWORD OVE SERVISSE
+    // RECUPERO DELLA PASSWORD (UTILITY)
     @Override
     public String recuperaPassword(String email) throws Exception {
 
@@ -197,7 +196,7 @@ public class UtenteDAO implements IUtenteDAO {
 
     @Override
     public boolean updateUtente(Utente utente) throws Exception{
-        String query = "UPDATE ordine SET (nome, email, ruolo) VALUES (?, ?, ?) WHERE id = ?";
+        String query = "UPDATE utente SET nome = ?, email = ?, ruolo = ? WHERE id = ?";
 
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {

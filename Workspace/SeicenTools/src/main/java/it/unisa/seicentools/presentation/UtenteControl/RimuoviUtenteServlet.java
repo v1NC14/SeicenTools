@@ -20,19 +20,33 @@ public class RimuoviUtenteServlet extends HttpServlet {
         HttpSession session = request.getSession();
         IUserService service = new UserService();
         Utente utente = (Utente) session.getAttribute("utente");
-        Utente user = (Utente) request.getAttribute("utente");
+        int idUser = Integer.parseInt(request.getParameter("id"));
+        Utente user = null;
 
         if(utente != null){
             try {
-                if(service.deleteUser(user)){
-                    request.setAttribute("errore", "Utente eliminato con successo."); //anche se non è un errore, chiamarlo così ci evita di gestire altre stringhe nelle jsp
+                user = service.getUser(idUser);
 
+                if(!user.equals(utente)){
+                    try {
+                        if(service.deleteUser(user)){
+                            request.setAttribute("errore", "Utente eliminato con successo."); //anche se non è un errore, chiamarlo così ci evita di gestire altre stringhe nelle jsp
+                            request.setAttribute("viewPath", "gestioneUtenti.jsp");
+                        }
+                        else{
+                            request.setAttribute("errore", "Errore durante l'eliminazione dell utente.");
+                            request.setAttribute("viewPath", "gestioneUtenti.jsp");
+                        }
+                        request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
+                    } catch (SQLException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
                 else{
-                    request.setAttribute("errore", "Errore durante l'eliminazione dell utente.");
+                    request.setAttribute("errore", "Impossibile eliminare utente in sessione.");
                     request.setAttribute("viewPath", "gestioneUtenti.jsp");
+                    request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
                 }
-                request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }

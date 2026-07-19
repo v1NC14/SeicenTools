@@ -156,7 +156,7 @@ public class ProdottoDAO implements IProdottoDAO {
 
     @Override
     public boolean updateProdotto(Prodotto p) throws Exception{
-        String query = "UPDATE ordine SET (nome, categoria, descrizione, prezzo, imgPath, disponibilita) VALUES (?, ?, ?, ?, ?, ?) WHERE id = ?";
+        String query = "UPDATE prodotto SET nome = ?, categoria = ?, descrizione = ?, prezzo = ?, imgPath = ?, disponibilita = ? WHERE id = ?";
 
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
@@ -172,7 +172,6 @@ public class ProdottoDAO implements IProdottoDAO {
             ps.executeUpdate();
             return true;
         } catch (Exception e) {
-            e.printStackTrace();
             throw new SQLException("Connessione con il database fallita...");
         }
     }

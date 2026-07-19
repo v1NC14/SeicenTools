@@ -41,7 +41,6 @@ public class OrdineDAO implements IOrdineDAO {
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
             throw new SQLException("Connessione con il database fallita...");
         }
     }
@@ -71,7 +70,6 @@ public class OrdineDAO implements IOrdineDAO {
                 ordini.add(tmp);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
             throw new SQLException("Connessione con il database fallita...");
         }
         return ordini;
@@ -101,7 +99,6 @@ public class OrdineDAO implements IOrdineDAO {
                 ordini.add(tmp);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
             throw new SQLException("Connessione con il database fallita...");
         }
         return ordini;
@@ -131,12 +128,12 @@ public class OrdineDAO implements IOrdineDAO {
                 ordini.add(tmp);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
             throw new SQLException("Connessione con il database fallita...");
         }
         return ordini;
     }
 
+    /*
     @Override
     public boolean updateOrdine(Ordine ordine) throws Exception{
         //id_utente, qta, totale, indirizzo
@@ -158,6 +155,7 @@ public class OrdineDAO implements IOrdineDAO {
             throw new SQLException("Connessione con il database fallita...");
         }
     }
+    */
 
     @Override
     public boolean deleteOrdine(Ordine ordine) throws Exception{
@@ -171,7 +169,6 @@ public class OrdineDAO implements IOrdineDAO {
 
             return true;
         } catch (Exception e) {
-            e.printStackTrace();
             throw new SQLException("Connessione con il database fallita...");
         }
     }
@@ -191,7 +188,6 @@ public class OrdineDAO implements IOrdineDAO {
                 return rs.getInt(1);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
             throw new SQLException("Connessione con il database fallita...");
         }
 

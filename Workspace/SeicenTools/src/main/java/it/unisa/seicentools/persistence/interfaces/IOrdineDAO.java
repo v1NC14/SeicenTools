@@ -14,7 +14,7 @@ public interface IOrdineDAO {
 
     public List<Ordine> getByData(Timestamp date) throws Exception;
 
-    public boolean updateOrdine(Ordine ordine) throws Exception;
+    //public boolean updateOrdine(Ordine ordine) throws Exception;
 
     public boolean deleteOrdine(Ordine ordine) throws Exception;
 

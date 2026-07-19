@@ -23,10 +23,10 @@ public class GestisciUtenteServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         HttpSession session = request.getSession();
-        List<Utente> utenti = (List<Utente>) session.getAttribute("utenti");
+        Utente admin = (Utente) session.getAttribute("utente");
         IUserService service = new UserService();
 
-        if(session.getAttribute("utente") != null){
+        if(admin != null){
             try {
                 List<Utente> listaUtenti = service.getAllUser();
 

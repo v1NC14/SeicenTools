@@ -13,6 +13,9 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
 
+/*
+* per 'modifica' di un utente si intende il cambio nome e/o e-mail* */
+
 @WebServlet(name = "ModificaUtenteServlet", value="/mod-utente")
 public class ModificaUtenteServlet extends HttpServlet {
 
@@ -60,8 +63,8 @@ public class ModificaUtenteServlet extends HttpServlet {
             try {
                 Utente user = service.getUser(Integer.parseInt(request.getParameter("id")));
 
-                request.setAttribute("utenteProfilo", user);
-                request.setAttribute("viewPath", "modificaUtente.jsp");
+                request.setAttribute("utenteTrovato", user);
+                request.setAttribute("viewPath", "modProfilo.jsp");
                 request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
             } catch (SQLException e) {
                 throw new RuntimeException(e);
