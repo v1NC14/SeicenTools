@@ -1,6 +1,45 @@
- -OrdiniUtenteServlet
--metodo 	findByUtente(int idUtente, int offset,int limit) in OrdiniDAO
--utlizzare json (ordine)
--utilizzare ajax (carrello) 
--controllare il css
--FILTRARE ACCESSIBILITà navbar
+(Leggere questo elenco partendo verso il basso)
+
+- AJAX & JSON -
+
+AJAX -> carrello
+JSON -> ordine
+
+non si riescono a far scaricare le dipendenze necessarie per poter riconoscere il formato json sul progetto.
+Si potrebbe implementare a mano ma si ricorda che abbiamo solo 3 giorni.
+
+- CSS -
+
+da vedere per ultimo, l'importante sarà la funzionalità e la responsiveness
+
+- NAVBAR/BANNER -
+
+gestire le accessibilità delle funzioni sulla navbar in base al ruolo dell'utente in sessione, inoltre si devono mostrare le immagini sul banner funzionante
+
+- IMMAGINI - 
+
+scoprire perché le immagini dei prodotti non compaiono sulle card ne nella dettagli-prodotto
+
+capire anche i problemi legati alla random() sulla homepage (provare a popolare prima il db con almeno 15 prodotti)
+
+
+===========================
+      SERVLET TESTING
+===========================
+
+Testare TUTTE le servlet, controllarne non solo il funzionamento ma anche le buone prassi e i rigori logici GET/POST
+
+=============================
+	CRUD TESTING
+=============================
+
+Testare le operazioni di Create - Read - Update - Delete delle entità:
+
+- Utente (FATTO)
+
+- Prodotto
+
+- Carrello
+
+- Ordine -> e quindi anche prodotti ordinati
+
