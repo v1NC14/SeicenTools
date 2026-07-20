@@ -30,7 +30,18 @@ public class GestisciUtenteServlet extends HttpServlet {
             try {
                 List<Utente> listaUtenti = service.getAllUser();
 
+                System.out.println("Lista pre: ");
+
+                for(Utente utente : listaUtenti)
+                    System.out.println(utente.getNome());
+
+
                 listaUtenti.removeIf(utente -> admin.getId() == utente.getId());
+
+                System.out.println("Lista post: ");
+
+                for(Utente utente : listaUtenti)
+                    System.out.println(utente.getNome());
 
                 session.setAttribute("listaUtenti",listaUtenti);
                 request.setAttribute("viewPath", "gestioneUtenti.jsp");

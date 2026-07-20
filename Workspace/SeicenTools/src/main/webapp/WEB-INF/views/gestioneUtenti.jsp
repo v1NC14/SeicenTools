@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+
 <c:choose>
     <c:when test = "${sessionScope.utente.ruolo == 'ADMIN'}">
         <div class="elenco-utenti mx-3 my-2">
@@ -6,20 +9,20 @@
                 <c:when test="${not empty listaUtenti}">
                     <div class="li-utente">
                         <table>
-                            <th>Nome</th>
-                            <th>E-mail</th>
-                            <th><i class="bi bi-gear"></i></th>
-                            <c:forEach var="utente" items="${listaUtenti}">
+                            <th class="mx-1">Nome</th>
+                            <th class="mx-1">E-mail</th>
+                            <th align="center"><i class="bi bi-gear"></i></th>
+                            <c:forEach var="user" items="${listaUtenti}">
                                 <tr>
-                                    <td>{utente.nome}</td>
-                                    <td>{utente.email}</td>
+                                    <td class="mx-1">${user.nome}</td>
+                                    <td class="mx-1">${user.email}</td>
                                     <td>
-                                        <a href"${pageContext.request.contextPath}/mod-utente?id=${utente.id}">
-                                            <button type="button">Modifica utente</button>
+                                        <a href"${pageContext.request.contextPath}/mod-utente?idUser=${user.id}">
+                                            <button type="button" class="btn btn-warning">Modifica utente</button>
                                         </a>
 
-                                        <a href="${pageContext.request.contextPath}/rmv-utente?id=${utente.id}">
-                                            <button type="button">Rimuovi utente</a>
+                                        <a href="${pageContext.request.contextPath}/rmv-utente?id=${user.id}">
+                                            <button type="button" class="btn btn-danger">Rimuovi utente</button>
                                         </a>
                                     </td>
                                 </tr>
@@ -28,8 +31,8 @@
                     </div>
                 </c:when>
                 <c:otherwise>
-                    <h2 align = "center">Nessun utente registrato...</h2>
-                </C:otherwise>
+                    <h2>Nessun utente registrato...</h2>
+                </c:otherwise>
             </c:choose>
         </div>
     </c:when>
@@ -38,7 +41,3 @@
         <h2 align="center">Niente da vedere qui</h2>
     </c:otherwise>
 </c:choose>
-
-<div id="footerL">
-    <p>&copy; 2026 SeicenTools</p>
-</div>

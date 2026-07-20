@@ -21,7 +21,7 @@
             <c:if test="${viewPath != 'login.jsp'}">
                 <div class="menu-links">
                     <c:if test="${sessionScope.utente.ruolo == 'ADMIN' && viewPath != 'gestioneUtenti.jsp' && viewPath != 'registraUtente.jsp'}">
-                        <a href="${pageContext.request.contextPath}/gestisci-utente?action=gestioneUtenti.jsp">
+                        <a href="${pageContext.request.contextPath}/gestisci-utente">
                             <i class="bi bi-person-fill-gear"></i>
                         </a>
                     </c:if>
@@ -32,7 +32,7 @@
                     </c:if>
 
                     <c:if test="${viewPath != 'profilo.jsp' && viewPath != 'registraUtente.jsp'}"> <!-- registra utente btn -->
-                        <a href="${pageContext.request.contextPath}/profilo?action=profilo.jsp">
+                        <a href="${pageContext.request.contextPath}/profilo">
                             <i class="bi bi-person-square mx-2" style="color: #04042a;"></i>
                         </a>
                     </c:if>

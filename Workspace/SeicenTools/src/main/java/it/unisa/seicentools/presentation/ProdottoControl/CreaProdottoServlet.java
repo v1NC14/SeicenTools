@@ -36,7 +36,6 @@ public class CreaProdottoServlet extends HttpServlet {
 
         try {
             List<String> categorie = service.getCategorie();
-            categorie.add("fine");
             req.setAttribute("categorie", categorie);
 
             req.setAttribute("viewPath", "aggiungiProdottoAdmin.jsp");
@@ -63,14 +62,14 @@ public class CreaProdottoServlet extends HttpServlet {
             // path reale della cartella imgs/products
             String uploadPath = req.getServletContext().getRealPath("/imgs/products");
 
-            imgService.imgMGMT(uploadPath, img);
+            //imgService.imgMGMT(uploadPath, img);
 
             tmp.setNome(req.getParameter("nome"));
             tmp.setCategoria(req.getParameter("categoria"));
             tmp.setDescrizione(req.getParameter("descrizione"));
             tmp.setPrezzo(BigDecimal.valueOf(Double.parseDouble(req.getParameter("prezzo"))));
             tmp.setImgPath(imgService.saveImage(img, uploadPath));
-            tmp.setDisponibilita(Integer.parseInt(req.getParameter("disponibilita")));
+            tmp.setDisponibilita(Integer.parseInt(req.getParameter("disp")));
 
             try{
                 if(service.creaProdotto(tmp)){

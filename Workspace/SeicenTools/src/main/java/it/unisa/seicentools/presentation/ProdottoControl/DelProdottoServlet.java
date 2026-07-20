@@ -14,7 +14,7 @@ import jakarta.servlet.http.*;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet(name="DelProdotto", value="/del-Prod")
+@WebServlet(name="DelProdotto", value="/del-prod")
 public class DelProdottoServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req , HttpServletResponse resp) throws ServletException, IOException {

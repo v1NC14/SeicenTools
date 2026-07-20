@@ -70,6 +70,7 @@ public class ImgService implements ImgServiceInterface {
         return fileName.substring(dot);
     }
 
+    /*
     @Override
     public void imgMGMT(String uploadPath, Part img) throws IOException {
         File uploadDir = new File(uploadPath);
@@ -83,4 +84,5 @@ public class ImgService implements ImgServiceInterface {
         // salvataggio fisico
         img.write(uploadPath + File.separator + fileName);
     }
+     */
 }

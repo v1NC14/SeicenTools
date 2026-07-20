@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
-
 <div id="Banner" class="Banner" data-bs-ride="carousel">
     <div class="banner-inner">
         <div class="banner-item">
@@ -31,7 +30,7 @@
                 <div class="card-body">
                     <h5 class="card-title">${prod.nome}</h5>
                     <p class="card-text">${prod.descrizione}.</p>
-                    <a href="${pageContext.request.contextPath}/dettagli_prod?idPrd=${prod.id}" class="btn btn-primary">visualizza</a>
+                    <a href="${pageContext.request.contextPath}/dettagli-prod?idPrd=${prod.id}" class="btn btn-primary">visualizza</a>
                 </div>
             </div>
         </c:forEach>

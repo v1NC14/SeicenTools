@@ -37,13 +37,10 @@ public class AddUtenteServlet  extends HttpServlet {
             try {
                 if (service.addUser(utente, password)) {
                     request.setAttribute("messaggio", "Utente aggiunto con successo.");
-                    request.setAttribute("viewPath", "homepage.jsp"); //gestioneUtenti.jsp
-
                 } else {
                     request.setAttribute("errore", "Errore durante la registrazione del nuovo utente.");
-                    request.setAttribute("viewPath", "homepage.jsp");
                 }
-                request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
+                response.sendRedirect(request.getContextPath()+"/homepage");
             }catch (SQLException e){
                 throw new RuntimeException(e);
             }

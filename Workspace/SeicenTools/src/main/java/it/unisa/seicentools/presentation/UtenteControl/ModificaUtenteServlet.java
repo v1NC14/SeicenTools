@@ -44,8 +44,7 @@ public class ModificaUtenteServlet extends HttpServlet {
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
-            request.setAttribute("viewPath", "gestioneUtenti.jsp");
-            request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
+            response.sendRedirect(request.getContextPath()+"/gestisci-utente");
         }else {
             request.setAttribute("errore", "Utente non loggato");
             request.setAttribute("viewPath", "login.jsp");
@@ -61,7 +60,7 @@ public class ModificaUtenteServlet extends HttpServlet {
 
         if(admin != null){
             try {
-                Utente user = service.getUser(Integer.parseInt(request.getParameter("id")));
+                Utente user = service.getUser(Integer.parseInt(request.getParameter("idUser")));
 
                 request.setAttribute("utenteTrovato", user);
                 request.setAttribute("viewPath", "modProfilo.jsp");

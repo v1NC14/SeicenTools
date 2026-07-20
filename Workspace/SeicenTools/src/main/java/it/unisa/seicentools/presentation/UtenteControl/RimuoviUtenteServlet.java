@@ -31,21 +31,18 @@ public class RimuoviUtenteServlet extends HttpServlet {
                     try {
                         if(service.deleteUser(user)){
                             request.setAttribute("errore", "Utente eliminato con successo."); //anche se non è un errore, chiamarlo così ci evita di gestire altre stringhe nelle jsp
-                            request.setAttribute("viewPath", "gestioneUtenti.jsp");
                         }
                         else{
                             request.setAttribute("errore", "Errore durante l'eliminazione dell utente.");
-                            request.setAttribute("viewPath", "gestioneUtenti.jsp");
                         }
-                        request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
+                        response.sendRedirect(request.getContextPath()+"/gestisci-utente");
                     } catch (SQLException e) {
                         throw new RuntimeException(e);
                     }
                 }
                 else{
                     request.setAttribute("errore", "Impossibile eliminare utente in sessione.");
-                    request.setAttribute("viewPath", "gestioneUtenti.jsp");
-                    request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
+                    response.sendRedirect(request.getContextPath()+"/gestisci-utente");
                 }
             } catch (SQLException e) {
                 throw new RuntimeException(e);

@@ -21,7 +21,7 @@
             </div>
             <div class="form-group">
                 <div align="center" class="my-sm-1">Disponibilità</div>
-                    <input type="number" id="disponibilita" name="disponibilita" min="1" max="999">
+                    <input type="number" id="disp" name="disp" min="1" max="999" step="1">
                     <small id="error-username" class="error-msg" style="color: red"></small>
             </div>
             <div class="form-group">

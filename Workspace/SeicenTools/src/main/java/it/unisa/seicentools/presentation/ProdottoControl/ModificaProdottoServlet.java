@@ -60,7 +60,7 @@ public class ModificaProdottoServlet extends HttpServlet {
             // path reale della cartella imgs/products
             String uploadPath = req.getServletContext().getRealPath("/imgs/products");
 
-            imgService.imgMGMT(uploadPath, img);
+            //imgService.imgMGMT(uploadPath, img);
 
             tmp.setNome(req.getParameter("nome"));
             tmp.setCategoria(req.getParameter("categoria"));
