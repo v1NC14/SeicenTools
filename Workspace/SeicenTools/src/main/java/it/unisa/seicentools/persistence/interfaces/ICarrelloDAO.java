@@ -4,6 +4,7 @@ import it.unisa.seicentools.models.Carrello;
 import it.unisa.seicentools.models.Prodotto;
 import it.unisa.seicentools.models.Utente;
 
+import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.util.List;
 
@@ -15,4 +16,8 @@ public interface ICarrelloDAO {
     public boolean rmvFromCarrello(int id_utente, int id_Prd) throws Exception;
 
     public boolean deleteCarrello(int id_utente) throws Exception;
+
+    public BigDecimal getPrezzoArticolo(Carrello cart) throws Exception;
+
+    public int getQtaArticolo(Carrello cart) throws Exception;
 }

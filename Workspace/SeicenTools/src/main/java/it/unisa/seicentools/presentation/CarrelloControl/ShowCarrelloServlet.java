@@ -29,6 +29,7 @@ public class ShowCarrelloServlet extends HttpServlet {
         try{
             List<Prodotto> carrello = service.getProdByUtente(user.getId());
 
+
             session.setAttribute("prodottiUtente", carrello);
             req.setAttribute("viewPath", "carrello.jsp");
             req.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(req, resp);

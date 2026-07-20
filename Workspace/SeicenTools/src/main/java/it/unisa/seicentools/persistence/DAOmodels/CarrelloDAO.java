@@ -5,6 +5,7 @@ import it.unisa.seicentools.models.Prodotto;
 import it.unisa.seicentools.persistence.DBConnection;
 import it.unisa.seicentools.persistence.interfaces.ICarrelloDAO;
 
+import java.math.BigDecimal;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -111,4 +112,40 @@ public class CarrelloDAO implements ICarrelloDAO {
 
         return false;
     }
+    public BigDecimal getPrezzoArticolo(Carrello cart) throws Exception{
+        String query ="SELECT prezzo FROM prodotto INNER JOIN CarrelloUtente ON prodotto.id = CarrelloUtente.id_prodotto WHERE id_utente = ? AND id_prodotto = ? ";
+        try(Connection conn = DBConnection.getConnection();
+        PreparedStatement ps = conn.prepareStatement(query)){
+            ps.setInt(1, cart.getId_utente());
+            ps.setInt(2, cart.getId_prodotto());
+            ResultSet rs = ps.executeQuery();
+
+            if(rs.next()){
+                return rs.getBigDecimal("prezzo");
+            }
+        }
+        catch (SQLException e){
+                        throw new SQLException("Connessione con il database fallita...");
+        }
+        return null;
+    }
+
+    public int getQtaArticolo(Carrello cart) throws Exception{
+        String query ="SELECT qta FROM CarrelloUtente WHERE id_utente = ? AND id_prodotto = ? ";
+        try(Connection conn = DBConnection.getConnection();
+            PreparedStatement ps = conn.prepareStatement(query)){
+            ps.setInt(1,cart.getId_utente());
+            ps.setInt(2, cart.getId_prodotto());
+            ResultSet rs = ps.executeQuery();
+
+            if(rs.next()){
+                return rs.getInt("qta");
+            }
+        }
+        catch (SQLException e){
+            throw new SQLException("Connessione con il database fallita...");
+        }
+
+    }
+
 }

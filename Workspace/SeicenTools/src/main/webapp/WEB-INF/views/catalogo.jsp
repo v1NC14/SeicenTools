@@ -9,17 +9,6 @@
         </c:forEach>
     </div>
     <div align="right" class="main-content">
-        <div class="searchBar">
-            <div class="filtro">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" >Filtra per</button>
-                <ul class="dropdown-menu">
-                    <c:forEach var="opzione" items="categorie">
-                        <li><a class="filtro-item" href="${pageContext.request.contextPath}/catalogo?categoria=${opzione}"></a></li>
-                    </c:forEach>
-                </ul>
-            </div>
-        </div><!-- da completare, capire per cosa filtrare-->
-
         <div class="catalogo">
             <c:forEach var="list" items="${listaProdotti}">
                 <div class="card" style="width: 18rem;">
@@ -33,4 +22,8 @@
             </c:forEach>
         </div>
     </div>
+</div>
+
+<div id="footerL">
+    <p>&copy; 2026 SeicenTools</p>
 </div>

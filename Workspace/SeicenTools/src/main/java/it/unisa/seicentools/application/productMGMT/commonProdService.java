@@ -9,6 +9,7 @@ import it.unisa.seicentools.persistence.interfaces.ICarrelloDAO;
 import it.unisa.seicentools.persistence.interfaces.IPersistenceService;
 import it.unisa.seicentools.persistence.interfaces.IProdottoDAO;
 
+import java.math.BigDecimal;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -140,5 +141,15 @@ public class commonProdService implements IcommonProdService {
         try{
             return prodottoDAO.getRandProd(limit);
         }catch(Exception e){throw new SQLException(e);}
+    }
+
+    public BigDecimal getPrezzo(int id_utente, int id_Prd) throws SQLException{
+        ICarrelloDAO cartDAO = service.getCarrelloDAO();
+
+        try{
+            int qta=cartDAO.getQtaArticolo(cart);
+            BigDecimal prezzo=cartDAO=getPrezzoArticolo(cart);
+            return prezzo*qta;
+        }
     }
 }
