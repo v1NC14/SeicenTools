@@ -15,4 +15,6 @@ public interface IcommonProdService {
     public boolean cancellaCarrello(int id_utente)  throws SQLException;
     public List<String> getCategorie() throws SQLException;
     public List<Prodotto> getRandProd(int limit) throws SQLException;
+    public double getPrezzo(int id_utente, int id_Prd) throws SQLException;
+
 }

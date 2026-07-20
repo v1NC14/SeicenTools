@@ -2,9 +2,9 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <div class = "product_img">
-<img src="${pageContext.request.contextPath}/imgs/products/${prodotto.imgPath}" alt="foto prodotto" id="prodImg"> <!--qui devo capire come poter caricare le immagini, servirà tempo, è una delle parti più difficili del progetto-->
-<c:if test="${sessionScope.utente.ruolo == 'ADMIN'}">
-    <a href="servletpermodificareilprodotto"> <!--da vedere-->
+<img src="${pageContext.request.contextPath}/${prodotto.imgPath}" alt="foto prodotto" id="prodImg"> <!--qui devo capire come poter caricare le immagini, servirà tempo, è una delle parti più difficili del progetto-->
+<!-- c:if test="${sessionScope.utente.ruolo == 'ADMIN'}">
+    <a href="mod-prod">
         <button type="button" class="btn btn-danger mx-1">Cambia immagine prodotto</button>
     </a>
 </c:if>
@@ -19,11 +19,11 @@
         </c:if>
         <div class="my-1">
             <h1>${prodotto.nome}</h1>
+            <h3>Disponibilità: ${prodotto.disponibilita}</h3>
         </div>
 
         <div>
             <h2><strong>€ ${prodotto.prezzo}</strong></h2>
-            <h3>Disponibilità: ${prodotto.disponibilita}</h3>
             <h2>Descrizione prodotto:</h2>
             <div>${prodotto.descrizione}</div>
         </div>
