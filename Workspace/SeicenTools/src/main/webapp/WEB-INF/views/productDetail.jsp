@@ -2,9 +2,9 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <div class = "product_img">
-<img src="${pageContext.request.contextPath}/imgs/products/${prodotto.imgPath}" alt="foto prodotto" id="prodImg"> <!--qui devo capire come poter caricare le immagini, servirà tempo, è una delle parti più difficili del progetto-->
+<img src="${pageContext.request.contextPath}/${prodotto.imgPath}" alt="foto prodotto" id="prodImg"> <!--qui devo capire come poter caricare le immagini, servirà tempo, è una delle parti più difficili del progetto-->
 <!-- c:if test="${sessionScope.utente.ruolo == 'ADMIN'}">
-    <a href="DettagliProdottoServlet?action=chngImg"> <!--da vedere-->
+    <a href="servletpermodificareilprodotto"> <!--da vedere-->
         <button type="button" class="btn btn-danger mx-1">Cambia immagine prodotto</button>
     </a>
 </c:if> -->

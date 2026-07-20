@@ -33,7 +33,6 @@ public class ProdottoDAO implements IProdottoDAO {
             return prodotti;
 
         } catch (Exception e) {
-            e.printStackTrace();
             throw new SQLException("Connessione con il database fallita...");
         }
     }
@@ -149,7 +148,6 @@ public class ProdottoDAO implements IProdottoDAO {
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
             throw new SQLException("Connessione con il database fallita...");
         }
     }
@@ -188,7 +186,6 @@ public class ProdottoDAO implements IProdottoDAO {
 
             return true;
         } catch (Exception e) {
-            e.printStackTrace();
             throw new SQLException("Connessione con il database fallita...");
         }
     }

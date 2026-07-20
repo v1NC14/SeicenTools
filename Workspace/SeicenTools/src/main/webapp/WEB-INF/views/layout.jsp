@@ -20,7 +20,11 @@
 
             <c:if test="${viewPath != 'login.jsp'}">
                 <div class="menu-links">
-
+                    <c:if test="${sessionScope.utente.ruolo == 'ADMIN' && viewPath != 'gestioneUtenti.jsp' && viewPath != 'registraUtente.jsp'}">
+                        <a href="${pageContext.request.contextPath}/gestisci-utente?action=gestioneUtenti.jsp">
+                            <i class="bi bi-person-fill-gear"></i>
+                        </a>
+                    </c:if>
                     <c:if test="${viewPath != 'homepage.jsp' && viewPath != 'registraUtente.jsp'}"> <!-- homepage btn -->
                         <a href="${pageContext.request.contextPath}/homepage?action=homepage.jsp" class="btn-create"><!--nell'href ho scritto roba a caso per quando farai il backend-->
                             <i class="bi bi-house-door mx-2" style="color: #04042a;"></i>
