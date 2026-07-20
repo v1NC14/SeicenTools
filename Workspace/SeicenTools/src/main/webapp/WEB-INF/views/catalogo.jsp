@@ -13,8 +13,8 @@
             <div class="filtro">
                 <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" >Filtra per</button>
                 <ul class="dropdown-menu">
-                    <c:forEach var="opzione" items="">
-                        <li><a class="filtro-item" href="">Action</a></li>
+                    <c:forEach var="opzione" items="categorie">
+                        <li><a class="filtro-item" href="${pageContext.request.contextPath}/catalogo?categoria=${opzione}"></a></li>
                     </c:forEach>
                 </ul>
             </div>
