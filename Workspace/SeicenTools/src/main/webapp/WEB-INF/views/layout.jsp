@@ -26,18 +26,22 @@
                         </a>
                     </c:if>
                     <c:if test="${viewPath != 'homepage.jsp' && viewPath != 'registraUtente.jsp'}"> <!-- homepage btn -->
-                        <a href="${pageContext.request.contextPath}/homepage?action=homepage.jsp" class="btn-create"><!--nell'href ho scritto roba a caso per quando farai il backend-->
+                        <a href="${pageContext.request.contextPath}/homepage" class="btn-create"><!--nell'href ho scritto roba a caso per quando farai il backend-->
                             <i class="bi bi-house-door mx-2" style="color: #04042a;"></i>
                         </a>
                     </c:if>
-
+                    <c:if test="${viewPath != 'registraUtente.jsp'}"> <!-- cart btn -->
+                        <a href="${pageContext.request.contextPath}/show-carrello" class="btn-create">
+                            <i class="bi bi-cart4"></i>
+                        </a>
+                    </c:if>
                     <c:if test="${viewPath != 'profilo.jsp' && viewPath != 'registraUtente.jsp'}"> <!-- registra utente btn -->
                         <a href="${pageContext.request.contextPath}/profilo">
                             <i class="bi bi-person-square mx-2" style="color: #04042a;"></i>
                         </a>
                     </c:if>
                     <c:if test="${viewPath != 'aggiungiProdottoAdmin.jsp' && viewPath != 'registraUtente.jsp' && sessionScope.utente.ruolo == 'ADMIN'}">
-                        <a href="${pageContext.request.contextPath}/crea-prod?action=aggiungiProdottoAdmin.jsp"> <!-- aggiungi prodotto btn -->
+                        <a href="${pageContext.request.contextPath}/crea-prod"> <!-- aggiungi prodotto btn -->
                             <i class="bi bi-plus-square-fill mx-2" style="color: #04042a;"></i>
                         </a>
                     </c:if>
@@ -56,5 +60,36 @@
         <div id="footerL">
             <p>&copy; 2026 SeicenTools</p>
         </div>
+        <div class="position-fixed top-0 start-50 translate-middle-x mt-3 p-3" style="z-index:1100">
+            <div id="cartToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <strong class="me-auto">Carrello</strong>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+                </div>
+                <div class="toast-body">Prodotto aggiunto al carrello!</div>
+            </div>
+        </div>
     </body>
 </html>
+<c:if test="${not empty sessionScope.cartMessage}">
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+    const toastElement =
+        document.getElementById("cartToast");
+
+    const toast =
+        new bootstrap.Toast(toastElement);
+
+    toast.show();
+
+});
+
+</script>
+
+
+<c:remove var="cartMessage" scope="session"/>
+
+</c:if>

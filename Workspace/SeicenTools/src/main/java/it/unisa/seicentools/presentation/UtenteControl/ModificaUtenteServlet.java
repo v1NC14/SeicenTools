@@ -30,11 +30,11 @@ public class ModificaUtenteServlet extends HttpServlet {
             String nome = request.getParameter("nome");
             String email = request.getParameter("email");
 
-            Utente utente = new Utente();
-            utente.setNome(nome);
-            utente.setEmail(email);
-            utente.setRuolo(Ruolo.USER);
             try {
+                Utente utente = service.getUser(Integer.parseInt(request.getParameter("idUser")));
+                utente.setNome(nome);
+                utente.setEmail(email);
+                utente.setRuolo(Ruolo.USER);
                 if(service.updateUser(utente)){
                     request.setAttribute("errore", "Dati aggiornati con successo.");
                 }

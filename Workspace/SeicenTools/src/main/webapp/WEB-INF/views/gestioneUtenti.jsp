@@ -17,7 +17,7 @@
                                     <td class="mx-1">${user.nome}</td>
                                     <td class="mx-1">${user.email}</td>
                                     <td>
-                                        <a href"${pageContext.request.contextPath}/mod-utente?idUser=${user.id}">
+                                        <a href="${pageContext.request.contextPath}/mod-utente?idUser=${user.id}">
                                             <button type="button" class="btn btn-warning">Modifica utente</button>
                                         </a>
 

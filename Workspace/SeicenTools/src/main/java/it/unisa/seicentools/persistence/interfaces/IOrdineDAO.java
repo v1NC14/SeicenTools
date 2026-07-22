@@ -1,12 +1,13 @@
 package it.unisa.seicentools.persistence.interfaces;
 
+import it.unisa.seicentools.models.Carrello;
 import it.unisa.seicentools.models.Ordine;
 
 import java.sql.Timestamp;
 import java.util.List;
 
 public interface IOrdineDAO {
-    public boolean creaOrdine(Ordine ordine) throws Exception;
+    public boolean creaOrdine(Ordine ordine, List<Carrello> carrello) throws Exception;
 
     public List<Ordine> getByUtente(int id_utente) throws Exception;
 

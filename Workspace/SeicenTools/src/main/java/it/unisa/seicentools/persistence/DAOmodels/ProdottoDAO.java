@@ -26,6 +26,7 @@ public class ProdottoDAO implements IProdottoDAO {
                 tmp.setDescrizione(rs.getString("descrizione"));
                 tmp.setPrezzo(rs.getBigDecimal("prezzo"));
                 tmp.setImgPath(rs.getString("imgPath"));
+                tmp.setDisponibilita(Integer.parseInt(rs.getString("disponibilita")));
 
                 prodotti.add(tmp);
             }
@@ -56,7 +57,7 @@ public class ProdottoDAO implements IProdottoDAO {
                 tmp.setDescrizione(rs.getString("descrizione"));
                 tmp.setPrezzo(rs.getBigDecimal("prezzo"));
                 tmp.setImgPath(rs.getString("imgPath"));
-
+                tmp.setDisponibilita(Integer.parseInt(rs.getString("disponibilita")));
             }
 
             return tmp;
@@ -108,6 +109,7 @@ public class ProdottoDAO implements IProdottoDAO {
                 temp.setDescrizione(rs.getString("descrizione"));
                 temp.setPrezzo(rs.getBigDecimal("prezzo"));
                 temp.setImgPath(rs.getString("imgPath"));
+                temp.setDisponibilita(Integer.parseInt(rs.getString("disponibilita")));
 
                 tmplist.add(temp);
             }
@@ -157,7 +159,7 @@ public class ProdottoDAO implements IProdottoDAO {
         String query = "UPDATE prodotto SET nome = ?, categoria = ?, descrizione = ?, prezzo = ?, imgPath = ?, disponibilita = ? WHERE id = ?";
 
         try (Connection conn = DBConnection.getConnection();
-             PreparedStatement ps = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
+             PreparedStatement ps = conn.prepareStatement(query)) {
 
             ps.setString(1, p.getNome());
             ps.setString(2, p.getCategoria());
@@ -167,9 +169,9 @@ public class ProdottoDAO implements IProdottoDAO {
             ps.setInt(6, p.getDisponibilita());
             ps.setInt(7, p.getId());
 
-            ps.executeUpdate();
-            return true;
-        } catch (Exception e) {
+            return ps.executeUpdate() > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
             throw new SQLException("Connessione con il database fallita...");
         }
     }

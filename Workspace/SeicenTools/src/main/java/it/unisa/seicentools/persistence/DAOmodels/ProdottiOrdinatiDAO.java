@@ -1,5 +1,6 @@
 package it.unisa.seicentools.persistence.DAOmodels;
 
+import it.unisa.seicentools.models.Carrello;
 import it.unisa.seicentools.models.Ordine;
 import it.unisa.seicentools.models.ProdottiOrdinati;
 import it.unisa.seicentools.models.Prodotto;
@@ -13,37 +14,33 @@ import java.util.List;
 public class ProdottiOrdinatiDAO implements IProdottiOrdinatiDAO {
 
     @Override
-    public boolean addProdottoOrdinato(ProdottiOrdinati tmp) throws Exception{
-        String query = "INSERT INTO prodottiordinati (id_ordine, id_prodotto) VALUES (?, ?)";
+    public boolean addProdottoOrdinato(ProdottiOrdinati tmp, Connection conn) throws Exception{
+        String query = "INSERT INTO prodottiordinati (id_ordine, id_prodotto, qta) VALUES (?, ?, ?)";
 
-        try (Connection conn = DBConnection.getConnection();
-             PreparedStatement ps = conn.prepareStatement(query)) {
+        try (PreparedStatement ps = conn.prepareStatement(query)) {
 
             ps.setInt(1, tmp.getIdOrdine());
             ps.setInt(2, tmp.getIdProdotto());
+            ps.setInt(3, tmp.getQta());
 
-            try (ResultSet generatedKeys = ps.getGeneratedKeys()) {
-                if (generatedKeys.next()) {
-                    // Prendo il primo campo generato (l'ID)
-                    int idGenerato = generatedKeys.getInt(1);
-
-                    // AGGIORNO L'OGGETTO JAVA
-                    tmp.setId(idGenerato);
-                    return true;
-                } else {
-                    throw new SQLException("Creazione fallita, nessun ID ottenuto.");
-                }
+            if (ps.execute()){
+                System.out.println("Inserimento nuovo prodotto riuscito");
+                return true;
+            }else{
+                return false;
             }
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new SQLException("Connessione con il database fallita...");
+        }catch (Exception e) {
+            if(conn!=null)
+                conn.rollback();
+
+            throw new RuntimeException(e);
         }
     }
 
     @Override
     public List<Prodotto> getProdottiByOrdine(Ordine ordine) throws Exception {
         List<Prodotto> lista = new ArrayList<>();
-        String query = "SELECT * FROM prodotto INNER JOIN prodottiordinati ON prodottiordinati.id_prodotto = prodotto.id WHERE id_ordine = ?";
+        String query = "SELECT * FROM prodottiordinati INNER JOIN prodottiordinati ON prodottiordinati.id_prodotto = prodotto.id WHERE id_ordine = ?";
 
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement(query)) {
@@ -65,7 +62,6 @@ public class ProdottiOrdinatiDAO implements IProdottiOrdinatiDAO {
                 lista.add(tmp);
             }
         } catch (Exception e) {
-            e.printStackTrace();
             throw new SQLException("Connessione con il database fallita...");
         }
         return lista;

@@ -1,18 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <c:choose>
-    <c:when test = "${numOrders} == 0">
+    <c:when test = "${numOrders == 0}">
         <div id = "noOrders"><h3>Nessun Ordine da mostrare</h3></div>
     </c:when>
     <c:otherwise>
         <div id = "ordini-page">
             <span><h2>I tuoi ordini</h2></span>
-            <c:forEach items="${orders}" var = "ordine" begin = "${offset}" end = "${offset + limit - 1}">
+            <c:forEach items="${orders}" var = "ordine">
                 <div id = "ord-utente my-3">
                     <span class="badge bg-info">Ordine #${ordine.id}</span>
                     <span class="badge bg-secondary">#${ordine.dataCreazione}</span>
                     <span class="fw-bold ms-2">${ordine.indirizzoConsegna}</span>
-                    <span class="badge bg-success ms-4">#${ordine.tot}</span>
+                    <span class="badge bg-success ms-4">#${ordine.totale}</span>
                 </div>
             </c:forEach>
         </div>

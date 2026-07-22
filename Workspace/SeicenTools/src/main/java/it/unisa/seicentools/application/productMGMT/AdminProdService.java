@@ -1,15 +1,11 @@
 package it.unisa.seicentools.application.productMGMT;
 
 import it.unisa.seicentools.application.productMGMT.interfaces.IAdminProdService;
-import it.unisa.seicentools.models.Carrello;
 import it.unisa.seicentools.models.Prodotto;
 import it.unisa.seicentools.persistence.DAOmodels.ProdottoDAO;
-import it.unisa.seicentools.persistence.interfaces.ICarrelloDAO;
 import it.unisa.seicentools.persistence.interfaces.IProdottoDAO;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class AdminProdService implements IAdminProdService{
 

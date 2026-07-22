@@ -1,12 +1,8 @@
 package it.unisa.seicentools.presentation.OrdineControl;
 
-import it.unisa.seicentools.application.productMGMT.UserProdService;
-import it.unisa.seicentools.application.productMGMT.commonProdService;
-import it.unisa.seicentools.application.productMGMT.interfaces.IUserProdService;
-import it.unisa.seicentools.application.productMGMT.interfaces.IcommonProdService;
-import it.unisa.seicentools.models.Ordine;
-import it.unisa.seicentools.models.Prodotto;
-import it.unisa.seicentools.models.Utente;
+import it.unisa.seicentools.application.orderMGMT.OrderService;
+import it.unisa.seicentools.application.orderMGMT.interfaces.IOrderService;
+import it.unisa.seicentools.models.*;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -15,6 +11,8 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,65 +21,69 @@ import java.util.List;
 public class OrdineServlet  extends HttpServlet{
 
     @SuppressWarnings("unchecked")
-    protected void doPost(HttpServletRequest req , HttpServletResponse resp) throws ServletException, IOException {
-        HttpSession session = req.getSession();
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
         Utente utente = (Utente) session.getAttribute("utente");
-        IUserProdService service = new UserProdService();
+        IOrderService orderService = new  OrderService();
 
-        List<Prodotto> carrello = (List<Prodotto>) session.getAttribute("carrello");
-
-        if (utente != null) {
+        if(utente == null || utente.getRuolo() == Ruolo.GUEST){
+            request.setAttribute("errore","Utente non loggato");
+            response.sendRedirect(request.getContextPath()+"/login");
+        }else{
+            List<Carrello> carrello = (List<Carrello>) session.getAttribute("carrello");
             try {
-                String numCarta = req.getParameter("numCarta");
-                String indirizzoConsegna = req.getParameter("indirizzoConsegna");
-
-                Ordine order = service.cartToOrder(carrello, utente.getId(), numCarta, indirizzoConsegna);
-
-                if (order != null) {
-                    req.setAttribute("error", "Ordine effettuato");
-                    session.removeAttribute("carrello");
-                } else {
-                    req.setAttribute("error", "Si è verificato un problema, ordine interrotto");
-                }
-                req.setAttribute("viewPath", "homepage.jsp");
-                req.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(req, resp);
+                List<Prodotto> prodottiCarrello = orderService.cartToProds(carrello);
+                request.setAttribute("prodotti", prodottiCarrello);
 
             } catch (Exception e) {
-                e.printStackTrace();
+                throw new RuntimeException(e);
             }
-        }else {
-            req.setAttribute("errore", "Utente non loggato");
-            req.setAttribute("viewPath", "login.jsp");
-            req.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(req, resp);
+            if(carrello == null || carrello.isEmpty()){
+                response.sendRedirect(request.getContextPath()+"/show-carrello");
+                return;
+            }
+
+            request.setAttribute("carrello", carrello);
+            request.setAttribute("viewPath", "ordine.jsp");
+            request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request,response);
         }
     }
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        IcommonProdService service = new commonProdService();
-        Utente utente =  (Utente) session.getAttribute("utente");
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session =  request.getSession();
+        Utente utente = (Utente) session.getAttribute("utente");
+        IOrderService orderService = new OrderService();
 
-        if(utente != null){
-            try {//introdurre la utility order to cart per ottenere le qta delle entità carrello e calcolare bene il prezzo
-                List<Prodotto> lista = service.getProdByUtente(utente.getId());
-                BigDecimal tot = new BigDecimal(0);
-
-                for(Prodotto prod : lista) {
-                    tot.add(prod.getPrezzo());
-                }
-
-                request.setAttribute("totale", tot);
-                session.setAttribute("carrello",lista); //rieseguo la scansione del carrello per sicurezza
-                request.setAttribute("viewPath", "ordine.jsp");
-                request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
-            }catch (Exception e){
-                e.printStackTrace();
-            }
-        }else {
+        if(utente.getRuolo() == Ruolo.GUEST){
             request.setAttribute("errore", "Utente non loggato");
-            request.setAttribute("viewPath", "login.jsp");
-            request.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(request, response);
+            response.sendRedirect(request.getContextPath()+"/homepage");
+        }else{
+            List<Carrello> carrelloSessione = (List<Carrello>) session.getAttribute("carrello");
+
+            if(carrelloSessione == null || carrelloSessione.isEmpty()){
+                response.sendRedirect(request.getContextPath()+"/show-carrello");
+            }else{
+                try {
+                    Ordine tmpOrder = new Ordine();
+
+                    tmpOrder.setId_utente(utente.getId());
+                    tmpOrder.setTotale(orderService.getTotalFromCart(carrelloSessione));
+                    tmpOrder.setQta(orderService.getTotQta(carrelloSessione));
+                    tmpOrder.setNumCarta(request.getParameter("numCarta"));
+                    tmpOrder.setDataCreazione(Timestamp.valueOf(LocalDateTime.now()));
+                    tmpOrder.setIndirizzoConsegna(request.getParameter("indirizzoConsegna"));
+
+                    if(orderService.creaOrdine(tmpOrder, carrelloSessione)){
+                        request.setAttribute("errore", "Ordine effettuato correttamente");
+                        response.sendRedirect(request.getContextPath()+"/ordini-utente");
+                    }else{
+
+                    }
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+            }
         }
     }
 }

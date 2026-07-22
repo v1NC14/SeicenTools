@@ -1,7 +1,5 @@
 package it.unisa.seicentools.persistence.DAOmodels;
-import it.unisa.seicentools.models.Ordine;
-import it.unisa.seicentools.models.Prodotto;
-import it.unisa.seicentools.models.Utente;
+import it.unisa.seicentools.models.*;
 import it.unisa.seicentools.persistence.DBConnection;
 import it.unisa.seicentools.persistence.interfaces.IOrdineDAO;
 import it.unisa.seicentools.persistence.interfaces.IUtenteDAO;
@@ -14,16 +12,19 @@ import java.util.List;
 public class OrdineDAO implements IOrdineDAO {
 
     @Override
-    public boolean creaOrdine(Ordine ordine) throws Exception{
-        String query = "INSERT INTO ordine (id_utente, tot, qta, indirizzoConsegna) VALUES (?, ?, ?, ?)";
+    public boolean creaOrdine(Ordine ordine, List<Carrello> carrello) throws Exception{
+        String query = "INSERT INTO ordine (id_utente, tot, qta, numCarta, dataCreazione, indirizzoConsegna) VALUES (?, ?, ?, ?, ?, ?)";
+        Connection conn = DBConnection.getConnection();
+        try (PreparedStatement ps = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
 
-        try (Connection conn = DBConnection.getConnection();
-             PreparedStatement ps = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
+            conn.setAutoCommit(false);
 
             ps.setInt(1, ordine.getId_utente());
             ps.setBigDecimal(2, ordine.getTotale());
             ps.setInt(3, ordine.getQta());
-            ps.setString(4, ordine.getIndirizzoConsegna());
+            ps.setString(4, ordine.getNumCarta());
+            ps.setTimestamp(5, ordine.getDataCreazione());
+            ps.setString(6, ordine.getIndirizzoConsegna());
 
 
             ps.executeUpdate();
@@ -35,20 +36,42 @@ public class OrdineDAO implements IOrdineDAO {
 
                     // AGGIORNO L'OGGETTO JAVA
                     ordine.setId(idGenerato);
+
+                    ProdottiOrdinatiDAO prodottiDAO = new ProdottiOrdinatiDAO();
+
+                    for(Carrello c: carrello){
+                        ProdottiOrdinati po = new ProdottiOrdinati();
+
+                        po.setIdOrdine(idGenerato);
+                        po.setIdProdotto(c.getId_prodotto());
+                        po.setQta(c.getQta());
+
+                        prodottiDAO.addProdottoOrdinato(po, conn);
+                    }
+
+                    conn.commit();
                     return true;
                 } else {
                     throw new SQLException("Creazione ordine fallita, nessun ID ottenuto.");
                 }
             }
         } catch (Exception e) {
-            throw new SQLException("Connessione con il database fallita...");
+            if(conn!=null)
+                    conn.rollback();
+
+            throw new RuntimeException(e);
+        }finally{
+            try{
+                if(conn!=null)
+                    conn.close();
+            }catch(SQLException ignored){}
         }
     }
 
     @Override
     public List<Ordine> getByUtente(int id_utente) throws Exception{
         List<Ordine> ordini = new ArrayList<>();
-        String query = "SELECT * FROM ordine WHERE id_utente = ?";
+        String query = "SELECT * FROM Ordine WHERE id_utente = ? ORDER BY dataCreazione DESC";
 
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement(query)) {
@@ -69,10 +92,11 @@ public class OrdineDAO implements IOrdineDAO {
 
                 ordini.add(tmp);
             }
+
+            return ordini;
         } catch (SQLException e) {
             throw new SQLException("Connessione con il database fallita...");
         }
-        return ordini;
     }
 
     @Override

@@ -19,7 +19,7 @@
                         </td>
                         <td>
                             <h1>Modifica i dati</h1>
-                            <form name="form1" action = "${pageContext.request.contextPath}/mod-utente" method="post">
+                            <form name="form1" action = "${pageContext.request.contextPath}/mod-utente?idUser=${utenteTrovato.id}" method="post">
                                 <div class="form-group">
                                     <div align="center" class="my-sm-1">Nome</div>
                                     <input type="text" id="nome" name="nome" placeholder="es. ${utenteTrovato.nome}" value="">

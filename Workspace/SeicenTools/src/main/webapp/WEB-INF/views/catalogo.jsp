@@ -10,20 +10,16 @@
     </div>
     <div align="right" class="main-content">
         <div class="catalogo">
-            <c:forEach var="list" items="${listaProdotti}">
+            <c:forEach var="prod" items="${listaProdotti}">
                 <div class="card" style="width: 18rem;">
-                    <img src="${pageContext.request.contextPath}/imgs/${list.imgPath}" class="card-img-top" alt="...">
+                    <img src="${pageContext.request.contextPath}/products/${prod.imgPath}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">${list.nome}</h5>
-                        <p class="grassetto">${list.prezzo}.</p>
-                            <a href="${pageContext.request.contextPath}/dettagli_prod?id=${prod.id}" class="btn btn-primary">visualizza</a>
+                        <h5 class="card-title">${prod.nome}</h5>
+                        <p class="grassetto">${prod.prezzo}.</p>
+                            <a href="${pageContext.request.contextPath}/dettagli-prod?idPrd=${prod.id}" class="btn btn-primary">visualizza</a>
                     </div>
                 </div>
             </c:forEach>
         </div>
     </div>
-</div>
-
-<div id="footerL">
-    <p>&copy; 2026 SeicenTools</p>
 </div>

@@ -23,14 +23,14 @@
         </c:forEach>
     </div>
 
-    <div align="right" class="productCard">
+    <div align="center" class="productCard">
         <c:forEach var="prod" items = "${cardProducts}">
             <div class="card" style="width: 18rem;">
-                <img src="${pageContext.request.contextPath}/${prod.imgPath}" class="card-img-top img-thumbnail" alt="${prod.nome}">
+                <img src="${pageContext.request.contextPath}/products/${prod.imgPath}" class="card-img-top img-thumbnail-lg" alt="${prod.nome}">
                 <div class="card-body">
                     <h5 class="card-title">${prod.nome}</h5>
                     <p class="card-text">${prod.descrizione}.</p>
-                    <a href="${pageContext.request.contextPath}/dettagli-prod?idPrd=${prod.id}" class="btn btn-primary">visualizza</a>
+                    <a href = "${pageContext.request.contextPath}/dettagli-prod?idPrd=${prod.id}" class="btn btn-primary">visualizza</a>
                 </div>
             </div>
         </c:forEach>

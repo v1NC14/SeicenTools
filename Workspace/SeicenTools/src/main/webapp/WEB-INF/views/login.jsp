@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <div>
-    <div class="login_form">
+    <div class="login_form" >
         <c:if test="${error != null}">
             <div class="error-banner mx-2">
                 <p>${error}</p>
@@ -19,15 +19,18 @@
                 <small id="error-password" class="error-msg" style="color: red"></small>
             </div>
 
-            <button type="submit" class="btn-login">Accedi</button>
+            <button type="submit" class="btn btn-success mx-1">Accedi</button>
         </form>
-        <form name="guest" action="guest" method="post">
-            <div>
-                <button type = "submit" class="btn-login">Ospite</button>
-            </div>
-        </form>
-        <form name="registraForm" action="${pageContext.request.contextPath}/add-utente" method="get">
-            <div><button type = "submit" class="btn-login">Registrati  <i class="bi bi-person-plus-fill"></i></button></div>
-        </form>
+        <div class="d-flex btn-gorup">
+
+            <form name="guest" action="guest" method="post">
+                <div>
+                    <button type = "submit" class="btn btn-info mx-1">Ospite</button>
+                </div>
+            </form>
+            <form name="registraForm" action="${pageContext.request.contextPath}/add-utente" method="get">
+                <div><button type = "submit" class="btn btn-outline-warning mx-1">Registrati  <i class="bi bi-person-plus-fill"></i></button></div>
+            </form>
+        </div>
     </div>
 </div>

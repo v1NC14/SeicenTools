@@ -3,7 +3,7 @@
 
 <div class = "product_img">
 <img src="${pageContext.request.contextPath}/${prodotto.imgPath}" alt="foto prodotto" id="prodImg"> <!--qui devo capire come poter caricare le immagini, servirà tempo, è una delle parti più difficili del progetto-->
-<!-- c:if test="${sessionScope.utente.ruolo == 'ADMIN'}">
+<c:if test="${sessionScope.utente.ruolo == 'ADMIN'}">
     <a href="mod-prod">
         <button type="button" class="btn btn-danger mx-1">Cambia immagine prodotto</button>
     </a>
@@ -18,25 +18,26 @@
             </div>
         </c:if>
         <div class="my-1">
-            <h1>${prodotto.nome}</h1>
-            <h3>Disponibilità: ${prodotto.disponibilita}</h3>
+            <h1>${sessionScope.prodotto.nome}</h1>
+            <h3>Disponibilità: ${sessionScope.prodotto.disponibilita}</h3>
         </div>
 
         <div>
-            <h2><strong>€ ${prodotto.prezzo}</strong></h2>
-            <h2>Descrizione prodotto:</h2>
-            <div>${prodotto.descrizione}</div>
+            <h2><strong>€ ${sessionScope.prodotto.prezzo}</strong></h2>
+            <h2>Descrizione:</h2>
+            <div>${sessionScope.prodotto.descrizione}</div>
         </div>
 
         <div class="my-2">
-            <a href="${pageContext.request.contextPath}/add-cart?prodotto=${sessionScope.prodotto}">
-                <button type="button" class="btn btn-warning mx-1">Aggiungi al carrello<i class="bi bi-plus"></i></button>
+
+            <a href="${pageContext.request.contextPath}/add-carrello?id=${sessionScope.prodotto.id}&qta=1">
+                <button type="button" class="btn btn-warning mx-1">Aggiungi al carrello<i class="bi bi-patch-plus-fill"></i></button>
             </a>
             <c:if test="${sessionScope.utente.ruolo == 'ADMIN'}">
-                <a href="${pageContext.request.contextPath}/mod-prod?id=${prodotto.id}"> <!--da fare-->
+                <a href="${pageContext.request.contextPath}/mod-prod?id=${sessionScope.prodotto.id}"> <!--da fare-->
                     <button type="button" class="btn btn-info mx-1">Modifica prodotto</button>
                 </a>
-                <a href="${pageContext.request.contextPath}/del-prod?id=${prodotto.id}"> <!--da fare-->
+                <a href="${pageContext.request.contextPath}/del-prod?id=${sessionScope.prodotto.id}"> <!--da fare-->
                     <button type="button" class="btn btn-danger mx-1">Elimina prodotto</button>
                 </a>
             </c:if>

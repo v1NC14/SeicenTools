@@ -18,12 +18,13 @@ public class DettagliProdottoServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req , HttpServletResponse resp) throws ServletException, IOException {
         IcommonProdService service = new commonProdService();
+        HttpSession session = req.getSession();
         int idPrd = Integer.parseInt(req.getParameter("idPrd"));
 
         try {
             Prodotto tmp = service.getProdotto(idPrd);
 
-            req.setAttribute("prodotto", tmp);
+            session.setAttribute("prodotto", tmp);
             req.setAttribute("viewPath", "productDetail.jsp");
             req.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(req, resp);
         } catch (Exception e) {

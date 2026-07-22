@@ -21,7 +21,7 @@ public class Ordine {
         this.id_utente = id_utente;
         this.totale = totale;
         this.qta = qta;
-        this.dataCreazione = Timestamp.from(Instant.now());
+        this.dataCreazione = Timestamp.valueOf(String.valueOf(Instant.now()));
         this.indirizzoConsegna = indirizzoConsegna;
     }
 
@@ -31,6 +31,7 @@ public class Ordine {
     public int getQta() {return this.qta;}
     public Timestamp getDataCreazione() {return this.dataCreazione;}
     public String getIndirizzoConsegna() {return this.indirizzoConsegna;}
+    public String getNumCarta() {return this.numCarta;}
 
     public void setId(int id) {this.id = id;}
     public void setId_utente(int id_utente) {this.id_utente = id_utente;}
@@ -38,5 +39,6 @@ public class Ordine {
     public void setQta(int qta) {this.qta = qta;}
     public void setDataCreazione(Timestamp dataCreazione){this.dataCreazione = dataCreazione;}
     public void setIndirizzoConsegna(String indirizzoConsegna) {this.indirizzoConsegna = indirizzoConsegna;}
+    public void setNumCarta(String numCarta) {this.numCarta = numCarta;}
 }
 

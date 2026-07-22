@@ -7,5 +7,5 @@ public interface IPersistenceService {
     public ProdottoDAO getProdottoDAO();
     public UtenteDAO getUtenteDAO();
     public ProdottiOrdinatiDAO getProdottiOrdinatiDAO();
-    public CarrelloDAO getCarrelloDAO();
+    //public CarrelloDAO getCarrelloDAO();
 }

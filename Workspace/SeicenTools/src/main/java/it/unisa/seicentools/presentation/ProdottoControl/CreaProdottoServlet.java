@@ -36,6 +36,7 @@ public class CreaProdottoServlet extends HttpServlet {
 
         try {
             List<String> categorie = service.getCategorie();
+            categorie.add("placeholder");
             req.setAttribute("categorie", categorie);
 
             req.setAttribute("viewPath", "aggiungiProdottoAdmin.jsp");
@@ -84,8 +85,7 @@ public class CreaProdottoServlet extends HttpServlet {
             }
         }else{
             req.setAttribute("errore", "403 - Forbidden");
-            req.setAttribute("viewPath", "homepage.jsp");
-            req.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(req, resp);
+            resp.sendRedirect(req.getContextPath()+"/homepage");
         }
     }
 }

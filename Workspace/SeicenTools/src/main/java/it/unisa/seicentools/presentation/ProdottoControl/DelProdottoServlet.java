@@ -43,15 +43,13 @@ public class DelProdottoServlet extends HttpServlet {
                     req.setAttribute("errore", "Problemi con l'eliminazione del prodotto");
                 }
 
-                req.setAttribute("viewPath", "homepage.jsp");
-                req.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(req, resp);
+                resp.sendRedirect(req.getContextPath() + "/homepage");
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
         }else{
             req.setAttribute("errore", "Utente non loggato");
-            req.setAttribute("viewPath", "login.jsp");
-            req.getRequestDispatcher("/WEB-INF/views/layout.jsp").forward(req, resp);
+            resp.sendRedirect(req.getContextPath() + "/login");
         }
     }
 }
