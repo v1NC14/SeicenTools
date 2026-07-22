@@ -36,3 +36,7 @@
         </div>
     </c:otherwise>
 </c:choose>
+
+<div id="footerL">
+    <p>&copy; 2026 SeicenTools</p>
+</div>

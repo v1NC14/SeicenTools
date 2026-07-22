@@ -81,3 +81,43 @@ td{
     position: relative;
     margin-bottom: 25px; /* Spazio extra per il messaggio che apparirà sotto */
 }
+
+.card{
+    border: 2px solid black;
+}
+.card-body .mx-1{
+    background-color: white;
+}
+.list-categories .categorie{
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+    border-radius: 3px;
+    background-color: white;
+}
+.grassetto{
+    font-weight:bold;
+}
+
+.product-img {
+    border:2px ;
+    border-color: black;
+    border-style: solid;
+    border-radius: 3px;
+}
+
+.tabella{
+
+.list-categories .categorie{
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+    background-color: white;
+}}
+
+
+
+
+
+
+

@@ -44,5 +44,5 @@
         <input class="form-control" name="numCarta" placeholder="Inserisci il numero della tua carta" required>
     </div>
 
-    <input type="submit" class="btn btn-success">Conferma ordine</button>
+    <input type="submit"  value="Conferma" class="btn btn-success">
 </form>

@@ -8,7 +8,7 @@
             <c:choose>
                 <c:when test="${not empty listaUtenti}">
                     <div class="li-utente">
-                        <table>
+                        <table class>
                             <th class="mx-1">Nome</th>
                             <th class="mx-1">E-mail</th>
                             <th align="center"><i class="bi bi-gear"></i></th>

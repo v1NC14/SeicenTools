@@ -18,7 +18,7 @@
             </div>
         </c:if>
         <div class="my-1">
-            <h1>${sessionScope.prodotto.nome}</h1>
+            <h1 class="grassetto">${sessionScope.prodotto.nome}</h1>
             <h3>Disponibilità: ${sessionScope.prodotto.disponibilita}</h3>
         </div>
 

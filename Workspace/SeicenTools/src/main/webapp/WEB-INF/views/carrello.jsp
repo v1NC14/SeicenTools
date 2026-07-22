@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <div class="cart-container my-4">
-    <h3>Il tuo Carrello</h3>
+    <h3 class="grassetto">Il tuo Carrello</h3>
     <table class="table-cart table table-striped table-hover">
         <thead>
             <tr>

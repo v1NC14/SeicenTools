@@ -9,14 +9,14 @@
     <table>
         <tr>
              <td>
-                <h1>Dati Prodotto</h1>
+                <h1 class="grassetto">Dati Prodotto</h1>
                 <h2>Nome: ${prodotto.nome}</h2>
                 <h3>Prezzo: ${prodotto.prezzo} €</h3>
                 <h3>Disponibilità: ${prodotto.disponibilita}</h3>
                 <h3>Categoria: ${prodotto.categoria}</h3>
              </td>
              <td>
-                <h1>Modifica i dati</h1>
+                <h1 class="grassetto">Modifica i dati</h1>
                 <form name = "form1" action = "${pageContext.request.contextPath}/mod-prod" method = "post" enctype="multipart/form-data">
                     <div id = "dataUpload">
                         <div class="form-group">

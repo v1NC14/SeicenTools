@@ -13,12 +13,12 @@
                 <table>
                     <tr>
                         <td>
-                            <h1>Dati Utente</h1>
+                            <h1 class="grassetto">Dati Utente</h1>
                             <h2>Nome: ${utenteTrovato.nome}</h2>
                             <h3><strong>E-mail: </strong>${utenteTrovato.email}</h3>
                         </td>
                         <td>
-                            <h1>Modifica i dati</h1>
+                            <h1 class="grassetto">Modifica i dati</h1>
                             <form name="form1" action = "${pageContext.request.contextPath}/mod-utente?idUser=${utenteTrovato.id}" method="post">
                                 <div class="form-group">
                                     <div align="center" class="my-sm-1">Nome</div>

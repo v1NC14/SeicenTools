@@ -1,0 +1,147 @@
+Index: src/main/webapp/WEB-INF/views/carrello.jsp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><%@ page language=\"java\" contentType=\"text/html; charset=UTF-8\" pageEncoding=\"UTF-8\"%>\r\n<%@ taglib prefix=\"c\" uri=\"jakarta.tags.core\" %>\r\n\r\n<div calss=\"cart\" id=\"cart\">\r\n    <c:forEach var=\"item\" items=\"${prodottiUtente}\">\r\n        <div class=\"cartItem\">\r\n            <h3>${item.nome}</h3>&nbsp&nbsp\r\n            <p>qta:${item.qta}&nbsp&nbsp  totale:${item.prezzoLotto} </p><!--\"prezzoLotto è una variabile di ShowCarrelloServlet che fa il prodotto tra prezzo e qta di ogno prodotto nel carrello\"-->\r\n            <a href=\"${pageContext.request.contextPath}/rmv-cart?id=${item.id}\"><button type=\"button\">Rimuovi</button></a>\r\n        </div>\r\n    </c:forEach>\r\n</div>\r\n\r\n<div class=\"effettuaOrdine\">\r\n    <p class=\"grassetto\"> Totale ordine: ${item.prezzoTotaleCarrello}</p><br>    <!-- anche questa è una variabile di ShowCarrelloServlet-->\r\n    <a href=\"OrdineServlet\"><button type=\"button\">ORDINA</button></a>\r\n</div>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/webapp/WEB-INF/views/carrello.jsp b/src/main/webapp/WEB-INF/views/carrello.jsp
+--- a/src/main/webapp/WEB-INF/views/carrello.jsp	(revision cfac6f4283e158e419db9ff4113a510751e5537b)
++++ b/src/main/webapp/WEB-INF/views/carrello.jsp	(date 1784734255943)
+@@ -6,12 +6,12 @@
+         <div class="cartItem">
+             <h3>${item.nome}</h3>&nbsp&nbsp
+             <p>qta:${item.qta}&nbsp&nbsp  totale:${item.prezzoLotto} </p><!--"prezzoLotto è una variabile di ShowCarrelloServlet che fa il prodotto tra prezzo e qta di ogno prodotto nel carrello"-->
+-            <a href="${pageContext.request.contextPath}/rmv-cart?id=${item.id}"><button type="button">Rimuovi</button></a>
++            <a href="${pageContext.request.contextPath}/rmv-cart?id=${item.id}"><button type="button" <i class="bi bi-trash"></i>>Rimuovi</button></a>
+         </div>
+     </c:forEach>
+ </div>
+ 
+ <div class="effettuaOrdine">
+-    <p class="grassetto"> Totale ordine: ${item.prezzoTotaleCarrello}</p><br>    <!-- anche questa è una variabile di ShowCarrelloServlet-->
++    <p class="grassetto"> Totale ordine: ${item.prezzoTotaleCarrello}</p><br>
+     <a href="OrdineServlet"><button type="button">ORDINA</button></a>
+-</div>
+\ No newline at end of file
++</div>
+Index: src/main/webapp/css/style.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>body{\r\n    background-color: #89cff0;\r\n}\r\n\r\ntd{\r\n    margin-left: 2.5em;\r\n    margin-right: 2.5em;\r\n}\r\n\r\n#logo{\r\n    max-width:  3em;\r\n    max-height: 3em;\r\n}\r\n\r\n.navbar-brand #brand{\r\n    max-height: fit-content;\r\n    width: 20%;\r\n}\r\n\r\n.login_form{\r\n    width: fit-content;\r\n    margin: 0 auto;\r\n    margin-top: 3em;\r\n}\r\n\r\n.btn-login{\r\n    margin-left: 4em;\r\n}\r\n\r\n.form-group{\r\n    margin-bottom: 1em;\r\n    margin-top: 1em;\r\n}\r\n\r\n.nav-color{\r\n    background: white;\r\n    border-bottom: #04042a;\r\n}\r\n\r\n#footerL{\r\n    position: fixed;\r\n    left: 0;\r\n    bottom: 0;\r\n    width: 100%;\r\n    background-color: #04042a;\r\n    text-align: center;\r\n    color: white;\r\n}\r\n\r\n#brand{\r\n    color: #04042a !important;\r\n    font-family: Forte, sans-serif;\r\n    font-weight: 1000;\r\n}\r\n\r\n.menu-links{\r\n    color: #04042a;\r\n    margin-left: 2em;\r\n    margin-right: 2em;\r\n    font-size: 1.75em;\r\n}\r\n\r\n.error-banner{\r\n    margin: 0 auto;\r\n    margin-top: 0.5em;\r\n    margin-bottom: 0.5em;\r\n    color: red;\r\n}\r\n\r\n.login_form .error-msg {\r\n    position: absolute;\r\n    left: 100%;\r\n    margin-left: 15px;\r\n    top: 28px;\r\n    width: 250px;\r\n    line-height: 1.2;\r\n    white-space: normal;\r\n}\r\n\r\n.login_form .form-group {\r\n    position: relative;\r\n    margin-bottom: 25px; /* Spazio extra per il messaggio che apparirà sotto */\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/webapp/css/style.css b/src/main/webapp/css/style.css
+--- a/src/main/webapp/css/style.css	(revision cfac6f4283e158e419db9ff4113a510751e5537b)
++++ b/src/main/webapp/css/style.css	(date 1784654493682)
+@@ -80,4 +80,31 @@
+ .login_form .form-group {
+     position: relative;
+     margin-bottom: 25px; /* Spazio extra per il messaggio che apparirà sotto */
+-}
+\ No newline at end of file
++}
++
++.card{
++    border: 2px solid black;
++}
++.card-body{
++    background-color: white;
++}
++.list-categories{
++    border: 2px solid black;
++    border-radius: 3px;
++    background-color: white;
++}
++.grassetto{
++    font-weight:bold;
++}
++
++.product-img {
++    border:2px solid black;
++
++
++
++
++
++
++
++
++
+Index: src/main/webapp/WEB-INF/views/homepage.jsp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><%@ page language=\"java\" contentType=\"text/html; charset=UTF-8\" pageEncoding=\"UTF-8\"%>\r\n<%@ taglib prefix=\"c\" uri=\"jakarta.tags.core\" %>\r\n\r\n<div id=\"Banner\" class=\"Banner\" data-bs-ride=\"carousel\">\r\n    <div class=\"banner-inner\">\r\n        <div class=\"banner-item\">\r\n            <img src=\"${pageContext.request.contextPath}/imgs/products/...\" class=\"d-block w-100\" alt=\"...\"><!--${prod.imgPath}-->\r\n        </div>\r\n        <div class=\"banner-item\">\r\n            <img src=\"${pageContext.request.contextPath}/imgs/products/...\"\" class=\"d-block w-100\" alt=\"...\">\r\n        </div>\r\n        <div class=\"banner-item\">\r\n            <img src=\"${pageContext.request.contextPath}/imgs/products/...\"\" class=\"d-block w-100\" alt=\"...\">\r\n        </div>\r\n    </div>\r\n</div><!-- si deve vedere per le immagini-->\r\n\r\n<div class=\"content\">\r\n    <h4>CATEGORIE</h4><br>\r\n    <div  align=\"left\" class=\"list-categories\">\r\n        <c:forEach var=\"cat\" items=\"${categorie}\">\r\n            <a href=\"${pageContext.request.contextPath}/catalogo?filtro=${cat}\" class=\"list-categories-item list-categories-item-action \">${cat}</a>\r\n        </c:forEach>\r\n    </div>\r\n\r\n    <div align=\"right\" class=\"productCard\">\r\n        <c:forEach var=\"prod\" items = \"${cardProducts}\">\r\n            <div class=\"card\" style=\"width: 18rem;\">\r\n                <img src=\"${pageContext.request.contextPath}/${prod.imgPath}\" class=\"card-img-top img-thumbnail\" alt=\"${prod.nome}\">\r\n                <div class=\"card-body\">\r\n                    <h5 class=\"card-title\">${prod.nome}</h5>\r\n                    <p class=\"card-text\">${prod.descrizione}.</p>\r\n                    <a href=\"${pageContext.request.contextPath}/dettagli-prod?idPrd=${prod.id}\" class=\"btn btn-primary\">visualizza</a>\r\n                </div>\r\n            </div>\r\n        </c:forEach>\r\n    </div>\r\n</div>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/webapp/WEB-INF/views/homepage.jsp b/src/main/webapp/WEB-INF/views/homepage.jsp
+--- a/src/main/webapp/WEB-INF/views/homepage.jsp	(revision cfac6f4283e158e419db9ff4113a510751e5537b)
++++ b/src/main/webapp/WEB-INF/views/homepage.jsp	(date 1784643257008)
+@@ -28,7 +28,7 @@
+             <div class="card" style="width: 18rem;">
+                 <img src="${pageContext.request.contextPath}/${prod.imgPath}" class="card-img-top img-thumbnail" alt="${prod.nome}">
+                 <div class="card-body">
+-                    <h5 class="card-title">${prod.nome}</h5>
++                    <h5 class="grassetto">${prod.nome}</h5>
+                     <p class="card-text">${prod.descrizione}.</p>
+                     <a href="${pageContext.request.contextPath}/dettagli-prod?idPrd=${prod.id}" class="btn btn-primary">visualizza</a>
+                 </div>
+Index: src/main/webapp/WEB-INF/views/ordiniUtente.jsp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><%@ page language=\"java\" contentType=\"text/html; charset=UTF-8\" pageEncoding=\"UTF-8\"%>\r\n<%@ taglib prefix=\"c\" uri=\"jakarta.tags.core\" %>\r\n<c:choose>\r\n    <c:when test = \"${numOrders} == 0\">\r\n        <div id = \"noOrders\"><h3>Nessun Ordine da mostrare</h3></div>\r\n    </c:when>\r\n    <c:otherwise>\r\n        <div id = \"ordini-page\">\r\n            <span><h2>I tuoi ordini</h2></span>\r\n            <c:forEach items=\"${orders}\" var = \"ordine\" begin = \"${offset}\" end = \"${offset + limit - 1}\">\r\n                <div id = \"ord-utente my-3\">\r\n                    <span class=\"badge bg-info\">Ordine #${ordine.id}</span>\r\n                    <span class=\"badge bg-secondary\">#${ordine.dataCreazione}</span>\r\n                    <span class=\"fw-bold ms-2\">${ordine.indirizzoConsegna}</span>\r\n                    <span class=\"badge bg-success ms-4\">#${ordine.tot}</span>\r\n                </div>\r\n            </c:forEach>\r\n        </div>\r\n        <div id=\"nav-pagination\">\r\n            <nav aria-label=\"Page navigation example\">\r\n              <ul class=\"pagination\">\r\n\r\n                <li class=\"page-item\"<c:if test=\"${page <= 1}\">hidden</c:if>>\r\n                  <a class=\"page-link\" href=\"${pageContext.request.contextPath}/ordini-utente?page=${page - 1}\" aria-label=\"Previous\"><span aria-hidden=\"true\">&laquo;</span></a>\r\n                </li>\r\n\r\n                <c:forEach begin = \"1\" end = \"${totalPages}\" var = \"i\">\r\n                <li class=\"page-item\"><a class=\"page-link\" href=\"${pageContext.request.contextPath}/ordini-utente?page=${i}\"><c:out value = \"${i}\"></c:out></a></li>\r\n                </c:forEach>\r\n\r\n                <li class=\"page-item\"<c:if test=\"${page >= totalPages}\">hidden</c:if>>\r\n                    <a class=\"page-link\" href=\"${pageContext.request.contextPath}/ordini-utente?page=${page + 1}\" aria-label=\"Next\"><span aria-hidden=\"true\">&raquo;</span></a>\r\n                </li>\r\n              </ul>\r\n            </nav>\r\n        </div>\r\n    </c:otherwise>\r\n</c:choose>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/webapp/WEB-INF/views/ordiniUtente.jsp b/src/main/webapp/WEB-INF/views/ordiniUtente.jsp
+--- a/src/main/webapp/WEB-INF/views/ordiniUtente.jsp	(revision cfac6f4283e158e419db9ff4113a510751e5537b)
++++ b/src/main/webapp/WEB-INF/views/ordiniUtente.jsp	(date 1784552142674)
+@@ -35,4 +35,8 @@
+             </nav>
+         </div>
+     </c:otherwise>
+-</c:choose>
+\ No newline at end of file
++</c:choose>
++
++<div id="footerL">
++    <p>&copy; 2026 SeicenTools</p>
++</div>
+\ No newline at end of file
+Index: src/main/webapp/WEB-INF/views/catalogo.jsp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><%@ page language=\"java\" contentType=\"text/html; charset=UTF-8\" pageEncoding=\"UTF-8\"%>\r\n<%@ taglib prefix=\"c\" uri=\"jakarta.tags.core\" %>\r\n\r\n<div class=\"content\">\r\n    <div align=\"left\" class=\"categorie\" >\r\n        <h2>CATEGORIE</h2><br>\r\n        <c:forEach var=\"categ\" items=\"${categorie}\">\r\n            <p>-${categ}</p><br>\r\n        </c:forEach>\r\n    </div>\r\n    <div align=\"right\" class=\"main-content\">\r\n        <div class=\"catalogo\">\r\n            <c:forEach var=\"list\" items=\"${listaProdotti}\">\r\n                <div class=\"card\" style=\"width: 18rem;\">\r\n                    <img src=\"${pageContext.request.contextPath}/imgs/${list.imgPath}\" class=\"card-img-top\" alt=\"...\">\r\n                    <div class=\"card-body\">\r\n                        <h5 class=\"card-title\">${list.nome}</h5>\r\n                        <p class=\"grassetto\">${list.prezzo}.</p>\r\n                            <a href=\"${pageContext.request.contextPath}/dettagli_prod?id=${prod.id}\" class=\"btn btn-primary\">visualizza</a>\r\n                    </div>\r\n                </div>\r\n            </c:forEach>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n<div id=\"footerL\">\r\n    <p>&copy; 2026 SeicenTools</p>\r\n</div>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/webapp/WEB-INF/views/catalogo.jsp b/src/main/webapp/WEB-INF/views/catalogo.jsp
+--- a/src/main/webapp/WEB-INF/views/catalogo.jsp	(revision cfac6f4283e158e419db9ff4113a510751e5537b)
++++ b/src/main/webapp/WEB-INF/views/catalogo.jsp	(date 1784733796553)
+@@ -2,7 +2,7 @@
+ <%@ taglib prefix="c" uri="jakarta.tags.core" %>
+ 
+ <div class="content">
+-    <div align="left" class="categorie" >
++    <div align="left" class="list-categories">
+         <h2>CATEGORIE</h2><br>
+         <c:forEach var="categ" items="${categorie}">
+             <p>-${categ}</p><br>
+@@ -14,13 +14,13 @@
+                 <div class="card" style="width: 18rem;">
+                     <img src="${pageContext.request.contextPath}/imgs/${list.imgPath}" class="card-img-top" alt="...">
+                     <div class="card-body">
+-                        <h5 class="card-title">${list.nome}</h5>
++                        <h5 class="grassetto">${list.nome}</h5>
+                         <p class="grassetto">${list.prezzo}.</p>
+                             <a href="${pageContext.request.contextPath}/dettagli_prod?id=${prod.id}" class="btn btn-primary">visualizza</a>
+                     </div>
+                 </div>
+             </c:forEach>
+-        </div>
++        </div>z
+     </div>
+ </div>
+ 

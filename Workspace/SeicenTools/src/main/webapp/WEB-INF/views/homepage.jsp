@@ -16,8 +16,9 @@
 </div><!-- si deve vedere per le immagini-->
 
 <div class="content">
-    <h4>CATEGORIE</h4><br>
+
     <div  align="left" class="list-categories">
+        <h4>CATEGORIE</h4><br>
         <c:forEach var="cat" items="${categorie}">
             <a href="${pageContext.request.contextPath}/catalogo?filtro=${cat}" class="list-categories-item list-categories-item-action ">${cat}</a>
         </c:forEach>
@@ -28,7 +29,7 @@
             <div class="card" style="width: 18rem;">
                 <img src="${pageContext.request.contextPath}/products/${prod.imgPath}" class="card-img-top img-thumbnail-lg" alt="${prod.nome}">
                 <div class="card-body">
-                    <h5 class="card-title">${prod.nome}</h5>
+                    <h5 class="grassetto">${prod.nome}</h5>
                     <p class="card-text">${prod.descrizione}.</p>
                     <a href = "${pageContext.request.contextPath}/dettagli-prod?idPrd=${prod.id}" class="btn btn-primary">visualizza</a>
                 </div>
