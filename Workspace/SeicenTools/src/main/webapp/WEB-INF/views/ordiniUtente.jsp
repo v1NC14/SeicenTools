@@ -12,7 +12,7 @@
                     <span class="badge bg-info">Ordine #${ordine.id}</span>
                     <span class="badge bg-secondary">#${ordine.dataCreazione}</span>
                     <span class="fw-bold ms-2">${ordine.indirizzoConsegna}</span>
-                    <span class="badge bg-success ms-4">#${ordine.totale}</span>
+                    <span class="badge bg-success ms-4">€${ordine.totale}</span>
                 </div>
             </c:forEach>
         </div>

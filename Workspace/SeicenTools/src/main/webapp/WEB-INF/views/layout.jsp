@@ -22,7 +22,7 @@
                 <div class="menu-links">
                     <c:if test="${sessionScope.utente.ruolo == 'ADMIN' && viewPath != 'gestioneUtenti.jsp' && viewPath != 'registraUtente.jsp'}">
                         <a href="${pageContext.request.contextPath}/gestisci-utente">
-                            <i class="bi bi-person-fill-gear"></i>
+                            <i class="bi bi-person-fill-gear mx-2"></i>
                         </a>
                     </c:if>
                     <c:if test="${viewPath != 'homepage.jsp' && viewPath != 'registraUtente.jsp'}"> <!-- homepage btn -->
@@ -32,7 +32,7 @@
                     </c:if>
                     <c:if test="${viewPath != 'registraUtente.jsp'}"> <!-- cart btn -->
                         <a href="${pageContext.request.contextPath}/show-carrello" class="btn-create">
-                            <i class="bi bi-cart4"></i>
+                            <i class="bi bi-cart4 mx-2"></i>
                         </a>
                     </c:if>
                     <c:if test="${viewPath != 'profilo.jsp' && viewPath != 'registraUtente.jsp'}"> <!-- registra utente btn -->
@@ -63,7 +63,7 @@
         <div class="position-fixed top-0 start-50 translate-middle-x mt-3 p-3" style="z-index:1100">
             <div id="cartToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
                 <div class="toast-header">
-                    <strong class="me-auto">Carrello</strong>
+                    <strong class="me-auto">Notifica</strong>
 
                     <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
                 </div>
@@ -88,7 +88,6 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 
 </script>
-
 
 <c:remove var="cartMessage" scope="session"/>
 

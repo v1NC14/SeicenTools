@@ -25,8 +25,8 @@ public class HomepageServlet extends HttpServlet {
         IcommonProdService service = new commonProdService();
 
         try {
-            //List<Prodotto> random = service.getRandProd(8);
-            //List<Prodotto> banner = service.getRandProd(4);
+            //List<Prodotto> random = service.getRandProd(2);
+            //List<Prodotto> banner = service.getRandProd(2);
             List<String> categorie = service.getCategorie();
 
             //request.setAttribute("cardProducts", random);
